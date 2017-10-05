@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:id="@+id/itemWrapper" 
+	android:orientation="vertical"
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	android:background="@drawable/button"
+	>
+	
+	<TextView 
+		style="@style/labelText"
+	    android:id="@+id/bankName"
+	    android:text="Unicredit"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center_vertical"
+	    android:paddingLeft="5dip"
+	    android:singleLine="true"
+	/>
+	<TextView 
+		style="@style/commentText"
+	    android:id="@+id/phoneNumber"
+	    android:text="+36204051181"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center_vertical"
+	    android:paddingLeft="5dip"
+	    android:singleLine="true"
+	/>
+
+</LinearLayout>

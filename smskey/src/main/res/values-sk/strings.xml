@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><resources>
+	<!-- Bank List Activity -->
+	<string name="bankListTitle">Zoznam bánk:</string>
+    <string name="addBank">Pridať banku</string>
+    <string name="editBank">Upraviť banku</string>
+    <string name="deleteBank">Odstrániť banku</string>
+    <string name="bankDeleted">Banka bola úspešne odstránená.</string>
+    <string name="showForeignBanks">Zobraziť zahraničné banky</string>
+	
+	<!-- Bank Edit Activity -->
+	<string name="phoneNumber">Telefónne číslo (čísla):</string>
+	<string name="messagePatterns">Správa vzor (y):</string>
+	<string name="expiry">Uplynutí niekoľkých sekúnd:</string>
+	<string name="btnDone">Hotovo</string>
+	<string name="btnCancel">Zrušiť</string>
+	<string name="tooMuchPhoneNumber">Povolené sú maximálne 3 telefónne čísla.</string>
+	<string name="minPhoneNumber">Apoň jedno číslo musí byť zadané.</string>
+	<string name="tooMuchPattern">Povolené sú maximálne 3 vzory.</string>
+	<string name="minPattern">Minimálne 1 vzorka je potrebná.</string>
+	<string name="specifyBankName">Zadajte meno banky.</string>
+	<string name="noEmptyPhoneNumber">Prázdne telefónne čísla nie sú povolené.</string>
+	<string name="noEmptyExpression">Prázdne výrazy nie sú povolené.</string>
+	<string name="invalidExpression">Neplatný regulárny výraz. Skontrolujte to znovu!</string>
+	
+
+	<!-- SMS OTP Display Activity -->
+	<string name="copyright">SMS Key TM, BankDroid, 2009 (c)</string>
+	<string name="clickToClose">Kliknite alebo zatrasete pre skopírovanie a zavretie.</string>
+	<string name="menuClear">Vyčisiť</string>
+	<string name="menuBanks">Banky</string>
+	<string name="menuPref">Predvoľby</string>
+	<string name="menuUserGuide">Online pomocník</string>
+	<string name="menuAbout">O aplikácii</string>
+	<string name="app_name">SMS Key TM</string>
+	<string name="received.prefix">Prijaté o: </string>
+	<string name="countdown.prefix">Zostávajúci čas: </string>
+	<string name="nocode">- Žiadny kód -</string>
+	<string name="securityWarning">Overte podrobnosti transakcie v SMS pred jej odsúhlasením.</string>
+	<string name="visitBlog">Navštívte SMS Key blog!</string>
+	
+	<!-- SMS pick activity -->
+	<string name="smsListTitle">Vyberte SMS obsahujúcu heslo, ktorému už skončila platnosť:</string>
+	<string name="selectEmail">Vyberte E-mailový účet:</string>
+	<string name="noSMSInInbox">Nemáte žiadne SMS.</string>
+	<string name="btnHelp">Pomoc</string>
+	<string name="emailSubject">Ukážka SMS OTP</string>
+	<string name="emailPrefix">Ďakujeme za odoslanie vzorky kódy! Prosím, nemeňte číslo banky a kód. Osobné dáta v správe môžete zmeniť.</string>
+	<string name="emailOriginator">Tel. číslo banky: </string>
+	<string name="emailSMSText">Text správy: </string>
+	
+	<!-- Preferences -->
+	<string name="unlockScreen">Odomknutie obrazovky</string>
+	<string name="unlockScreenSummary">Zobudiť telefón a odomknúť obrazovku, keď príde kód. (Len pre Android 2.0+)</string>
+	<string name="keepScreenOn">Nechať obrazovku zapnutú</string>
+	<string name="keepScreenOnSummary">Počas zobrazenia kódu nechať obrazovku zapnutú.</string>
+	<string name="keepSMS">Nemazať SMS</string>
+	<string name="keepSMSSummary">Ak je zvolené, pôvodná SMS ostane v správach.</string>
+	<string name="notification">Len oznámenie</string>
+	<string name="notificationSummary">Ak je zvolené, kód sa nezobrazí vo vyskakovacom okne.</string>
+	<string name="autoCopy">Automaticky skopírovať kód</string>
+	<string name="autoCopySummary">Kód sa automaticky skopíruje do schránky</string>
+	<string name="resetDb">Resetnúť DB bánk</string>
+	<string name="resetDbSummary">Vyčistenie obsahu DB (vlastné banky budú zmazané!)</string>
+	<string name="developerPrefs">Predvoľby Vývojára</string>
+	<string name="genericPrefs">Všeobecné Predvoľby</string>
+	<string name="msgDbReset">DB bánk bola úspečne vymazaná.</string>
+	<string name="msgAreYouSure">Ste si istí?</string>
+	<string name="yes">Áno</string>
+	<string name="no">Nie</string>
+	
+	<!-- Notification -->
+	<string name="notificationTicker">Formulár prijatého hesla (0)</string>
+	<string name="notificationTitle">SMS Key TM</string>
+	<string name="notificationText">Formulár prijatého hesla (0). Kliknite pre zobrazenie hesla.</string>
+	
+	<!-- Main -->
+	<string name="mainTitle">SMS Key TM</string>
+	<string name="btnViewLast">Zobraziť Posledný Kód</string>
+	<string name="btnManageBanks">Správa bánk</string>
+	<string name="btnSubmitSample">Odoslať vzor</string>
+	<string name="btnInfoSite">Online Pomocník</string>
+	<string name="descViewLast">Znovu zobraziť posledný SMS kód.</string>
+	<string name="descManageBanks">Vlastná správa bánk...</string>
+	<string name="descSubmitSample">Nie je Vaša banka zatiaľ podporovaná?</string>
+	<string name="descInfoSite">Nechápete načo je táto aplikácia?</string>
+	<string name="noMessageYet">Ešte ste nedostali žiadny kód SMS. (Poznámka: SMS Key analyzuje len nové správy. Už existujúce Súčasné správy nie sú spracované.)</string>
+	<string name="ok">Ok</string>
+
+	<!-- About -->
+	<string name="aboutId">SMS Key TM</string>
+	<string name="aboutDesc">SMS Key je produktom projektu BankDroid open source. Vyvinuté dobrovoľnými programátormi.</string>
+	<string name="aboutDesc2">Ak budete mať akýkoľvek problém s aplikáciou, alebo by ste chceli nejaké nové funkcie, neváhajte nás kontaktovať.</string>
+	<string name="aboutUrl2">www.bankdroid.info</string>
+	<string name="donateButton">Darovať</string>
+	<string name="donateButtonDesc">Pomôž mi priamo prispieť cez PayPal</string>
+	
+	<!-- EULA -->
+	<string name="eula_title">Licencia</string>
+	<string name="eula_accept">Prijať</string>
+	<string name="eula_refuse">Odmietnuť</string>
+
+</resources>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><resources>
+	<!-- Bank List Activity -->
+	<string name="bankListTitle">Bankok listája:</string>
+    <string name="addBank">Új létrehozás</string>
+    <string name="editBank">Szerkesztés</string>
+    <string name="deleteBank">Törlés</string>
+    <string name="bankDeleted">A bankot sikeresen töröltem.</string>
+    <string name="showForeignBanks">Külföldi bankok listázása</string>
+	
+	<!-- Bank Edit Activity -->
+	<string name="bankName">Bank neve:</string>
+	<string name="phoneNumber">Telefonszám(ok):</string>
+	<string name="messagePatterns">Üzenetszűrő(k):</string>
+	<string name="expiry">Lejárat (mp):</string>
+	<string name="btnDone">Ment</string>
+	<string name="btnCancel">Elvet</string>
+	<string name="tooMuchPhoneNumber">Maximum 3 telefonszám adható meg.</string>
+	<string name="minPhoneNumber">Minimum 1 telefonszám szükséges.</string>
+	<string name="tooMuchPattern">Maximum 3 szűrő adható meg.</string>
+	<string name="minPattern">Minimum 1 szűrő szükséges.</string>
+	<string name="specifyBankName">Kérlek, ad meg a bank nevét.</string>
+	<string name="noEmptyPhoneNumber">Az üres telefonszámokat törölni kell.</string>
+	<string name="noEmptyExpression">Az üres szűrőket törölni kell.</string>
+	<string name="invalidExpression">Érvénytelen kifejezés. Ellenőrizd újra.</string>
+	
+
+	<!-- SMS OTP Display Activity -->
+	<string name="copyright">SMS Key TM, BankDroid, 2009 (c)</string>
+	<string name="clickToClose">Tappints a kódra, vagy rázd meg a készüléket a másoláshoz és bezáráshoz.</string>
+	<string name="menuClear">Kód törlése</string>
+	<string name="menuBanks">Bankok</string>
+	<string name="menuPref">Beállítások</string>
+	<string name="menuUserGuide">Leírás</string>
+	<string name="menuAbout">Névjegy</string>
+	<string name="app_name">SMS Key TM</string>
+	<string name="received.prefix">Érkezett: </string>
+	<string name="countdown.prefix">Hátralévő idő: </string>
+	<string name="nocode">-- nincs jelszó --</string>
+	<string name="securityWarning">Ellenőrizd a tranzakció részleteit, mielőtt felhasználod a kódot.</string>
+	<string name="visitBlog">Látogasd meg az SMS Key blogot!</string>
+	
+	<!-- SMS pick activity -->
+	<string name="smsListTitle">Kérlek válassz egy SMS mintát:</string>
+	<string name="selectEmail">Kérlek válassz egy postafiókot:</string>
+	<string name="noSMSInInbox">Nincs most SMS a bejövő üzenetekben.</string>
+	<string name="btnHelp">Súgó</string>
+	<string name="emailSubject">SMS Jelszóminta</string>
+	<string name="emailPrefix">Köszönöm, hogy mintával segíti a fejlesztést! Kérlek a telefonszámot, és a jelszót hagyd érintetlenül. Személyes adatok módosíthatóak.</string>
+	<string name="emailOriginator">Bank telefonszáma: </string>
+	<string name="emailSMSText">Üzenet szövege: </string>
+	<string name="statText">%1$d bank %2$d országban!</string>
+		<string name="msgKnownSMS">Ezt az üzenet fajtát már kezeli az alkalmazás. Ha ilyen üzenet érkezik, az SMS Key automatikusan elindul.</string>
+	
+	<!-- Preferences -->
+	<string name="splitCode">Kód darabolás</string>
+	<string name="splitCodeSummary">Az olvashatóság érdekében bontsa a kódot darabokra</string>
+
+	<string name="codeCount">Code count</string>
+	<string name="unlockScreen">Képernyő feloldása</string>
+	<string name="unlockScreenSummary">Telefon felkeltése és feloldása, amikor kód érkezik (csak Android 2.0 vagy a fölött)</string>
+	<string name="keepScreenOn">Kijelző ébrentartása</string>
+	<string name="keepScreenOnSummary">Ébren tartja a kijelzőt, amíg a jelszót mutatja.</string>
+	<string name="keepSMS">SMS megőrzése</string>
+	<string name="keepSMSSummary">Az eredeti üzenet megőrzése az üzenetek között.</string>
+	<string name="notification">Csak értesítés</string>
+	<string name="notificationSummary">A jelszót ne mutassa azonnal, csak egy figyelmeztetést.</string>
+	<string name="autoCopy">Automatikus kódmásolás</string>
+	<string name="autoCopySummary">A kód automatikus másolása a vágólapra</string>
+	<string name="shakeToCopy">Ráz és zár</string>
+	<string name="shakeToCopySummary">Ha megrázod a készüléket, az alkalmazás bezáródik és a kód vágólapra kerül.</string>
+	<string name="playSound">Értesítési hang</string>
+	<string name="playSoundSummary">Értesítési hang lejátszása, ha kód érkezik.</string>
+	<string name="resetCampaign">Kampány adat törlés</string>
+	<string name="resetCampaignSummary">Már elrejtett kampányok újra aktiválása</string>
+	<string name="notificationRingtone">Értesítési hang</string>
+	<string name="notificationRingtoneSummary">Hang lejátszása, ha új kód érkezik</string>
+	<string name="resetDb">Bank DB visszaállítás</string>
+	<string name="resetDbSummary">Visszaállításra kerülnek az alap banki paraméterek</string>
+	<string name="developerPrefs">Fejlesztő beállítások</string>
+	<string name="genericPrefs">Általános beállítások</string>
+	<string name="msgDbReset">A bank adatbázis visszaállításra került.</string>
+	<string name="msgCampaignReset">The hidden campaigns were reset successfully.</string>
+	<string name="msgAreYouSure">Biztos benne?</string>
+	<string name="yes">Igen</string>
+	<string name="no">Nem</string>
+	
+	<!-- Notification -->
+	<string name="notificationTicker">Jelszó érkezett a {0} bankból.</string>
+	<string name="notificationTitle">SMS Key TM</string>
+	<string name="notificationText">Jelszó érkezett {0} a bankból. Tappolj ide.</string>
+	
+	<!-- Main -->
+	<string name="mainTitle">SMS Key TM</string>
+	<string name="btnViewLast">Utolsó jelszó</string>
+	<string name="btnManageBanks">Bankok kezelése</string>
+	<string name="btnSubmitSample">Minta beküldése</string>
+	<string name="btnInfoSite">Infó oldalak (angol)</string>
+	<string name="descViewLast">Utolsó kód megjelenítése</string>
+	<string name="descManageBanks">Beállíthatsz saját bankokat magadnak</string>
+	<string name="descSubmitSample">A te bankodat még nem támogatja a program?</string>
+	<string name="descInfoSite">Nem érted mire jó ez a program?</string>
+	<string name="noMessageYet">Még egyetlen kódot sem fogadott az alkalmazás. (Megjegyzés: Az SMS Key csak az újonnan beérkező üzeneteket dolgozza fel. A korábbi üzeneteket nem értelmezi.)</string>
+	<string name="ok">Ok</string>
+	<string name="loading">Töltés...</string>
+	<string name="msgCheckForMessages">Az SMS-ek feldolgozása folyamatban.</string>
+	<string name="msgNoBankInCountry">Úgy néz ki, az országodban még nincs az SMS Key által támogatott bank. A bankok listáját megnézheted online. Klikk ide.</string>
+
+	<!-- About -->
+	<string name="aboutId">SMS Key TM</string>
+	<string name="aboutDesc">Az SMS Key a BankDroid nyíltforráskódú project terméke, önkéntes programozók munkája.</string>
+	<string name="aboutDesc2">Amennyiben hibát észlelsz, vagy új ötleted van az alkalmazással kapcsolatban, örömmel vesszük a visszajelzéseket.</string>
+	<string name="aboutUrl2">www.bankdroid.info</string>
+	<string name="donateButton">Támogatás</string>
+	<string name="donateButtonDesc">Segítsd pénzzel az alkalmazás fentartását</string>
+	
+	<!-- EULA -->
+	<string name="eula_title">License</string>
+	<string name="eula_accept">Elfogad</string>
+	<string name="eula_refuse">Visszautasít</string>
+	
+	<!-- Campaign -->
+	<string name="campaignRate">Értekeld az appot a Market, és írd meg kinél bankolsz!</string><!-- I18N -->
+	<string name="campaignFacebook">Tetszik az alkalmazás? Mutasd meg a többieknek...</string><!-- I18N -->
+	<string name="campaignDonate1">Túl vagy 150. kódon!</string>
+	<string name="campaignDonate2">PayPal adomány?</string>
+	<string name="errorLog">Hiba napló</string><!-- I18N -->
+	
+</resources>

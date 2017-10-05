@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="splitSizeName">
+        <item >Nincs darabolás</item>
+        <item >2 jegyű darabok</item>
+        <item >3 jegyű darabok</item>
+        <item >4 jegyű darabok</item>
+    </string-array>
+    
+</resources>

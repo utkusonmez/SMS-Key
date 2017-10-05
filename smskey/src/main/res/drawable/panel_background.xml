@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<!-- shadow layer 1 -->
+    <item android:top="2px" android:left="2px" android:bottom="2px" android:right="2px">
+		<shape android:shape="rectangle">
+		    <corners
+		        android:radius="8px"
+		        />
+			<solid 
+				android:color="#1000" 
+				/>
+		</shape>
+    </item> 
+	<!-- shadow layer 2 -->
+    <item android:top="4px" android:left="4px" android:bottom="4px" android:right="4px">
+		<shape android:shape="rectangle">
+		    <corners
+		        android:radius="8px"
+		        />
+			<solid 
+				android:color="#1000" 
+				/>
+		</shape>
+    </item> 
+	<!-- shadow layer 3 -->
+    <item android:top="6px" android:left="6px" android:bottom="6px" android:right="6px">
+		<shape android:shape="rectangle">
+		    <corners
+		        android:radius="8px"
+		        />
+			<solid 
+				android:color="#1000" 
+				/>
+		</shape>
+    </item> 
+ 	<!-- background -->
+    <item android:top="5px" android:left="6px" android:right="7px" android:bottom="7px">
+		<shape android:shape="rectangle">
+		    <corners
+		        android:radius="8px"
+		        />
+			<solid 
+				android:color="#FFF" 
+				/>
+			<stroke 
+				android:color="@color/darkBrown" 
+				android:width="1px"
+				/>
+		</shape>
+    </item>
+</layer-list>
