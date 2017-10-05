@@ -1,44 +1,37 @@
 package bankdroid.smskey.bank;
 
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.parsers.ParserConfigurationException;
+public class BankDescriptor {
+    private static Bank[] defaultBanks = null;
 
-import org.xml.sax.SAXException;
+    public static Bank[] getDefaultBanks() throws ParserConfigurationException, SAXException, IOException {
+        if (defaultBanks == null) {
 
-public class BankDescriptor
-{
-	private static Bank[] defaultBanks = null;
+            final List<Bank> result = new ArrayList<Bank>();
+            new Banks_HU().append(result);
 
-	public static Bank[] getDefaultBanks() throws ParserConfigurationException, SAXException, IOException
-	{
-		if ( defaultBanks == null )
-		{
+            defaultBanks = result.toArray(new Bank[result.size()]);
+        }
+        return defaultBanks;
+    }
 
-			final List<Bank> result = new ArrayList<Bank>();
-			new Banks_HU().append(result);
-
-			defaultBanks = result.toArray(new Bank[result.size()]);
-		}
-		return defaultBanks;
-	}
-
-	public static Bank[] findByPhoneNumber( String phoneNumber ) throws ParserConfigurationException, SAXException,
-			IOException
-	{
-		phoneNumber = phoneNumber.trim();
-		final Bank[] banks = getDefaultBanks();
-		final List<Bank> bankFound = new ArrayList<Bank>();
-		for ( final Bank bank : banks )
-		{
-			if ( bank.isBankPhoneNumber(phoneNumber) )
-			{
-				bankFound.add(bank);
-			}
-		}
-		return bankFound.toArray(new Bank[bankFound.size()]);
-	}
+    public static Bank[] findByPhoneNumber(String phoneNumber) throws ParserConfigurationException, SAXException,
+            IOException {
+        phoneNumber = phoneNumber.trim();
+        final Bank[] banks = getDefaultBanks();
+        final List<Bank> bankFound = new ArrayList<Bank>();
+        for (final Bank bank : banks) {
+            if (bank.isBankPhoneNumber(phoneNumber)) {
+                bankFound.add(bank);
+            }
+        }
+        return bankFound.toArray(new Bank[bankFound.size()]);
+    }
 
 }
