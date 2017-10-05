@@ -1,7 +1,7 @@
 /*
  * Copied from the following location:
  * http://apps-for-android.googlecode.com/svn-history/r93/trunk/DivideAndConquer/src/com/google/android/divideandconquer/Eula.java
- * 
+ *
  * Copyright (C) 2008 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,16 +19,16 @@
 
 package bankdroid.smskey;
 
-import java.io.BufferedReader;
-import java.io.Closeable;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import bankdroid.util.AppId;
+
+import java.io.BufferedReader;
+import java.io.Closeable;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * Displays an EULA ("End User License Agreement") that the user has to accept before
@@ -37,23 +37,10 @@ import bankdroid.util.AppId;
  * be shown again. If the user refuses, {@link android.app.Activity#finish()} is invoked
  * on your activity.
  */
-class Eula
-{
+class Eula {
 	public static final String ASSET_EULA = "EULA";
 	public static final String PREFERENCE_EULA_ACCEPTED = "eula.accepted";
 	public static final String PREFERENCES_EULA = "eula";
-
-	/**
-	 * callback to let the activity know when the user has accepted the EULA.
-	 */
-	static interface OnEulaAgreedTo
-	{
-
-		/**
-		 * Called when the user has accepted the eula and the dialog closes.
-		 */
-		void onEulaAgreedTo();
-	}
 
 	/**
 	 * Displays the EULA if necessary. This method should be called from the onCreate()
@@ -62,38 +49,29 @@ class Eula
 	 * @param activity The Activity to finish if the user rejects the EULA.
 	 * @return Whether the user has agreed already.
 	 */
-	static boolean show( final Activity activity )
-	{
+	static boolean show(final Activity activity) {
 		AppId.getAppId(activity); // init app Id
 
 		final SharedPreferences preferences = activity.getSharedPreferences(PREFERENCES_EULA, Activity.MODE_PRIVATE);
-		if ( !preferences.getBoolean(PREFERENCE_EULA_ACCEPTED, false) )
-		{
+		if (!preferences.getBoolean(PREFERENCE_EULA_ACCEPTED, false)) {
 			final AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 			builder.setTitle(R.string.eula_title);
 			builder.setCancelable(true);
-			builder.setPositiveButton(R.string.eula_accept, new DialogInterface.OnClickListener()
-			{
-				public void onClick( final DialogInterface dialog, final int which )
-				{
+			builder.setPositiveButton(R.string.eula_accept, new DialogInterface.OnClickListener() {
+				public void onClick(final DialogInterface dialog, final int which) {
 					accept(preferences);
-					if ( activity instanceof OnEulaAgreedTo )
-					{
-						( (OnEulaAgreedTo) activity ).onEulaAgreedTo();
+					if (activity instanceof OnEulaAgreedTo) {
+						((OnEulaAgreedTo) activity).onEulaAgreedTo();
 					}
 				}
 			});
-			builder.setNegativeButton(R.string.eula_refuse, new DialogInterface.OnClickListener()
-			{
-				public void onClick( final DialogInterface dialog, final int which )
-				{
+			builder.setNegativeButton(R.string.eula_refuse, new DialogInterface.OnClickListener() {
+				public void onClick(final DialogInterface dialog, final int which) {
 					refuse(activity);
 				}
 			});
-			builder.setOnCancelListener(new DialogInterface.OnCancelListener()
-			{
-				public void onCancel( final DialogInterface dialog )
-				{
+			builder.setOnCancelListener(new DialogInterface.OnCancelListener() {
+				public void onCancel(final DialogInterface dialog) {
 					refuse(activity);
 				}
 			});
@@ -104,34 +82,26 @@ class Eula
 		return true;
 	}
 
-	private static void accept( final SharedPreferences preferences )
-	{
+	private static void accept(final SharedPreferences preferences) {
 		preferences.edit().putBoolean(PREFERENCE_EULA_ACCEPTED, true).commit();
 	}
 
-	private static void refuse( final Activity activity )
-	{
+	private static void refuse(final Activity activity) {
 		activity.finish();
 	}
 
-	private static CharSequence readEula( final Activity activity )
-	{
+	private static CharSequence readEula(final Activity activity) {
 		BufferedReader in = null;
-		try
-		{
+		try {
 			in = new BufferedReader(new InputStreamReader(activity.getAssets().open(ASSET_EULA)));
 			String line;
 			final StringBuilder buffer = new StringBuilder();
-			while ( ( line = in.readLine() ) != null )
+			while ((line = in.readLine()) != null)
 				buffer.append(line).append('\n');
 			return buffer;
-		}
-		catch ( final IOException e )
-		{
+		} catch (final IOException e) {
 			return "";
-		}
-		finally
-		{
+		} finally {
 			closeStream(in);
 		}
 	}
@@ -141,18 +111,24 @@ class Eula
 	 *
 	 * @param stream The stream to close.
 	 */
-	private static void closeStream( final Closeable stream )
-	{
-		if ( stream != null )
-		{
-			try
-			{
+	private static void closeStream(final Closeable stream) {
+		if (stream != null) {
+			try {
 				stream.close();
-			}
-			catch ( final IOException e )
-			{
+			} catch (final IOException e) {
 				// Ignore
 			}
 		}
+	}
+
+	/**
+	 * callback to let the activity know when the user has accepted the EULA.
+	 */
+	static interface OnEulaAgreedTo {
+
+		/**
+		 * Called when the user has accepted the eula and the dialog closes.
+		 */
+		void onEulaAgreedTo();
 	}
 }

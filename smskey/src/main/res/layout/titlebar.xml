@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge
-  	xmlns:android="http://schemas.android.com/apk/res/android"
-   	>
-   	
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	>
+
 	<ImageButton
 		android:id="@+id/menuButton"
 		android:src="@drawable/title_menu"
@@ -13,9 +13,9 @@
 		android:layout_alignParentTop="true"
 		android:layout_alignParentRight="true"
 		/>
-		
-	<TextView 
-		android:id="@+id/titleView" 
+
+	<TextView
+		android:id="@+id/titleView"
 
 		android:text="@string/mainTitle"
 		android:textStyle="bold"
@@ -25,21 +25,21 @@
 		android:shadowRadius="1"
 		android:shadowDx="0"
 		android:shadowDy="0"
-		
+
 		android:background="@drawable/titlebackground"
-		
+
 		android:gravity="left|center_vertical"
 		android:paddingLeft="18sp"
 		android:paddingTop="5sp"
 		android:paddingBottom="5sp"
 
-		android:layout_width="fill_parent" 
+		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:layout_alignParentTop="true"
 		android:layout_alignParentLeft="true"
 		android:layout_toLeftOf="@id/menuButton"
 		android:layout_alignBottom="@id/menuButton"
-		
+
 		/>
 
 </merge>

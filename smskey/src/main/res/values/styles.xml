@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
 	<style name="labelText">
 		<item name="android:textSize">20sp</item>
 		<item name="android:textColor">@color/darkBrown</item>
 	</style>
+
 	<style name="commentText">
 		<item name="android:textSize">14sp</item>
 		<item name="android:textColor">@color/midBrown</item>
 	</style>
-	
+
 	<!-- MAIN PAGE Styles -->
 	<style name="button">
 		<item name="android:orientation">vertical</item>

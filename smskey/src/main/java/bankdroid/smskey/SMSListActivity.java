@@ -1,8 +1,5 @@
 package bankdroid.smskey;
 
-import java.util.Date;
-import java.util.HashSet;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -24,11 +21,13 @@ import android.widget.Toast;
 import bankdroid.smskey.bank.Bank;
 import bankdroid.util.ErrorLogger;
 
+import java.util.Date;
+import java.util.HashSet;
+
 /**
  * @author gyenes
  */
-public class SMSListActivity extends MenuActivity implements OnItemClickListener
-{
+public class SMSListActivity extends MenuActivity implements OnItemClickListener {
 	private final static int DIALOG_KNOWN_SMS = 678;
 
 	private SimpleCursorAdapter adapter;
@@ -42,14 +41,13 @@ public class SMSListActivity extends MenuActivity implements OnItemClickListener
 	private int timestampIndex;
 
 	@Override
-	protected void onCreate( final Bundle savedInstanceState )
-	{
+	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.smslist);
 
 		final Cursor cursor = getContentResolver().query(Uri.parse("content://sms/inbox"),
-				new String[] { "_id", "address", "person", "body", "date" }, null, null, "date DESC");
+			new String[]{"_id", "address", "person", "body", "date"}, null, null, "date DESC");
 
 		addressIndex = cursor.getColumnIndexOrThrow("address");
 		bodyIndex = cursor.getColumnIndexOrThrow("body");
@@ -57,8 +55,8 @@ public class SMSListActivity extends MenuActivity implements OnItemClickListener
 
 		startManagingCursor(cursor); //display person if known
 
-		final String[] columns = new String[] { "address", "body" };
-		final int[] names = new int[] { R.id.smsSender, R.id.smstext };
+		final String[] columns = new String[]{"address", "body"};
+		final int[] names = new int[]{R.id.smsSender, R.id.smstext};
 
 		adapter = new SimpleCursorAdapter(this, R.layout.smslistitem, cursor, columns, names);
 
@@ -68,8 +66,7 @@ public class SMSListActivity extends MenuActivity implements OnItemClickListener
 	}
 
 	@Override
-	protected void onResume()
-	{
+	protected void onResume() {
 		super.onResume();
 
 		final Cursor cursor = adapter.getCursor();
@@ -78,21 +75,17 @@ public class SMSListActivity extends MenuActivity implements OnItemClickListener
 		cursor.moveToFirst();
 
 		final int count = cursor.getCount();
-		if ( count == 0 )
-		{
+		if (count == 0) {
 			final Toast toast = Toast.makeText(getApplicationContext(), R.string.noSMSInInbox, Toast.LENGTH_SHORT);
 			toast.show();
 
 			Log.d(TAG, "There is no SMS in the inbox. Existing from SMS selection activity.");
 			finish();
-		}
-		else
-		{
+		} else {
 			addresses = new String[count];
 			bodies = new String[count];
 			timestamps = new long[count];
-			for ( int i = 0; i < count; i++ )
-			{
+			for (int i = 0; i < count; i++) {
 				addresses[i] = cursor.getString(addressIndex);
 				bodies[i] = cursor.getString(bodyIndex);
 				timestamps[i] = cursor.getLong(timestampIndex);
@@ -105,8 +98,7 @@ public class SMSListActivity extends MenuActivity implements OnItemClickListener
 	}
 
 	@Override
-	public void onItemClick( final AdapterView<?> adapter, final View view, final int position, final long id )
-	{
+	public void onItemClick(final AdapterView<?> adapter, final View view, final int position, final long id) {
 		final String address = addresses[position];
 		final String body = bodies[position];
 		final Date timestamp = new Date(timestamps[position]);
@@ -115,8 +107,7 @@ public class SMSListActivity extends MenuActivity implements OnItemClickListener
 
 		//verify whether the SMS is already known or not
 		final Message code = BankManager.getCode(this, address, body, timestamp, false);
-		if ( code != null )
-		{
+		if (code != null) {
 			Log.w(TAG, "User selected known SMS as sample. Identified bank: " + code.getBank().getName());
 			showDialog(DIALOG_KNOWN_SMS);
 			return;
@@ -130,23 +121,19 @@ public class SMSListActivity extends MenuActivity implements OnItemClickListener
 		builder.append(getString(R.string.emailSMSText)).append(" {{").append(body).append("}} \n\n");
 		builder.append(getString(R.string.app_name)).append(" ");
 		//set version number
-		try
-		{
+		try {
 			final PackageManager manager = getPackageManager();
 			final PackageInfo info = manager.getPackageInfo(getPackageName(), 0);
 			final String versionName = info.versionName;
 			builder.append("v").append(versionName);
-		}
-		catch ( final NameNotFoundException e )
-		{
+		} catch (final NameNotFoundException e) {
 			Log.e(TAG, "Error getting package name.", e);
 		}
 
 		//generate DB stats for debugging purposes
 		final Bank[] banks = BankManager.getAllBanks(this);
 		final HashSet<String> countries = new HashSet<String>();
-		for ( final Bank bank : banks )
-		{
+		for (final Bank bank : banks) {
 			countries.add(bank.getCountryCode());
 		}
 		final int countryCount = countries.size();
@@ -156,35 +143,31 @@ public class SMSListActivity extends MenuActivity implements OnItemClickListener
 
 		final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
 		final String installLog = preferences.getString(Codes.PREF_INSTALL_LOG, "");
-		if ( installLog.length() > 1 )
+		if (installLog.length() > 1)
 			builder.append("\n").append(installLog);
 
-		ErrorLogger.sendEmail(this, new String[] { SUBMISSION_ADDRESS }, getString(R.string.emailSubject),
-				builder.toString());//no I18N
+		ErrorLogger.sendEmail(this, new String[]{SUBMISSION_ADDRESS}, getString(R.string.emailSubject),
+			builder.toString());//no I18N
 	}
 
 	@Override
-	protected Dialog onCreateDialog( final int id )
-	{
+	protected Dialog onCreateDialog(final int id) {
 		final Dialog dialog;
-		switch ( id )
-		{
-		case DIALOG_KNOWN_SMS:
-			// do the work to define the pause Dialog
-			final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-			builder.setMessage(R.string.msgKnownSMS).setCancelable(false)
-					.setNeutralButton(R.string.ok, new DialogInterface.OnClickListener()
-					{
+		switch (id) {
+			case DIALOG_KNOWN_SMS:
+				// do the work to define the pause Dialog
+				final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+				builder.setMessage(R.string.msgKnownSMS).setCancelable(false)
+					.setNeutralButton(R.string.ok, new DialogInterface.OnClickListener() {
 						@Override
-						public void onClick( final DialogInterface dialog, final int id )
-						{
+						public void onClick(final DialogInterface dialog, final int id) {
 							dialog.cancel();
 						}
 					});
-			dialog = builder.create();
-			break;
-		default:
-			dialog = null;
+				dialog = builder.create();
+				break;
+			default:
+				dialog = null;
 		}
 		return dialog;
 	}

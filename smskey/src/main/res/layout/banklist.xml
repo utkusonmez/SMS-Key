@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
-	android:orientation="vertical"
-	android:background="@drawable/background3"
-	android:layout_width="fill_parent" 
-	android:layout_height="fill_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:orientation="vertical"
+				android:background="@drawable/background3"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
 	>
 
 	<include
@@ -11,22 +11,22 @@
 		layout="@layout/titlebar"
 		/>
 
-	<TextView 
-		android:id="@+id/title" 
+	<TextView
+		android:id="@+id/title"
 		android:text="@string/bankListTitle"
 		android:padding="5sp"
-		style="@style/commentText" 
+		style="@style/commentText"
 
-		android:layout_width="wrap_content" 
+		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		
+
 		android:layout_below="@id/titleView"
 		/>
-		
+
 	<CheckBox
 		android:id="@+id/showAllCountry"
-		
-		android:text="@string/showForeignBanks" 
+
+		android:text="@string/showForeignBanks"
 		android:textSize="20sp"
 		android:textColor="@color/midBrown"
 		android:paddingTop="0sp"
@@ -38,13 +38,13 @@
 		android:layout_alignParentBottom="true"
 		/>
 
-	<ListView 
-		android:id="@+id/bankListView" 
+	<ListView
+		android:id="@+id/bankListView"
 		android:background="#000"
-		
-		android:layout_width="fill_parent" 
+
+		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
-		
+
 		android:layout_below="@id/title"
 		android:layout_above="@id/showAllCountry"
 		/>

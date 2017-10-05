@@ -2,12 +2,12 @@
 <resources>
 	<!-- Bank List Activity -->
 	<string name="bankListTitle">List of Banks:</string>
-    <string name="addBank">Add Bank</string>
-    <string name="editBank">Edit Bank</string>
-    <string name="deleteBank">Delete Bank</string>
-    <string name="bankDeleted">The bank was successfully deleted.</string>
-    <string name="showForeignBanks">Show foreign banks</string>
-	
+	<string name="addBank">Add Bank</string>
+	<string name="editBank">Edit Bank</string>
+	<string name="deleteBank">Delete Bank</string>
+	<string name="bankDeleted">The bank was successfully deleted.</string>
+	<string name="showForeignBanks">Show foreign banks</string>
+
 	<!-- Bank Edit Activity -->
 	<string name="bankName">Bank name:</string><!-- I18N -->
 	<string name="phoneNumber">Phone number(s):</string>
@@ -23,7 +23,7 @@
 	<string name="noEmptyPhoneNumber">Empty phone numbers are not allowed.</string>
 	<string name="noEmptyExpression">Empty expressions are not allowed.</string>
 	<string name="invalidExpression">Invalid regular expression. Please check it again!</string>
-	
+
 
 	<!-- SMS OTP Display Activity -->
 	<string name="copyright">SMS Key TM, BankDroid, 2009 (c)</string>
@@ -39,7 +39,7 @@
 	<string name="nocode">-- no code --</string>
 	<string name="securityWarning">Verify transaction details in the message before signing the transaction!</string>
 	<string name="visitBlog">Visit the SMS Key blog!</string>
-	
+
 	<!-- SMS pick activity -->
 	<string name="smsListTitle">Please select an SMS containing a one-time password that is already used or expired:</string>
 	<string name="selectEmail">Please select an E-mail account:</string>
@@ -51,11 +51,11 @@
 	<string name="emailSMSText">Message text: </string>
 	<string name="statText">%1$d banks in %2$d countries!</string>
 	<string name="msgKnownSMS">This SMS is already registered. If you receive similar message next time, the application should be activated automatically.</string><!-- I18N -->
-	
+
 	<!-- Preferences -->
 	<string name="splitCode">Split code</string><!-- I18N -->
 	<string name="splitCodeSummary">Split code into blocks for better readability</string><!-- I18N -->
-	
+
 	<string name="codeCount">Code count</string>
 	<string name="unlockScreen">Unlock screen</string>
 	<string name="unlockScreenSummary">Wake up and unlock screen when code arrives. (only for Android 2.0+)</string>
@@ -84,12 +84,12 @@
 	<string name="msgAreYouSure">Are you sure?</string>
 	<string name="yes">Yes</string>
 	<string name="no">No</string>
-	
+
 	<!-- Notification -->
 	<string name="notificationTicker">Password received from {0}</string>
 	<string name="notificationTitle">SMS Key TM</string>
 	<string name="notificationText">Password received from {0}. Click here to view it.</string>
-	
+
 	<!-- Main -->
 	<string name="mainTitle">SMS Key TM</string>
 	<string name="btnViewLast">View Last Code</string>
@@ -113,12 +113,12 @@
 	<string name="aboutUrl2">www.bankdroid.info</string>
 	<string name="donateButton">Donate</string>
 	<string name="donateButtonDesc">Help me on direct cost via PayPal</string>
-	
+
 	<!-- EULA -->
 	<string name="eula_title">License</string>
 	<string name="eula_accept">Accept</string>
 	<string name="eula_refuse">Refuse</string>
-	
+
 	<!-- Campaign -->
 	<string name="campaignRate">Rate SMS Key TM on Market and tell which bank you use!</string><!-- I18N -->
 	<string name="campaignFacebook">Do you like the app? Show it to others on facebook...</string><!-- I18N -->

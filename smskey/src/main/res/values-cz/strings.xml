@@ -1,12 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?><resources>
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
 	<!-- Bank List Activity -->
 	<string name="bankListTitle">Seznam bank:</string>
-    <string name="addBank">Přidat banku</string>
-    <string name="editBank">Upravit banku</string>
-    <string name="deleteBank">Odstranit banku</string>
-    <string name="bankDeleted">Banka byla úspěšně odstraněna.</string>
-    <string name="showForeignBanks">Zobrazit zahraničních bank</string>
-	
+	<string name="addBank">Přidat banku</string>
+	<string name="editBank">Upravit banku</string>
+	<string name="deleteBank">Odstranit banku</string>
+	<string name="bankDeleted">Banka byla úspěšně odstraněna.</string>
+	<string name="showForeignBanks">Zobrazit zahraničních bank</string>
+
 	<!-- Bank Edit Activity -->
 	<string name="phoneNumber">Telefonní číslo(a):</string>
 	<string name="messagePatterns">Vzor(y) zpráv:</string>
@@ -21,11 +22,11 @@
 	<string name="noEmptyPhoneNumber">Prázdná telefonní čísla nejsou povolena.</string>
 	<string name="noEmptyExpression">Prázdné výrazy nejsou povoleny.</string>
 	<string name="invalidExpression">Neplatný regulární výraz. Zkontrolujte to znovu!</string>
-	
+
 
 	<!-- SMS OTP Display Activity -->
 	<string name="copyright">SMS Key TM, BankDroid, 2009 (c)</string>
-	<string name="clickToClose">Klepnutím nebo chvění kopírování a zavřete.</string> 
+	<string name="clickToClose">Klepnutím nebo chvění kopírování a zavřete.</string>
 	<string name="menuClear">Vymazat</string>
 	<string name="menuBanks">Banky</string>
 	<string name="menuPref">Předvolby</string>
@@ -37,7 +38,7 @@
 	<string name="nocode">- Bez kódu -</string>
 	<string name="securityWarning">Před podepsáním ověřte detaily transakce.</string>
 	<string name="visitBlog">Navštivte SMS Key blog!</string>
-	
+
 	<!-- SMS pick activity -->
 	<string name="smsListTitle">Prosím, vyberte vzorek SMS:</string>
 	<string name="selectEmail">Prosím, zvolte E-mailový účet:</string>
@@ -48,7 +49,7 @@
 		osobní údaje ve zprávě.</string>
 	<string name="emailOriginator">Telefonní číslo banky: </string>
 	<string name="emailSMSText">Text zprávy: </string>
-	
+
 	<!-- Preferences -->
 	<string name="unlockScreen">Odemknout obrazovky</string>
 	<string name="unlockScreenSummary">Probuď se a odemknout obrazovku, když přijde kód. (pouze pro Android 2.0 +)</string>
@@ -68,12 +69,12 @@
 	<string name="msgAreYouSure">Opravdu?</string>
 	<string name="yes">Ano</string>
 	<string name="no">Ne</string>
-	
+
 	<!-- Notification -->
 	<string name="notificationTicker">Heslo získáno z  {0}</string>
 	<string name="notificationTitle">SMS Key TM</string>
 	<string name="notificationText">Heslo získáno z {0}. Klikněte zde pro zobrazení.</string>
-	
+
 	<!-- Main -->
 	<string name="mainTitle">SMS Key TM</string>
 	<string name="btnViewLast">Zobrazit poslední kód</string>
@@ -94,7 +95,7 @@
 	<string name="aboutUrl2">www.bankdroid.info</string>
 	<string name="donateButton">Podpořit vývoj darem</string>
 	<string name="donateButtonDesc">Pomoz mi na přímé náklady přes PayPal</string>
-	
+
 	<!-- EULA -->
 	<string name="eula_title">Licence</string>
 	<string name="eula_accept">Přijmout</string>

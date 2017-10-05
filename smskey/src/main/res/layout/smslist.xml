@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout 
-	xmlns:android="http://schemas.android.com/apk/res/android" 
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:background="@drawable/background3"
-	android:layout_width="fill_parent" 
+	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
 	>
-   	
+
 	<include
 		android:id="@+id/titleView"
 		layout="@layout/titlebar"
 		/>
-		
-	<TextView 
-		android:id="@+id/pageDesc" 
 
-		android:text="@string/smsListTitle" 
+	<TextView
+		android:id="@+id/pageDesc"
+
+		android:text="@string/smsListTitle"
 
 		style="@style/commentText"
 		android:gravity="left"
 		android:padding="5sp"
 
-		android:layout_width="fill_parent" 
+		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:layout_below="@id/titleView"
 		android:layout_alignParentLeft="true"
 		/>
 
-	<ListView 
-		android:id="@+id/smsListView" 
-		
+	<ListView
+		android:id="@+id/smsListView"
+
 		android:background="#000"
-		android:layout_width="fill_parent" 
+		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
-		
+
 		android:layout_below="@id/pageDesc"
 		/>
 

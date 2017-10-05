@@ -1,7 +1,5 @@
 package bankdroid.smskey;
 
-import java.util.HashSet;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -25,6 +23,8 @@ import android.widget.Toast;
 import bankdroid.campaign.CampaignManager;
 import bankdroid.smskey.bank.Bank;
 import bankdroid.util.ErrorLogger;
+
+import java.util.HashSet;
 
 /**
  * @author Gabe

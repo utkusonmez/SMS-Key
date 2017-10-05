@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-	<item 
-		android:id="@+id/menuBanks" 
-		android:title="@string/menuBanks" 
-		android:icon="@android:drawable/ic_menu_gallery" 
+	<item
+		android:id="@+id/menuBanks"
+		android:title="@string/menuBanks"
+		android:icon="@android:drawable/ic_menu_gallery"
 		/>
-	<item 
-		android:id="@+id/menuClear" 
-		android:title="@string/menuClear" 
+	<item
+		android:id="@+id/menuClear"
+		android:title="@string/menuClear"
 		android:icon="@android:drawable/ic_menu_close_clear_cancel"
 		/>
-	<item 
-		android:id="@+id/menuPreferences"  
+	<item
+		android:id="@+id/menuPreferences"
 		android:title="@string/menuPref"
-		android:icon="@android:drawable/ic_menu_preferences" 
+		android:icon="@android:drawable/ic_menu_preferences"
 		/>
-	<item 
-		android:id="@+id/menuUserGuide"  
+	<item
+		android:id="@+id/menuUserGuide"
 		android:title="@string/menuUserGuide"
-		android:icon="@android:drawable/ic_menu_help" 
+		android:icon="@android:drawable/ic_menu_help"
 		/>
-	<item 
+	<item
 		android:id="@+id/menuAbout"
-		android:title="@string/menuAbout" 
+		android:title="@string/menuAbout"
 		android:icon="@android:drawable/ic_menu_info_details"
 		/>
 </menu>

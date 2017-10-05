@@ -2,8 +2,7 @@ package bankdroid.smskey;
 
 import android.net.Uri;
 
-public interface Codes
-{
+public interface Codes {
 	public static final String DEFAULT_COUNTRY = "HU";
 
 	public static final String FACEBOOK_URL = "http://goo.gl/1TZ9x";

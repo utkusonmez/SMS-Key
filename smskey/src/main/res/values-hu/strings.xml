@@ -1,12 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?><resources>
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
 	<!-- Bank List Activity -->
 	<string name="bankListTitle">Bankok listája:</string>
-    <string name="addBank">Új létrehozás</string>
-    <string name="editBank">Szerkesztés</string>
-    <string name="deleteBank">Törlés</string>
-    <string name="bankDeleted">A bankot sikeresen töröltem.</string>
-    <string name="showForeignBanks">Külföldi bankok listázása</string>
-	
+	<string name="addBank">Új létrehozás</string>
+	<string name="editBank">Szerkesztés</string>
+	<string name="deleteBank">Törlés</string>
+	<string name="bankDeleted">A bankot sikeresen töröltem.</string>
+	<string name="showForeignBanks">Külföldi bankok listázása</string>
+
 	<!-- Bank Edit Activity -->
 	<string name="bankName">Bank neve:</string>
 	<string name="phoneNumber">Telefonszám(ok):</string>
@@ -22,7 +23,7 @@
 	<string name="noEmptyPhoneNumber">Az üres telefonszámokat törölni kell.</string>
 	<string name="noEmptyExpression">Az üres szűrőket törölni kell.</string>
 	<string name="invalidExpression">Érvénytelen kifejezés. Ellenőrizd újra.</string>
-	
+
 
 	<!-- SMS OTP Display Activity -->
 	<string name="copyright">SMS Key TM, BankDroid, 2009 (c)</string>
@@ -38,7 +39,7 @@
 	<string name="nocode">-- nincs jelszó --</string>
 	<string name="securityWarning">Ellenőrizd a tranzakció részleteit, mielőtt felhasználod a kódot.</string>
 	<string name="visitBlog">Látogasd meg az SMS Key blogot!</string>
-	
+
 	<!-- SMS pick activity -->
 	<string name="smsListTitle">Kérlek válassz egy SMS mintát:</string>
 	<string name="selectEmail">Kérlek válassz egy postafiókot:</string>
@@ -49,8 +50,8 @@
 	<string name="emailOriginator">Bank telefonszáma: </string>
 	<string name="emailSMSText">Üzenet szövege: </string>
 	<string name="statText">%1$d bank %2$d országban!</string>
-		<string name="msgKnownSMS">Ezt az üzenet fajtát már kezeli az alkalmazás. Ha ilyen üzenet érkezik, az SMS Key automatikusan elindul.</string>
-	
+	<string name="msgKnownSMS">Ezt az üzenet fajtát már kezeli az alkalmazás. Ha ilyen üzenet érkezik, az SMS Key automatikusan elindul.</string>
+
 	<!-- Preferences -->
 	<string name="splitCode">Kód darabolás</string>
 	<string name="splitCodeSummary">Az olvashatóság érdekében bontsa a kódot darabokra</string>
@@ -83,12 +84,12 @@
 	<string name="msgAreYouSure">Biztos benne?</string>
 	<string name="yes">Igen</string>
 	<string name="no">Nem</string>
-	
+
 	<!-- Notification -->
 	<string name="notificationTicker">Jelszó érkezett a {0} bankból.</string>
 	<string name="notificationTitle">SMS Key TM</string>
 	<string name="notificationText">Jelszó érkezett {0} a bankból. Tappolj ide.</string>
-	
+
 	<!-- Main -->
 	<string name="mainTitle">SMS Key TM</string>
 	<string name="btnViewLast">Utolsó jelszó</string>
@@ -112,17 +113,17 @@
 	<string name="aboutUrl2">www.bankdroid.info</string>
 	<string name="donateButton">Támogatás</string>
 	<string name="donateButtonDesc">Segítsd pénzzel az alkalmazás fentartását</string>
-	
+
 	<!-- EULA -->
 	<string name="eula_title">License</string>
 	<string name="eula_accept">Elfogad</string>
 	<string name="eula_refuse">Visszautasít</string>
-	
+
 	<!-- Campaign -->
 	<string name="campaignRate">Értekeld az appot a Market, és írd meg kinél bankolsz!</string><!-- I18N -->
 	<string name="campaignFacebook">Tetszik az alkalmazás? Mutasd meg a többieknek...</string><!-- I18N -->
 	<string name="campaignDonate1">Túl vagy 150. kódon!</string>
 	<string name="campaignDonate2">PayPal adomány?</string>
 	<string name="errorLog">Hiba napló</string><!-- I18N -->
-	
+
 </resources>

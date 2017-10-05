@@ -6,59 +6,63 @@
 	android:padding="2sp"
 	android:background="@drawable/campaign_bkg2"
 	>
-	
+
+	<TextView
+		android:id="@+id/text1"
+		android:text="@string/campaignDonate1"
+		android:textColor="#FFF"
+		android:textStyle="bold"
+		android:gravity="left"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentTop="true"
+		android:layout_alignParentLeft="true"
+		/>
+
+	<LinearLayout
+		android:id="@+id/decoration"
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/text1"
+		android:layout_alignLeft="@+id/text1"
+		android:layout_alignRight="@+id/text1">
+
+		<View
+			android:background="#7A8AAF"
+			android:layout_margin="2sp"
+			android:layout_height="fill_parent"
+			android:layout_width="35sp"/>
+
+		<View
+			android:background="#2D4D97"
+			android:layout_margin="2sp"
+			android:layout_height="fill_parent"
+			android:layout_width="35sp"/>
+
+		<View
+			android:background="#AAC0F4"
+			android:layout_margin="2sp"
+			android:layout_height="fill_parent"
+			android:layout_width="35sp"/>
+
+		<View
+			android:background="#BECEF4"
+			android:layout_margin="2sp"
+			android:layout_height="fill_parent"
+			android:layout_width="35sp"/>
+
 		<TextView
-			android:id="@+id/text1"
-			android:text="@string/campaignDonate1"
-			android:textColor="#FFF"
-			android:textStyle="bold"
-			android:gravity="left"
+			android:text="@string/campaignDonate2"
+			android:textColor="#000"
+			android:textStyle="italic"
+			android:gravity="center_vertical|right"
+			android:background="#F0F3FC"
+			android:layout_margin="2sp"
 			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:layout_alignParentTop="true"
-			android:layout_alignParentLeft="true"
+			android:layout_height="fill_parent"
 			/>
-			
-		<LinearLayout 
-			android:id="@+id/decoration" 
-			android:orientation="horizontal" 
-			android:layout_width="fill_parent" 
-			android:layout_height="wrap_content" 
-			android:layout_below="@+id/text1" 
-			android:layout_alignLeft="@+id/text1" 
-			android:layout_alignRight="@+id/text1">
-			
-			<View 
-				android:background="#7A8AAF" 
-				android:layout_margin="2sp" 
-				android:layout_height="fill_parent" 
-				android:layout_width="35sp"/>
-			<View 
-				android:background="#2D4D97" 
-				android:layout_margin="2sp" 
-				android:layout_height="fill_parent" 
-				android:layout_width="35sp"/>
-			<View 
-				android:background="#AAC0F4" 
-				android:layout_margin="2sp" 
-				android:layout_height="fill_parent" 
-				android:layout_width="35sp"/>
-			<View 
-				android:background="#BECEF4" 
-				android:layout_margin="2sp" 
-				android:layout_height="fill_parent" 
-				android:layout_width="35sp"/>
-			<TextView
-				android:text="@string/campaignDonate2"
-				android:textColor="#000"
-				android:textStyle="italic"
-				android:gravity="center_vertical|right"
-				android:background="#F0F3FC"
-				android:layout_margin="2sp"
-				android:layout_width="fill_parent"
-				android:layout_height="fill_parent"
-				/>
-		</LinearLayout>
-  
-    
+	</LinearLayout>
+
+
 </RelativeLayout>
