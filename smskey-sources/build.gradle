@@ -5,8 +5,15 @@ repositories {
 }
 
 dependencies {
+	compile 'com.google.code.gson:gson:2.8.0'
 	testCompile 'junit:junit:4.11'
 }
 
 targetCompatibility = '1.7'
 sourceCompatibility = '1.7'
+
+sourceSets {
+	main {
+		output.resourcesDir = "build/classes/main"
+	}
+}
