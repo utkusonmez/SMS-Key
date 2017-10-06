@@ -1,5 +1,6 @@
 package bankdroid.smskey.bank.test;
 
+import android.content.Context;
 import bankdroid.smskey.bank.Bank;
 import bankdroid.smskey.bank.BankDescriptor;
 import com.google.gson.Gson;
@@ -7,8 +8,11 @@ import com.google.gson.reflect.TypeToken;
 import com.tngtech.java.junit.dataprovider.DataProvider;
 import com.tngtech.java.junit.dataprovider.DataProviderRunner;
 import com.tngtech.java.junit.dataprovider.UseDataProvider;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Matchers;
+import org.mockito.Mockito;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -27,11 +31,12 @@ import java.util.List;
 import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(DataProviderRunner.class)
 public class JsonTests {
+
+	private BankDescriptor bankDescriptor;
 
 	@DataProvider
 	public static Object[][] testData() throws FileNotFoundException {
@@ -61,8 +66,7 @@ public class JsonTests {
 		}.getType();
 
 		Map<String, List<TestEntry>> results = new HashMap<>();
-
-		URL data = Thread.currentThread().getContextClassLoader().getResource("test_cases");
+		URL data = JsonTests.class.getClassLoader().getResource("test_cases");
 		if (null != data) {
 			File[] files = new File(data.getPath()).listFiles(new FilenameFilter() {
 				@Override
@@ -81,10 +85,19 @@ public class JsonTests {
 		return results;
 	}
 
+	@Before
+	public void init() throws IOException, IllegalAccessException {
+		Context context = Mockito.mock(Context.class);
+		bankDescriptor = Mockito.mock(BankDescriptor.class);
+		Mockito.when(bankDescriptor.loadBanks()).thenReturn(populateBankData());
+		Mockito.when(bankDescriptor.getDefaultBanks()).thenCallRealMethod();
+		Mockito.when(bankDescriptor.findByPhoneNumber(Matchers.anyString())).thenCallRealMethod();
+	}
+
 	@Test
 	@UseDataProvider("testData")
-	public void test(String country, TestEntry entry) throws IOException {
-		Bank[] banks = BankDescriptor.findByPhoneNumber(entry.getNumber());
+	public void test(String country, TestEntry entry) throws IOException, IllegalAccessException {
+		Bank[] banks = bankDescriptor.findByPhoneNumber(entry.getNumber());
 		assertTrue("Missing banks supporting given number", banks.length > 0);
 		boolean extracted = false;
 		for (Bank bank : banks) {
@@ -98,9 +111,8 @@ public class JsonTests {
 		assertTrue("At least one bank must decode provided code", extracted);
 	}
 
-
 	@Test
-	public void eachBankShouldHaveAtLeastOneTestCase() throws IOException {
+	public void eachBankShouldHaveAtLeastOneTestCase() throws IOException, IllegalAccessException {
 		Map<String, List<TestEntry>> testCasesByCountry = load();
 		List<BankFacade> decoratedBanks = getDecoratedBanks();
 
@@ -148,11 +160,30 @@ public class JsonTests {
 		}
 	}
 
-	private List<BankFacade> getDecoratedBanks() throws IOException {
+	private List<BankFacade> getDecoratedBanks() throws IOException, IllegalAccessException {
 		List<BankFacade> decorators = new ArrayList<>();
-		for (Bank bank : BankDescriptor.getDefaultBanks()) {
+		for (Bank bank : bankDescriptor.getDefaultBanks()) {
 			decorators.add(new BankFacade(bank));
 		}
 		return decorators;
 	}
+
+	private List<Bank> populateBankData() throws FileNotFoundException {
+		Gson gson = new Gson();
+		Type listType = new TypeToken<List<Bank>>() {
+		}.getType();
+		List<Bank> result = new ArrayList<>();
+
+		//FIXME
+		File f = new File("smskey").exists() ?
+			new File("smskey/src/main/res/raw") : new File("src/main/res/raw");
+
+		File[] files = f.listFiles();
+		for (File file : files) {
+			List<Bank> banks = gson.fromJson(new BufferedReader(new FileReader(file)), listType);
+			result.addAll(banks);
+		}
+		return result;
+	}
+
 }

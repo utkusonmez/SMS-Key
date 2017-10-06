@@ -219,7 +219,7 @@ public class BankProvider extends ContentProvider implements Codes {
 		private void insertDefaultBanks(final SQLiteDatabase db) {
 			//load constants here
 			try {
-				final Bank[] banks = BankDescriptor.getDefaultBanks();
+				final Bank[] banks = new BankDescriptor(context).getDefaultBanks();
 				final ContentValues values = new ContentValues(9);
 				for (int i = 0; i < banks.length; i++) {
 					final Bank bank = banks[i];

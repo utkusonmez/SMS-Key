@@ -82,7 +82,7 @@ public class BankTest extends BankTestBase {
 			"ERSTE Bank",
 			"0036303444481",
 			"ERSTE NetBank forintatutalas. Kedvezmenyezett 11111111-22222222-3333333, osszeg 123123,11 HUF. Tranzakcios kod: 010-53353861",
-			"53353861");
+			"010-53353861");
 		testBank("ERSTE Broker", "0036303444481", "qHHS", "qHHS");
 		testBank("ERSTE Broker", "0036303444481", "ab4R https://mobiltozsde.erstebroker.hu/mobilbroker/", "ab4R");
 		testBank("ERSTE Broker", "0036303444481", "Z686 https://mobiltozsde.erstebroker.hu/mobilbroker/", "Z686");

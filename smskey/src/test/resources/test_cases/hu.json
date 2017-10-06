@@ -90,6 +90,16 @@
 		"expectedCode": "1212121212"
 	},
 	{
+		"number": "0036303444481",
+		"message": "qHHS",
+		"expectedCode": "qHHS"
+	},
+	{
+		"number": "0036303444481",
+		"message": "ab4R https://mobiltozsde.erstebroker.hu/mobilbroker/",
+		"expectedCode": "ab4R"
+	},
+	{
 		"number": "+36303444664",
 		"message": "Az an egyszer hasznalatos jelszava: 74716681. Karjak, ezt a jelszat alkalmazza a tranzakciakhoz as a madsatasokhoz a Netbank hasznalata soran!",
 		"expectedCode": "74716681"

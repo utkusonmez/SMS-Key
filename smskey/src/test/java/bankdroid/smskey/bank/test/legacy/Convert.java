@@ -1,5 +1,6 @@
 package bankdroid.smskey.bank.test.legacy;
 
+import android.content.Context;
 import bankdroid.smskey.bank.Bank;
 import bankdroid.smskey.bank.BankDescriptor;
 import bankdroid.smskey.bank.Expression;
@@ -51,8 +52,8 @@ public class Convert {
 	 * @throws SAXException
 	 * @throws ParserConfigurationException
 	 */
-	public static void main(final String[] args) throws ParserConfigurationException, SAXException, IOException {
-		final Bank[] defaultBanks = BankDescriptor.getDefaultBanks();
+	public static void main(final String[] args) throws ParserConfigurationException, SAXException, IOException, IllegalAccessException {
+		final Bank[] defaultBanks = new BankDescriptor(null).getDefaultBanks();
 
 		final List<String> countries = new ArrayList<String>();
 		for (int i = 0; i < defaultBanks.length; i++) {

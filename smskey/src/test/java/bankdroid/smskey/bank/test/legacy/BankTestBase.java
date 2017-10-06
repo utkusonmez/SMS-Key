@@ -7,10 +7,16 @@ import junit.framework.TestCase;
 
 import java.util.regex.Pattern;
 
-public abstract class BankTestBase extends TestCase {
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+
+//public abstract class BankTestBase extends TestCase {
+public abstract class BankTestBase {
 
 	public void negativeTest(final String phoneNumber) throws Exception {
-		final Bank[] bank = BankDescriptor.findByPhoneNumber(phoneNumber);
+		final Bank[] bank = new BankDescriptor(null).findByPhoneNumber(phoneNumber);
 
 		//check phone number matching
 		assertFalse("Negative test failed for number: " + phoneNumber, bank != null && bank.length > 0);
@@ -45,7 +51,7 @@ public abstract class BankTestBase extends TestCase {
 	}
 
 	public Bank[] testBank(final String bankName, final String phoneNumber) throws Exception {
-		final Bank[] banks = BankDescriptor.findByPhoneNumber(phoneNumber);
+		final Bank[] banks = new BankDescriptor(null).findByPhoneNumber(phoneNumber);
 
 		assertTrue(bankName + ": no bank was found.", banks != null && banks.length > 0);
 

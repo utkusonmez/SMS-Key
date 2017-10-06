@@ -8,7 +8,7 @@ import java.util.List;
 
 public class GenerateTest {
 	public static void main(final String[] args) throws Exception {
-		final Bank[] defaultBanks = BankDescriptor.getDefaultBanks();
+		final Bank[] defaultBanks = new BankDescriptor(null).getDefaultBanks();
 
 		final List<String> countries = new ArrayList<String>();
 		for (int i = 0; i < defaultBanks.length; i++) {
