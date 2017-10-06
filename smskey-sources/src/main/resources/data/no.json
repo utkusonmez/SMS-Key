@@ -1,0 +1,16 @@
+[
+	{
+		"name": "Skandiabanken",
+		"expiry": -1,
+		"phoneNumbers": [
+			"+4781001001"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": ".* engangspassord er ([0-9a-zA-Z]+)"
+			}
+		],
+		"countryCode": "NO"
+	}
+]

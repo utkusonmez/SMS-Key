@@ -1,0 +1,16 @@
+[
+	{
+		"name": "Citibank",
+		"expiry": 120,
+		"phoneNumbers": [
+			"Citi"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": ".* PIN is ([0-9]+).*"
+			}
+		],
+		"countryCode": "SG"
+	}
+]

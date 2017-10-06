@@ -1,0 +1,31 @@
+[
+	{
+		"name": "Yapi Kredi",
+		"expiry": -1,
+		"phoneNumbers": [
+			"AKILLISMS",
+			"4410"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": ".*Akilli SMS sifreniz: ([0-9]+).*"
+			}
+		],
+		"countryCode": "TR"
+	},
+	{
+		"name": "Bank Asya",
+		"expiry": -1,
+		"phoneNumbers": [
+			".BANKASYA."
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": ".*Sifreniz: ([0-9]+) .*"
+			}
+		],
+		"countryCode": "TR"
+	}
+]

@@ -1,0 +1,16 @@
+[
+	{
+		"name": "Credit Suisse",
+		"expiry": -1,
+		"phoneNumbers": [
+			"00000"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": ".* CODE: ([0-9]+)"
+			}
+		],
+		"countryCode": "CH"
+	}
+]

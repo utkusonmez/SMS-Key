@@ -1,0 +1,190 @@
+[
+	{
+		"name": "Alior Bank",
+		"expiry": -1,
+		"phoneNumbers": [
+			"Alior Bank"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": true,
+				"expression": "Alior Bank:.*Kod .*: ([0-9]*)"
+			}
+		],
+		"countryCode": "PL"
+	},
+	{
+		"name": "mBank",
+		"expiry": -1,
+		"phoneNumbers": [
+			"3388",
+			"Operacja"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": true,
+				"expression": ".* haslo: ([0-9]+) mBank.*"
+			}
+		],
+		"countryCode": "PL"
+	},
+	{
+		"name": "Polbank EFG",
+		"expiry": 120,
+		"phoneNumbers": [
+			"PolbankEFG"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": "[^:]+ Polbank24: ([0-9]+). *"
+			}
+		],
+		"countryCode": "PL"
+	},
+	{
+		"name": "MultiBank",
+		"expiry": -1,
+		"phoneNumbers": [
+			"3003"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": true,
+				"expression": ".* haslo: ([0-9]+) MultiBank.*"
+			}
+		],
+		"countryCode": "PL"
+	},
+	{
+		"name": "Orange",
+		"expiry": -1,
+		"phoneNumbers": [
+			"Kod Orange"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": ".* Orange[^:]+: ([a-z0-9]+).*"
+			}
+		],
+		"countryCode": "PL"
+	},
+	{
+		"name": "Open Finance",
+		"expiry": -1,
+		"phoneNumbers": [
+			"OPEN"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": ".* Haslo: ([a-z0-9]+).*"
+			}
+		],
+		"countryCode": "PL"
+	},
+	{
+		"name": "iBOA/mBOA (ERA GSM)",
+		"expiry": -1,
+		"phoneNumbers": [
+			"+48602909",
+			"mBOA"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": ".* haslo .* to ([0-9]+)"
+			},
+			{
+				"transactionSign": false,
+				"expression": "Kod .* to ([0-9]+)"
+			}
+		],
+		"countryCode": "PL"
+	},
+	{
+		"name": "Play Mobile",
+		"expiry": -1,
+		"phoneNumbers": [
+			"+6670"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": ".* haslo .* ([0-9]+)"
+			}
+		],
+		"countryCode": "PL"
+	},
+	{
+		"name": "Getin Online Bank",
+		"expiry": -1,
+		"phoneNumbers": [
+			"GETINONLINE"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": ".*: ([a-zA-Z0-9]+)"
+			}
+		],
+		"countryCode": "PL"
+	},
+	{
+		"name": "BlueCash",
+		"expiry": -1,
+		"phoneNumbers": [
+			"+48790569575"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": "BlueCash.* kod .*: ([a-zA-Z0-9]+)"
+			}
+		],
+		"countryCode": "PL"
+	},
+	{
+		"name": "Citibank",
+		"expiry": -1,
+		"phoneNumbers": [
+			"226922484"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": ".*Kod: ([0-9]+).*"
+			}
+		],
+		"countryCode": "PL"
+	},
+	{
+		"name": "Idea Bank",
+		"expiry": -1,
+		"phoneNumbers": [
+			"IDEA BANK"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": ".* Haslo [^:]*: ([0-9a-zA-Z]+)"
+			}
+		],
+		"countryCode": "PL"
+	},
+	{
+		"name": "Tax Care S.A.",
+		"expiry": -1,
+		"phoneNumbers": [
+			"TAXCARE"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": ".* Haslo: ([0-9a-zA-Z]+)"
+			}
+		],
+		"countryCode": "PL"
+	}
+]

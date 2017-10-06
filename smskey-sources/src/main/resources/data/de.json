@@ -1,0 +1,16 @@
+[
+	{
+		"name": "Sparkasse Hannover",
+		"expiry": -1,
+		"phoneNumbers": [
+			"SpkHannover"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": true,
+				"expression": ".*TAN.* lautet ([0-9]*).*"
+			}
+		],
+		"countryCode": "DE"
+	}
+]

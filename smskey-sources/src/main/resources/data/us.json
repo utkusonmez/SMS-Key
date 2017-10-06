@@ -1,0 +1,16 @@
+[
+	{
+		"name": "Bank of America",
+		"expiry": -1,
+		"phoneNumbers": [
+			"73981"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": ".* SafePass .*: ([0-9]*)"
+			}
+		],
+		"countryCode": "US"
+	}
+]

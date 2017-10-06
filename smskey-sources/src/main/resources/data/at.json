@@ -1,0 +1,30 @@
+[
+	{
+		"name": "PSK Bank",
+		"expiry": -1,
+		"phoneNumbers": [
+			"PSK"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": true,
+				"expression": ".*TAN: ([0-9]*)"
+			}
+		],
+		"countryCode": "AT"
+	},
+	{
+		"name": "Bank Austria",
+		"expiry": -1,
+		"phoneNumbers": [
+			"+435050526101"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": true,
+				"expression": ".*TAN: ([a-zA-Z0-9]+)"
+			}
+		],
+		"countryCode": "AT"
+	}
+]

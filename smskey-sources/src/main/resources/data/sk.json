@@ -1,0 +1,45 @@
+[
+	{
+		"name": "Tatra banka",
+		"expiry": -1,
+		"phoneNumbers": [
+			"+421902022200"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": "[^:]*: ([A-Z0-9a-z]*)"
+			}
+		],
+		"countryCode": "SK"
+	},
+	{
+		"name": "VUB banka",
+		"expiry": -1,
+		"phoneNumbers": [
+			"323"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": ".* KOD\u003d([0-9-]+)"
+			}
+		],
+		"countryCode": "SK"
+	},
+	{
+		"name": "mBank",
+		"expiry": -1,
+		"phoneNumbers": [
+			"2265",
+			"2287"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": true,
+				"expression": ".* kod: ([0-9]*) mBank.*"
+			}
+		],
+		"countryCode": "SK"
+	}
+]

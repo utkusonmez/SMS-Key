@@ -1,0 +1,31 @@
+[
+	{
+		"name": "PrivatBank",
+		"expiry": -1,
+		"phoneNumbers": [
+			"10060",
+			"privat24.ua"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": "[^:]+: ([0-9]+) www.privat24.ua .*"
+			}
+		],
+		"countryCode": "UA"
+	},
+	{
+		"name": "UkrSibBank",
+		"expiry": -1,
+		"phoneNumbers": [
+			"0931777755"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": "Password: ([0-9a-zA-Z]+) .*"
+			}
+		],
+		"countryCode": "UA"
+	}
+]

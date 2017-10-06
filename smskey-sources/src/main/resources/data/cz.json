@@ -1,0 +1,87 @@
+[
+	{
+		"name": "ČSOB",
+		"expiry": 600,
+		"phoneNumbers": [
+			"39601",
+			"999020",
+			"+421940661750"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": true,
+				"expression": "CSOB: ([0-9a-z]*-[0-9a-z]*-[0-9a-z]*) .*"
+			}
+		],
+		"countryCode": "CZ"
+	},
+	{
+		"name": "Raiffeisenbank",
+		"expiry": -1,
+		"phoneNumbers": [
+			"999024"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": true,
+				"expression": ".*:[^:]* kod:([0-9]*) .*"
+			},
+			{
+				"transactionSign": false,
+				"expression": ".* autentizacni kod: ([0-9]*) .*"
+			}
+		],
+		"countryCode": "CZ"
+	},
+	{
+		"name": "mBank",
+		"expiry": -1,
+		"phoneNumbers": [
+			"mBank",
+			"+6011"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": true,
+				"expression": ".* heslo: ([0-9]*) mBank.*"
+			}
+		],
+		"countryCode": "CZ"
+	},
+	{
+		"name": "UniCredit Bank",
+		"expiry": -1,
+		"phoneNumbers": [
+			"5200"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": "UniCredit Bank.*Prihlaseni.*Kod ([a-zA-Z0-9]+)"
+			},
+			{
+				"transactionSign": true,
+				"expression": "UniCredit Bank.*Kod ([a-zA-Z0-9]+)"
+			}
+		],
+		"countryCode": "CZ"
+	},
+	{
+		"name": "GE Money Bank",
+		"expiry": -1,
+		"phoneNumbers": [
+			"GEMB"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": "Vas .* klic [^:]+: ([0-9]+)"
+			},
+			{
+				"transactionSign": true,
+				"expression": ".* Mobilni klic: ([0-9]+)"
+			}
+		],
+		"countryCode": "CZ"
+	}
+]

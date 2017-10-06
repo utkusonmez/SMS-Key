@@ -1,0 +1,16 @@
+[
+	{
+		"name": "Vietcombank",
+		"expiry": -1,
+		"phoneNumbers": [
+			"+8170"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": "VCB .* khau ([0-9a-zA-Z]+).*"
+			}
+		],
+		"countryCode": "VN"
+	}
+]

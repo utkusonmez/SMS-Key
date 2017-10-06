@@ -1,0 +1,64 @@
+[
+	{
+		"name": "Alfa Bank",
+		"expiry": -1,
+		"phoneNumbers": [
+			"Alfa-Bank"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": ".*Alfa-Click - ([0-9a-zA-Z]+)[\\. ]*.*"
+			},
+			{
+				"transactionSign": true,
+				"expression": ".* [pP]arol[: ]+([0-9a-zA-Z]+).*"
+			}
+		],
+		"countryCode": "RU"
+	},
+	{
+		"name": "Platezh.RU",
+		"expiry": -1,
+		"phoneNumbers": [
+			"Platezh.RU"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": "SMS-code: ([0-9a-zA-Z]+)"
+			}
+		],
+		"countryCode": "RU"
+	},
+	{
+		"name": "Svyaznoy Bank",
+		"expiry": -1,
+		"phoneNumbers": [
+			"SvyaznoyBnk"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": "[^ ]+ ([0-9]+) .*"
+			}
+		],
+		"countryCode": "RU"
+	},
+	{
+		"name": "Sberbank",
+		"expiry": -1,
+		"phoneNumbers": [
+			"900",
+			"+79262000900",
+			"+79165723900"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": ".*parol:([0-9]+).*"
+			}
+		],
+		"countryCode": "RU"
+	}
+]
