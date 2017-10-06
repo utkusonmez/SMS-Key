@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<PreferenceCategory
+		android:title="@string/genericPrefs">
+
+		<ListPreference
+			android:title="@string/splitCode"
+			android:defaultValue="0"
+			android:summary="@string/splitCodeSummary"
+			android:key="bankdroid.smskey.SplitCode"
+			android:entries="@array/splitSizeName"
+			android:entryValues="@array/splitSizeValue"
+			/>
+
+		<CheckBoxPreference
+			android:title="@string/notification"
+			android:defaultValue="false"
+			android:summary="@string/notificationSummary"
+			android:key="bankdroid.smskey.Notification"/>
+
+		<CheckBoxPreference
+			android:title="@string/playSound"
+			android:defaultValue="true"
+			android:summary="@string/playSoundSummary"
+			android:key="bankdroid.smskey.PlaySound"/>
+
+		<RingtonePreference
+			android:title="@string/notificationRingtone"
+			android:defaultValue="true"
+			android:ringtoneType="notification"
+			android:summary="@string/notificationRingtoneSummary"
+			android:key="bankdroid.smskey.NotificationRingtone"/>
+
+		<CheckBoxPreference
+			android:title="@string/keepSMS"
+			android:defaultValue="false"
+			android:summary="@string/keepSMSSummary"
+			android:key="bankdroid.smskey.KeepSMS"/>
+
+		<CheckBoxPreference
+			android:title="@string/keepScreenOn"
+			android:defaultValue="true"
+			android:summary="@string/keepScreenOnSummary"
+			android:key="bankdroid.smskey.KeepScreenOn"/>
+
+		<CheckBoxPreference
+			android:title="@string/unlockScreen"
+			android:defaultValue="true"
+			android:summary="@string/unlockScreenSummary"
+			android:key="bankdroid.smskey.UnlockScreen"/>
+
+		<CheckBoxPreference
+			android:title="@string/autoCopy"
+			android:defaultValue="true"
+			android:summary="@string/autoCopySummary"
+			android:key="bankdroid.smskey.AutoCopy"/>
+
+		<CheckBoxPreference
+			android:title="@string/shakeToCopy"
+			android:defaultValue="true"
+			android:summary="@string/shakeToCopySummary"
+			android:key="bankdroid.smskey.ShakeToCopy"/>
+
+	</PreferenceCategory>
+
+
+	<PreferenceCategory
+		android:title="@string/developerPrefs">
+
+		<PreferenceScreen
+			android:title="@string/developerPrefs"
+			>
+
+			<CheckBoxPreference
+				android:title="@string/resetDb"
+				android:defaultValue="false"
+				android:summary="@string/resetDbSummary"
+				android:key="bankdroid.smskey.ResetDb"/>
+
+			<CheckBoxPreference
+				android:title="@string/resetCampaign"
+				android:defaultValue="false"
+				android:summary="@string/resetCampaignSummary"
+				android:key="bankdroid.smskey.ResetCampaign"/>
+
+			<Preference
+				android:title="@string/codeCount"
+				android:enabled="false"
+				android:defaultValue="0"
+				android:key="bankdroid.smskey.CodeCount"
+				android:summary="123"/>
+
+			<Preference
+				android:title="@string/errorLog"
+				android:enabled="false"
+				android:defaultValue=""
+				android:key="bankdroid.smskey.InstallLog"
+				android:summary="-"/>
+
+		</PreferenceScreen>
+	</PreferenceCategory>
+
+
+</PreferenceScreen>

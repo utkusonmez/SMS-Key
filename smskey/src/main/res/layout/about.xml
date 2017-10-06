@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@drawable/background3">
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		>
+
+		<TextView
+			android:text="@string/copyright"
+			android:textSize="10sp"
+			style="@style/buttonComment"
+
+			android:layout_marginTop="10sp"
+			android:gravity="right"
+			android:paddingRight="15sp"
+			/>
+
+		<RelativeLayout
+			android:background="@drawable/panel_background"
+			android:paddingTop="8sp"
+			android:paddingLeft="15sp"
+			android:paddingRight="15sp"
+			android:paddingBottom="10sp"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="5sp"
+			android:layout_marginRight="5sp"
+			>
+
+			<TextView
+				android:id="@+id/productId"
+				android:text="@string/aboutId"
+				android:textSize="20sp"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor="#000000"
+
+				android:layout_alignParentTop="true"
+				android:layout_alignParentLeft="true"
+				android:layout_marginTop="10sp"
+				android:layout_marginLeft="80sp"
+				/>
+
+			<ImageView
+				android:id="@+id/facebookIcon"
+				android:src="@drawable/icon_facebook"
+				android:background="@drawable/button"
+				android:onClick="onFacebook"
+				android:padding="2sp"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/productId"
+				android:layout_alignLeft="@id/productId"
+				/>
+
+			<ImageView
+				android:id="@+id/twitterIcon"
+				android:src="@drawable/icon_twitter"
+				android:background="@drawable/button"
+				android:onClick="onTwitter"
+				android:padding="2sp"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/productId"
+				android:layout_toRightOf="@id/facebookIcon"
+				/>
+
+			<ImageView
+				android:id="@+id/gmailIcon"
+				android:src="@drawable/icon_gmail"
+				android:background="@drawable/button"
+				android:onClick="onMail"
+				android:padding="2sp"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/productId"
+				android:layout_toRightOf="@id/twitterIcon"
+				/>
+
+			<ImageView
+				android:id="@+id/logo"
+				android:scaleType="fitCenter"
+				android:src="@drawable/icon_about"
+
+				android:layout_width="80sp"
+				android:layout_height="wrap_content"
+
+				android:layout_alignParentTop="true"
+				android:layout_alignParentLeft="true"
+				android:layout_alignBottom="@id/gmailIcon"
+				/>
+
+
+			<ImageView
+				android:id="@+id/divider"
+				android:src="@android:drawable/divider_horizontal_bright"
+				android:layout_width="fill_parent"
+				android:layout_height="2sp"
+				android:scaleType="fitXY"
+				android:layout_below="@id/gmailIcon"
+				/>
+
+			<TextView
+				android:text="@string/aboutDesc"
+				android:id="@+id/description"
+				android:textSize="12sp"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:textColor="#000000"
+				android:padding="5sp"
+
+				android:layout_below="@id/divider"
+				/>
+
+			<TextView
+				android:text="@string/aboutDesc2"
+				android:id="@+id/description2"
+				android:textSize="12sp"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:textColor="#000000"
+				android:padding="5sp"
+
+				android:layout_below="@id/description"
+				/>
+
+			<ImageView
+				android:id="@+id/divider2"
+				android:src="@android:drawable/divider_horizontal_bright"
+				android:layout_width="fill_parent"
+				android:layout_height="2sp"
+				android:scaleType="fitXY"
+				android:layout_below="@id/description2"
+				/>
+
+			<TextView
+				android:id="@+id/versionId"
+				android:text="v2.0"
+				android:textSize="12sp"
+				android:gravity="left"
+				android:textColor="#777"
+
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="5sp"
+
+				android:layout_below="@id/divider2"
+				/>
+
+			<TextView
+				android:id="@+id/url2"
+				android:text="@string/aboutUrl2"
+				android:textSize="12sp"
+				android:gravity="right"
+				android:textColor="#777"
+				android:onClick="onProductInfo"
+				android:clickable="true"
+
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:padding="5sp"
+
+				android:layout_below="@id/divider2"
+				android:layout_toRightOf="@id/versionId"
+				/>
+
+		</RelativeLayout>
+
+		<LinearLayout
+			android:onClick="onDonate"
+			style="@style/button"
+			android:layout_marginLeft="20sp"
+			android:layout_marginRight="20sp"
+			>
+
+			<TextView
+				android:text="@string/donateButton"
+				android:drawableLeft="@drawable/icon_submitsample"
+
+				style="@style/buttonTitle"
+				/>
+
+			<TextView
+				android:text="@string/donateButtonDesc"
+				style="@style/buttonComment"
+				/>
+		</LinearLayout>
+
+	</LinearLayout>
+
+</ScrollView>

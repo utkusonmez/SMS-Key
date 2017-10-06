@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:orientation="vertical"
+				android:background="@drawable/background3"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+	>
+
+	<include
+		android:id="@+id/titleView"
+		layout="@layout/titlebar"
+		/>
+
+	<TextView
+		android:id="@+id/title"
+		android:text="@string/bankListTitle"
+		android:padding="5sp"
+		style="@style/commentText"
+
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+
+		android:layout_below="@id/titleView"
+		/>
+
+	<CheckBox
+		android:id="@+id/showAllCountry"
+
+		android:text="@string/showForeignBanks"
+		android:textSize="20sp"
+		android:textColor="@color/midBrown"
+		android:paddingTop="0sp"
+		android:paddingBottom="0sp"
+
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="5sp"
+		android:layout_alignParentBottom="true"
+		/>
+
+	<ListView
+		android:id="@+id/bankListView"
+		android:background="#000"
+
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+
+		android:layout_below="@id/title"
+		android:layout_above="@id/showAllCountry"
+		/>
+
+</RelativeLayout>
