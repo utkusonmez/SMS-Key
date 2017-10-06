@@ -62,7 +62,7 @@ public class JsonTests {
 
 		Map<String, List<TestEntry>> results = new HashMap<>();
 
-		URL data = Thread.currentThread().getContextClassLoader().getResource(".");
+		URL data = Thread.currentThread().getContextClassLoader().getResource("test_cases");
 		if (null != data) {
 			File[] files = new File(data.getPath()).listFiles(new FilenameFilter() {
 				@Override
