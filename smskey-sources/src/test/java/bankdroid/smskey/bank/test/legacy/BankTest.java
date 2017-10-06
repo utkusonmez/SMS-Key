@@ -1,4 +1,4 @@
-package bankdroid.smskey.bank.test;
+package bankdroid.smskey.bank.test.legacy;
 
 public class BankTest extends BankTestBase {
 	public void testBasics() throws Exception {

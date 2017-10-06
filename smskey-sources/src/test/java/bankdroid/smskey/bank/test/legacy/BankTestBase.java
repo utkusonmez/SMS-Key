@@ -1,4 +1,4 @@
-package bankdroid.smskey.bank.test;
+package bankdroid.smskey.bank.test.legacy;
 
 import bankdroid.smskey.bank.Bank;
 import bankdroid.smskey.bank.BankDescriptor;

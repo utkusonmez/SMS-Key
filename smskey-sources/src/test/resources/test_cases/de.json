@@ -1,0 +1,7 @@
+[
+	{
+		"number": "SpkHannover",
+		"message": "Die TAN für ihre Überweisung über 100,00 Euro auf das Konto 12312312123 lautet 334855",
+		"expectedCode": "334855"
+	}
+]

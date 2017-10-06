@@ -76,28 +76,7 @@
 			},
 			{
 				"transactionSign": true,
-				"expression": "ERSTE NetBank [^:]*: *[0-9]+-([0-9]+)"
-			}
-		],
-		"countryCode": "HU"
-	},
-	{
-		"name": "ERSTE Broker",
-		"expiry": -1,
-		"phoneNumbers": [
-			"+36303444481",
-			"0036303444481",
-			"+36707060177",
-			"+36209000741"
-		],
-		"extractExpressions": [
-			{
-				"transactionSign": false,
-				"expression": "^([a-zA-Z0-9]{4})$"
-			},
-			{
-				"transactionSign": false,
-				"expression": "^([a-zA-Z0-9]{4}) .*"
+				"expression": "ERSTE NetBank [^:]*kod: ([0-9\\-]+)"
 			}
 		],
 		"countryCode": "HU"

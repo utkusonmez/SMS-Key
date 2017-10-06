@@ -1,0 +1,22 @@
+[
+	{
+		"number": "+421902022200",
+		"message": "SMS kod: AB34sd",
+		"expectedCode": "AB34sd"
+	},
+	{
+		"number": "323",
+		"message": "Transakcia: ZU=123456 NU=12345678/1234 SM=123,00 EUR KS= VS=1 KOD=9594-2984",
+		"expectedCode": "9594-2984"
+	},
+	{
+		"number": "2265",
+		"message": "Operacia c. 3 z dna 01-01-2010 Zmena prijemcu z uctu ...00012345 na ucet ...1234567/1234 sms kod: 37975982 mBank.",
+		"expectedCode": "37975982"
+	},
+	{
+		"number": "2287",
+		"message": "Operacia c. 2 z dna 01-01-2010 Definovanie prijemcu z uctu ...0123123 na ucet ...001231321/1212 sms kod: 60364442 mBank.",
+		"expectedCode": "60364442"
+	}
+]

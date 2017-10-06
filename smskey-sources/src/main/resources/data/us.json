@@ -2,8 +2,9 @@
 	{
 		"name": "Bank of America",
 		"expiry": -1,
+		"_comment": "Not sure what which is valid, second one was as phone, first one as example",
 		"phoneNumbers": [
-			"73981"
+			"73891", "73981"
 		],
 		"extractExpressions": [
 			{

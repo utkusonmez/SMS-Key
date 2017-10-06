@@ -1,0 +1,137 @@
+[
+	{
+		"number": "AXA BANK",
+		"message": "iBanq2 regisztraciojat a kovetkezo koddal tudja jovahagyni: 278699 Udv: AXA ",
+		"expectedCode": "278699"
+	},
+	{
+		"number": "AXA BANK",
+		"message": "iBanq2 bejelentkezeset a kovetkezo koddal tudja jovahagyni: 244662 Udv:Axa",
+		"expectedCode": "244662"
+	},
+	{
+		"number": "AXA BANK",
+		"message": "A 12345 vegu kartyahoz rendelt limiteket: napi 150000Ft, ATM 100000Ft, POS 100000Ft a kovetkezo koddal tudja jovahagyni: 924109. Udv: AXA ",
+		"expectedCode": "924109"
+	},
+	{
+		"number": "AXA BANK",
+		"message": "A 12312313-132123131-1313123123 celszamlara inditott 100 Ft osszegu tranzakcioval kapcsolatos muveletet az alabbi koddal tudja jovahagyni: 033692. Udv: AXA",
+		"expectedCode": "033692"
+	},
+	{
+		"number": "+36309400700",
+		"message": "OTPdirekt - Belfaldi forint atutalas 1111 szamlan yyy HUF asszeggel zzz szamlara. Azonosata: 90120437 Javahagyas 23:55-ig.",
+		"expectedCode": "90120437"
+	},
+	{
+		"number": "+36209400700",
+		"message": "OTPdirekt - Belfaldi forint atutalas 1111 szamlan yyy HUF asszeggel zzz szamlara. Azonosata: 90120437 Javahagyas 23:55-ig.",
+		"expectedCode": "90120437"
+	},
+	{
+		"number": "06709400700",
+		"message": "OTPdirekt - Belfaldi forint atutalas 1111 szamlan yyy HUF asszeggel zzz szamlara. Azonosata: 90120437 Javahagyas 23:55-ig.",
+		"expectedCode": "90120437"
+	},
+	{
+		"number": "+36209000703",
+		"message": "**K&H e-bank** Szàmlaszàm: 12341234-12341234-12341234 Összeg: 1234 HUF A tranzakciòhoz tartozò MàSODLAGOS sms jelszò: MKqgec",
+		"expectedCode": "MKqgec"
+	},
+	{
+		"number": "06709000542",
+		"message": "**K&H e-bank** Az Ön egy bejelentkezés időtartalmára vonatkozó sms jelszava: hNmKmp A jelszó maximum 30 percen belül érvényes.",
+		"expectedCode": "hNmKmp"
+	},
+	{
+		"number": "+36709000542",
+		"message": "**K&H e-bank** Az Ön egy bejelentkezés időtartalmára vonatkozó sms jelszava: hNmKmp A jelszó maximum 30 percen belül érvényes.",
+		"expectedCode": "hNmKmp"
+	},
+	{
+		"number": "+36209000848",
+		"message": "Az On Raiffeisen DirektNet egyszer hasznalatos jelszava: 76037367 Raiffeisen Bank Zrt.",
+		"expectedCode": "76037367"
+	},
+	{
+		"number": "+36303444540",
+		"message": "Az On Raiffeisen DirektNet egyszer hasznalatos jelszava: 76037367 Raiffeisen Bank Zrt.",
+		"expectedCode": "76037367"
+	},
+	{
+		"number": "+36707060660",
+		"message": "Az On Raiffeisen DirektNet egyszer hasznalatos jelszava: 76037367 Raiffeisen Bank Zrt.",
+		"expectedCode": "76037367"
+	},
+	{
+		"number": "+36303444504",
+		"message": "Az on kezdeti SpectraNet bejelentkezesi jelszava: 2HWNVRNJ",
+		"expectedCode": "2HWNVRNJ"
+	},
+	{
+		"number": "36303444504",
+		"message": "Az on kezdeti SpectraNet bejelentkezesi jelszava: 2HWNVRNJ",
+		"expectedCode": "2HWNVRNJ"
+	},
+	{
+		"number": "+36303444481",
+		"message": "Az On ERSTE NetBank  belepesi kodja: 1212121212",
+		"expectedCode": "1212121212"
+	},
+	{
+		"number": "0036303444481",
+		"message": "ERSTE NetBank forintatutalas. Kedvezmenyezett 11111111-22222222-3333333, osszeg 123123,11 HUF. Tranzakcios kod: 010-53353861",
+		"expectedCode": "010-53353861"
+	},
+	{
+		"number": "+36707060177",
+		"message": "Az On ERSTE NetBank  belepesi kodja: 1212121212",
+		"expectedCode": "1212121212"
+	},
+	{
+		"number": "+36303444664",
+		"message": "Az an egyszer hasznalatos jelszava: 74716681. Karjak, ezt a jelszat alkalmazza a tranzakciakhoz as a madsatasokhoz a Netbank hasznalata soran!",
+		"expectedCode": "74716681"
+	},
+	{
+		"number": "+36303444455",
+		"message": "AC - Online Aktivalasi kod: 633831. Kartyaszam: XX1111; Kedvezmenyezett: AAAAA BBBB www.citibank.hu Tel: +3612888888",
+		"expectedCode": "633831"
+	},
+	{
+		"number": "+36303444043",
+		"message": "Tisztelt agyfelank ! Az an altal indatott tranzakciahoz tartoza egyszer hasznalhata jelszava: 84-591727. FHB Zrt.",
+		"expectedCode": "84-591727"
+	},
+	{
+		"number": "+36309266245",
+		"message": "Az an ideiglenes kadja: 51930398 Ez a kad belapashez 13:47:58-ig hasznalhatja, de arizze meg a tranzakciahoz! Kapcsolat azonosata: 133758 Budapest Bank ",
+		"expectedCode": "51930398"
+	},
+	{
+		"number": "+36707060652",
+		"message": "MKB NetBANKar Forint atutalas ragzatase. Kedvezmanyezett 103000021231313213131, asszeg: 10000 HUF. Alaara jelsza: g985P",
+		"expectedCode": "g985P"
+	},
+	{
+		"number": "+36209000652",
+		"message": "MKB NetBANKar Forint atutalas ragzatase. Kedvezmanyezett 103000021231313213131, asszeg: 10000 HUF. Alaara jelsza: g985P",
+		"expectedCode": "g985P"
+	},
+	{
+		"number": "5833",
+		"message": "MKB NetBANKar Forint atutalas ragzatase. Kedvezmanyezett 103000021231313213131, asszeg: 10000 HUF. Alaara jelsza: g985P",
+		"expectedCode": "g985P"
+	},
+	{
+		"number": "+36709000666",
+		"message": "2010.08.18. 05:12:15 GOR-575 köteg összesen 3058754 Ft értékben. Aláíró jelszó: WQde75",
+		"expectedCode": "WQde75"
+	},
+	{
+		"number": "Vodafone",
+		"message": "Kedves Ugyfelunk! Az E-szamla rendszerbe a kovetkezo koddal tudsz belepni: 612134. Udvozlettel, Vodafone ",
+		"expectedCode": "612134"
+	}
+]

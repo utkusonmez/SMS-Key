@@ -1,0 +1,57 @@
+[
+	{
+		"number": "39601",
+		"message": "CSOB: 36e-5e5-yte kod transacke 234234 z 2342342342 na 2345-2345234523 castka 123,12 CZK.",
+		"expectedCode": "36e-5e5-yte"
+	},
+	{
+		"number": "999020",
+		"message": "CSOB: xkm-jzj-e3e kod transakce 23423423 z 234234234 na 123-1231231 csatka 1234,12 CZK.",
+		"expectedCode": "xkm-jzj-e3e"
+	},
+	{
+		"number": "+421940661750",
+		"message": "CSOB: wk6-48v-s9b kod transakcie 123456677 na prihlasenie do aplikacie Internet banking.",
+		"expectedCode": "wk6-48v-s9b"
+	},
+	{
+		"number": "999024",
+		"message": "Z:  123456789 na:  123456789 castka-mena:  1234.1234 c. kod:1234567890 Vygenerovan:17-06-2010 18:40:20",
+		"expectedCode": "1234567890"
+	},
+	{
+		"number": "999024",
+		"message": "Vas autentizacni kod: 0123456789 Vygenerovan: 17-06-2010 09:16:45 Kontrola serveru:  12345678abcdef",
+		"expectedCode": "0123456789"
+	},
+	{
+		"number": "mBank",
+		"message": "Operace c. 1 ze dne 11-1-2010 Zadani preddef. prijemce z uctu: ...12345678 na ucet: ...12345678/1234 heslo: 12345678 mBank.",
+		"expectedCode": "12345678"
+	},
+	{
+		"number": "+6011",
+		"message": "Operace c. 1 ze dne 11-1-2010 Zadani preddef. prijemce z uctu: ...12345678 na ucet: ...12345678/1234 heslo: 12345678 mBank.",
+		"expectedCode": "12345678"
+	},
+	{
+		"number": "5200",
+		"message": "UniCredit Bank\\nPrihlaseni\\nDatum 01.01.2010 01:01:01\\nKod NL3GHJQZ",
+		"expectedCode": "NL3GHJQZ"
+	},
+	{
+		"number": "5200",
+		"message": "UniCredit Bank\\nStandardni tuzemska platba\\nDetaily PARTNER NAME 123456-1234567890/1234\\nCastka -1,00 CZK\\nDatum 01.01.10 01:01:01\\nKod B1ADKLK4",
+		"expectedCode": "B1ADKLK4"
+	},
+	{
+		"number": "GEMB",
+		"message": "Cas: 20:59:05 Platebni prikaz: 123,00 CZK, z 12345678/1234, na 123456-123456789/1234, splatnost 11.11.11 - Mobilni klic: 12345678",
+		"expectedCode": "12345678"
+	},
+	{
+		"number": "GEMB",
+		"message": "Vas mobilni klic je: 12341234",
+		"expectedCode": "12341234"
+	}
+]
