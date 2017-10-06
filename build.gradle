@@ -8,27 +8,27 @@
 
 buildscript {
 
-    /**
-     * The repositories block configures the repositories Gradle uses to
-     * search or download the dependencies. Gradle pre-configures support for remote
-     * repositories such as JCenter, Maven Central, and Ivy. You can also use local
-     * repositories or define your own remote repositories. The code below defines
-     * JCenter as the repository Gradle should use to look for its dependencies.
-     */
+	/**
+	 * The repositories block configures the repositories Gradle uses to
+	 * search or download the dependencies. Gradle pre-configures support for remote
+	 * repositories such as JCenter, Maven Central, and Ivy. You can also use local
+	 * repositories or define your own remote repositories. The code below defines
+	 * JCenter as the repository Gradle should use to look for its dependencies.
+	 */
 
-    repositories {
-        jcenter()
-    }
+	repositories {
+		jcenter()
+	}
 
-    /**
-     * The dependencies block configures the dependencies Gradle needs to use
-     * to build your project. The following line adds Android plugin for Gradle
-     * version 2.3.3 as a classpath dependency.
-     */
+	/**
+	 * The dependencies block configures the dependencies Gradle needs to use
+	 * to build your project. The following line adds Android plugin for Gradle
+	 * version 2.3.3 as a classpath dependency.
+	 */
 
-    dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
-    }
+	dependencies {
+		classpath 'com.android.tools.build:gradle:2.3.3'
+	}
 }
 
 /**
@@ -41,18 +41,18 @@ buildscript {
  */
 
 allprojects {
-    repositories {
-        jcenter()
-    }
+	repositories {
+		jcenter()
+	}
 }
 
 // This block encapsulates custom properties and makes them available to all
 // modules in the project.
 ext {
-    // The following are only a few examples of the types of properties you can define.
-    compileSdkVersion = 26
-    buildToolsVersion = "26.0.1"
-    // You can also create properties to specify versions for dependencies.
-    // Having consistent versions between modules can avoid conflicts with behavior.
-    supportLibVersion = "26.1.0"
+	// The following are only a few examples of the types of properties you can define.
+	compileSdkVersion = 26
+	buildToolsVersion = "26.0.1"
+	// You can also create properties to specify versions for dependencies.
+	// Having consistent versions between modules can avoid conflicts with behavior.
+	supportLibVersion = "26.1.0"
 }
