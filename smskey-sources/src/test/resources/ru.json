@@ -1,0 +1,82 @@
+[
+	{
+		"number": "Alfa-Bank",
+		"message": "Vash parol dlya vhoda v Alfa-Click - 14wqm9kd. Alfa-Bank",
+		"expectedCode": "14wqm9kd"
+	},
+	{
+		"number": "Alfa-Bank",
+		"message": "Vash parol dlya vhoda v Alfa-Click - 2vyipc57. Nikomu ne soobshayte parol, v tom chisle sotrudnikam banka.",
+		"expectedCode": "2vyipc57"
+	},
+	{
+		"number": "Alfa-Bank",
+		"message": "Proverte adres banka - \"https://click.alfabank.ru\". Parol dlya vhoda v Alfa-Click - t2ax8dnh. Nikomu ne soobshayte parol, v tom chisle sotrudnikam banka.",
+		"expectedCode": "t2ax8dnh"
+	},
+	{
+		"number": "Alfa-Bank",
+		"message": "Dlya oplaty mobilnoi svyazi na summu 123132 CCY za nomer +123132123 Vash odnorazoviy parol 26zyub3c . Alfa-Bank",
+		"expectedCode": "26zyub3c"
+	},
+	{
+		"number": "Alfa-Bank",
+		"message": "Dlya perevoda na summu 0.00 CCY poluchatel PartnerName na schet ***1234 Vash odnorazoviy parol jwwen5ia . Alfa-Bank.",
+		"expectedCode": "jwwen5ia"
+	},
+	{
+		"number": "Alfa-Bank",
+		"message": "Dlya oplaty pokupki v partnername na summu 12.34 CCY vash odnorazoviy parol gnfe21jt",
+		"expectedCode": "gnfe21jt"
+	},
+	{
+		"number": "Alfa-Bank",
+		"message": "Podtverdite oplatu mobilnoi svyazi na summu 123 RUR za nomer +12345678. Parol: 1234abcd . Alfa-Bank",
+		"expectedCode": "1234abcd"
+	},
+	{
+		"number": "Alfa-Bank",
+		"message": "Podtverdite perevod na summu 123.00 RUR poluchatel UserName na schet ***1234. Parol: abcd1234 . Alfa-Bank.",
+		"expectedCode": "abcd1234"
+	},
+	{
+		"number": "Alfa-Bank",
+		"message": "Podtverdite perevod na koshelek User.Name 123413241234 na summu 123.00 RUR. Parol 33vmn3p9 . Alfa-Bank",
+		"expectedCode": "33vmn3p9"
+	},
+	{
+		"number": "Platezh.RU",
+		"message": "SMS-code: NU8DG594",
+		"expectedCode": "NU8DG594"
+	},
+	{
+		"number": "SvyaznoyBnk",
+		"message": "Пароль 99395270 до 11.22 11:22мск, 100.00р.док.N5 Utel #123#",
+		"expectedCode": "99395270"
+	},
+	{
+		"number": "SvyaznoyBnk",
+		"message": "Пароль 57951374 до 16.12 12:56мск, 9061.00р.док.N6 ИП Лысов Константин",
+		"expectedCode": "57951374"
+	},
+	{
+		"number": "SvyaznoyBnk",
+		"message": "parol 57951374 do 11.22 11:22msk, 1234.00p.dok.n6 IP Lisob Konstatin",
+		"expectedCode": "57951374"
+	},
+	{
+		"number": "900",
+		"message": "VISAxx xx; SBERBANK ONL@IN; parol:42205",
+		"expectedCode": "42205"
+	},
+	{
+		"number": "+79262000900",
+		"message": "VISAxx xx; SBERBANK ONL@IN; parol:42205",
+		"expectedCode": "42205"
+	},
+	{
+		"number": "+79165723900",
+		"message": "VISAxx xx; SBERBANK ONL@IN; parol:42205",
+		"expectedCode": "42205"
+	}
+]

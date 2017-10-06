@@ -1,0 +1,7 @@
+[
+	{
+		"number": "Citi",
+		"message": "Your One-Time PIN is 296400. It will expire in 2 minutes.",
+		"expectedCode": "296400"
+	}
+]

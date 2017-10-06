@@ -1,0 +1,22 @@
+[
+	{
+		"number": "10060",
+		"message": "Vhod v Privat24: 00433223 www.privat24.ua - Modem naprokat za 0 grn. v mesyats. Zakagi na privat24.ua i plati za Internet 60 ili 80 grn.",
+		"expectedCode": "00433223"
+	},
+	{
+		"number": "privat24.ua",
+		"message": "pay passwd: 90576069 www.privat24.ua this password is confirmation of p24 payment",
+		"expectedCode": "90576069"
+	},
+	{
+		"number": "10060",
+		"message": "Vhod v Privat24: 65411504 www.privat24.ua - UDOBNO: popolnit' telefon - otprav' sms s komandoy pay20+xx xx (4 poslednie cifry karty) na nomer 10060.",
+		"expectedCode": "65411504"
+	},
+	{
+		"number": "0931777755",
+		"message": "Password: 8leuaru9 Contact-Center: 0800505800",
+		"expectedCode": "8leuaru9"
+	}
+]

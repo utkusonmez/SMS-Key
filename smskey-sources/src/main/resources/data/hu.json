@@ -76,7 +76,7 @@
 			},
 			{
 				"transactionSign": true,
-				"expression": "ERSTE NetBank [^:]*: *[0-9]+-([0-9]+)"
+				"expression": "ERSTE NetBank [^:]*kod: ([0-9\\-]+)"
 			}
 		],
 		"countryCode": "HU"

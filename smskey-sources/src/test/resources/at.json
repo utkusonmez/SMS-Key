@@ -1,0 +1,12 @@
+[
+	{
+		"number": "PSK",
+		"message": "Inlandsüberweisung an Kto.-Nr. **12345678, TAN: 22951",
+		"expectedCode": "22951"
+	},
+	{
+		"number": "+435050526101",
+		"message": "Empfänger 1234567890 BLZ 12345 EUR 123,45 TAN: AB5CD",
+		"expectedCode": "AB5CD"
+	}
+]

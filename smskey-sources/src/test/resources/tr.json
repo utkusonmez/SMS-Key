@@ -1,0 +1,17 @@
+[
+	{
+		"number": "AKILLISMS",
+		"message": "TNDK referans kodlu Yapi Kredi Internet Bankaciligi'na giris isleminiz icin Akilli SMS sifreniz: 67632 Sifre talep tarihi: 03.12.2010-12:27:43",
+		"expectedCode": "67632"
+	},
+	{
+		"number": "4410",
+		"message": "01/01/2011 tarihli 11:11:11 saatli alisverisiniz icin 3 Boyutlu Guvenlik Akilli SMS sifreniz: 88809",
+		"expectedCode": "88809"
+	},
+	{
+		"number": ".BANKASYA.",
+		"message": "Tek Kullanimlik Sifreniz: 626385 Bu sifreyi kullanarak isleminize devam edebilirsiniz. 444 4 888 / Bank Asya",
+		"expectedCode": "626385"
+	}
+]
