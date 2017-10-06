@@ -16,3 +16,7 @@ Isn't your bank listed on the site? Don't worry! Submit a sample of SMS message 
 * Please note that no bank in USA is supported due to legal issues!
 
 * Google and Facebook SMS messages cannot be processed by SMS Key due to technical reasons. Please do not post samples for these services. 
+
+## Google Play
+[Get it from Google Play](https://play.google.com/store/apps/details?id=pl.pamsoft.smskey)  
+[Get beta from Google Play](https://play.google.com/apps/testing/pl.pamsoft.smskey)
