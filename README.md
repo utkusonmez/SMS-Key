@@ -1,4 +1,4 @@
-#SMS Key TM
+# SMS Key TM
 
 Are you tired at reading and entering SMS codes in your internet bank? If yes, this app is for you.
 
