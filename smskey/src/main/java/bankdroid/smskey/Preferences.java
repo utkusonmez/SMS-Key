@@ -172,8 +172,7 @@ public class Preferences extends PreferenceActivity implements Codes, OnPreferen
 						}
 					});
 		}
-		final AlertDialog alert = builder.create();
-		return alert;
+		return builder.create();
 	}
 
 	@Override
