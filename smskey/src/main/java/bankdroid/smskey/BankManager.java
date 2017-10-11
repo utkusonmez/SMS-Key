@@ -359,7 +359,7 @@ public final class BankManager implements Codes {
 
 					break;
 				}
-				if (code == null && debug) {
+				if (debug) {
 					Log.d(TAG, "Not an OTP message: '" + preprocessedMessage + "'");
 				}
 			}
