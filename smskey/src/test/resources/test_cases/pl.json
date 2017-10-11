@@ -68,5 +68,10 @@
 		"number": "TAXCARE",
 		"message": "Operacja z dnia: 2011-01-11 11:11 Przelew z rach:na rach: 123456...123123123123123 na kwote: 12.34  Haslo: rcx5gd",
 		"expectedCode": "rcx5gd"
+	},
+	{
+		"number": "7668",
+		"message": "Kod weryfikujący Twój numer w serwisie Finansowo.pl to: 6669",
+		"expectedCode": "6669"
 	}
 ]

@@ -186,5 +186,19 @@
 			}
 		],
 		"countryCode": "PL"
+	},
+	{
+		"name": "finansowo.pl",
+		"expiry": -1,
+		"phoneNumbers": [
+			"7668"
+		],
+		"extractExpressions": [
+			{
+				"transactionSign": false,
+				"expression": ".*: ([0-9]+)"
+			}
+		],
+		"countryCode": "PL"
 	}
 ]
