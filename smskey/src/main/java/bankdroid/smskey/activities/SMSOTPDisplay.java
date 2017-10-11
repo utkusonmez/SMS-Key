@@ -161,7 +161,7 @@ public class SMSOTPDisplay extends MenuActivity implements Codes, CountDownListe
 		final String ringtoneURI = settings.getString(PREF_NOTIFICATION_RINGTONE,
 			Settings.System.DEFAULT_NOTIFICATION_URI.toString());
 
-		if (ringtoneURI != null && !ringtoneURI.equals("")) {
+		if (ringtoneURI != null && !"".equals(ringtoneURI)) {
 			try {
 				final AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 				if (audioManager.getStreamVolume(AudioManager.STREAM_NOTIFICATION) != 0) {
@@ -203,7 +203,7 @@ public class SMSOTPDisplay extends MenuActivity implements Codes, CountDownListe
 			final boolean newMessage = this.message == null || !this.message.equals(message);
 			setValues(message);
 
-			if (intent.getAction().equals(ACTION_DISPLAY))
+			if (ACTION_DISPLAY.equals(intent.getAction()))
 				BankManager.updateLastMessage(getApplicationContext(), message);
 
 			if (newMessage && settings.getBoolean(PREF_PLAY_SOUND, DEFAULT_PLAY_SOUND)

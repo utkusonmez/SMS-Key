@@ -62,10 +62,10 @@ public class BankEditActivity extends MenuActivity implements OnClickListener, C
 
 		final Intent intent = getIntent();
 		if (bank == null && intent != null) {
-			if (intent.getAction().equals(Intent.ACTION_EDIT)) {
+			if (Intent.ACTION_EDIT.equals(intent.getAction())) {
 				final Uri uri = intent.getData();
 				bank = BankManager.findByUri(getApplicationContext(), uri);
-			} else if (intent.getAction().equals(Intent.ACTION_INSERT)) {
+			} else if (Intent.ACTION_INSERT.equals(intent.getAction())) {
 				Log.d(TAG, "Bank to be created.");
 				bank = new Bank();
 				bank.addPhoneNumber("");

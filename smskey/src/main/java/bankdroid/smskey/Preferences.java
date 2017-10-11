@@ -74,11 +74,11 @@ public class Preferences extends PreferenceActivity implements Codes, OnPreferen
 	@Override
 	public boolean onPreferenceChange( final Preference pref, final Object newValue )
 	{
-		if ( pref.getKey().equals(PREF_RESET_DB) && ( (Boolean) newValue ) )
+		if (PREF_RESET_DB.equals(pref.getKey()) && ( (Boolean) newValue ) )
 		{
 			showDialog(DIALOG_RESETDB);
 		}
-		else if ( pref.getKey().equals(PREF_RESET_CAMPAIGN) && ( (Boolean) newValue ) )
+		else if (PREF_RESET_CAMPAIGN.equals(pref.getKey()) && ( (Boolean) newValue ) )
 		{
 			showDialog(DIALOG_RESETCAMPAIGN);
 		}
@@ -178,7 +178,7 @@ public class Preferences extends PreferenceActivity implements Codes, OnPreferen
 	@Override
 	public boolean onPreferenceClick( final Preference pref )
 	{
-		if ( pref.getKey().equals(Codes.PREF_INSTALL_LOG) )
+		if (Codes.PREF_INSTALL_LOG.equals(pref.getKey()))
 		{
 			//construct e-mail body
 			final StringBuilder builder = new StringBuilder();

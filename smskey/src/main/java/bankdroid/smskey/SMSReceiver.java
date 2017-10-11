@@ -26,7 +26,7 @@ public class SMSReceiver extends BroadcastReceiver implements Codes {
 
 	@Override
 	public void onReceive(final Context context, final Intent intent) {
-		if (intent.getAction().equals(ACTION)) {
+		if (ACTION.equals(intent.getAction())) {
 			final Bundle bundle = intent.getExtras();
 			if (bundle != null) {
 				//retrieve the SMS message received
@@ -94,7 +94,7 @@ public class SMSReceiver extends BroadcastReceiver implements Codes {
 				final String ringtoneURI = settings.getString(PREF_NOTIFICATION_RINGTONE,
 					Settings.System.DEFAULT_NOTIFICATION_URI.toString());
 
-				if (ringtoneURI != null && !ringtoneURI.equals("")) {
+				if (ringtoneURI != null && !"".equals(ringtoneURI)) {
 					notification.audioStreamType = AudioManager.STREAM_NOTIFICATION;
 					notification.sound = Uri.parse(ringtoneURI);
 				}
