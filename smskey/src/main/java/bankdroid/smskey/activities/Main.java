@@ -39,9 +39,10 @@ public class Main extends MenuActivity implements Codes {
 		final Cursor cursor = getContentResolver().query(CONTENT_URI, new String[]{Bank.F__ID,},
 			Bank.F_COUNTRY + "=?", new String[]{userCountry}, Bank.DEFAULT_SORT_ORDER);
 		int numberOfBanks = 0;
-		if (cursor != null)
+		if (cursor != null) {
 			numberOfBanks = cursor.getCount();
-		cursor.close();
+			cursor.close();
+		}
 
 		Log.d(TAG, "Number of banks in " + userCountry + " is " + numberOfBanks + ".");
 		findViewById(R.id.bankWarning).setVisibility(numberOfBanks > 0 ? View.GONE : View.VISIBLE);
