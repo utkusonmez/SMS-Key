@@ -11,8 +11,9 @@ import java.util.Date;
 import static bankdroid.smskey.Codes.TAG;
 
 public class SMSCheckerTask extends AsyncTask<Void, Integer, Message> {
-	public static final Uri SMS_CONTENT_URI = Uri.parse("content://sms");
-	public static final Uri SMS_INBOX_CONTENT_URI = Uri.withAppendedPath(SMS_CONTENT_URI, "inbox");
+	private static final Uri SMS_CONTENT_URI = Uri.parse("content://sms");
+	private static final Uri SMS_INBOX_CONTENT_URI = Uri.withAppendedPath(SMS_CONTENT_URI, "inbox");
+	private static final String[] PROJECTION = new String[]{"_id", "thread_id", "address", "date", "body"};
 
 	private final Context context;
 	private OnFinishListener listener;
@@ -24,10 +25,9 @@ public class SMSCheckerTask extends AsyncTask<Void, Integer, Message> {
 	@Override
 	protected Message doInBackground(final Void... params) {
 		Message last = null;
-		final String[] projection = new String[]{"_id", "thread_id", "address", "date", "body"};
 		int count = 0;
 
-		final Cursor cursor = context.getContentResolver().query(SMS_INBOX_CONTENT_URI, projection, null, null,
+		final Cursor cursor = context.getContentResolver().query(SMS_INBOX_CONTENT_URI, PROJECTION, null, null,
 			"date ASC");
 
 		if (cursor != null) {
