@@ -22,7 +22,7 @@ import java.util.Date;
 import java.util.List;
 
 public class CampaignManager implements OnClickListener {
-	public final static List<Campaign> campaigns = new ArrayList<Campaign>();
+	private final static List<Campaign> campaigns = new ArrayList<Campaign>();
 	private final static long ANIMATION_DELAY = 500;
 
 	static {
