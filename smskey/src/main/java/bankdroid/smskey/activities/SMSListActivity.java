@@ -1,4 +1,4 @@
-package bankdroid.smskey;
+package bankdroid.smskey.activities;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -18,6 +18,11 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
+import bankdroid.smskey.BankManager;
+import bankdroid.smskey.Codes;
+import bankdroid.smskey.Message;
+import bankdroid.smskey.R;
+import bankdroid.smskey.activities.MenuActivity;
 import bankdroid.smskey.bank.Bank;
 import bankdroid.util.ErrorLogger;
 

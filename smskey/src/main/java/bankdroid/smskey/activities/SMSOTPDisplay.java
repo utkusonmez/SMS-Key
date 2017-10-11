@@ -1,4 +1,4 @@
-package bankdroid.smskey;
+package bankdroid.smskey.activities;
 
 import android.app.NotificationManager;
 import android.content.Context;
@@ -26,7 +26,17 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import bankdroid.campaign.CampaignManager;
+import bankdroid.smskey.BankManager;
+import bankdroid.smskey.Codes;
+import bankdroid.smskey.CountDown;
 import bankdroid.smskey.CountDown.CountDownListener;
+import bankdroid.smskey.Eula;
+import bankdroid.smskey.Formatters;
+import bankdroid.smskey.Message;
+import bankdroid.smskey.R;
+import bankdroid.smskey.SMSReceiver;
+import bankdroid.smskey.activities.BankListActivity;
+import bankdroid.smskey.activities.MenuActivity;
 
 import java.io.Serializable;
 import java.util.Calendar;

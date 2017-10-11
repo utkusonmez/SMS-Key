@@ -1,4 +1,4 @@
-package bankdroid.smskey;
+package bankdroid.smskey.activities;
 
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -14,6 +14,8 @@ import android.text.style.ClickableSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import bankdroid.smskey.Codes;
+import bankdroid.smskey.R;
 
 /**
  * TODO new preference: use only local banks

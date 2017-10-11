@@ -1,4 +1,4 @@
-package bankdroid.smskey;
+package bankdroid.smskey.activities;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -12,6 +12,9 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.Toast;
+import bankdroid.smskey.BankManager;
+import bankdroid.smskey.Codes;
+import bankdroid.smskey.R;
 import bankdroid.smskey.bank.Bank;
 import bankdroid.smskey.bank.Expression;
 

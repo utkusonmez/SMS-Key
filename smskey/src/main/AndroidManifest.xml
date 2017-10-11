@@ -13,7 +13,7 @@
 		android:theme="@android:style/Theme.NoTitleBar">
 
 		<activity
-			android:name="bankdroid.smskey.Main"
+			android:name="bankdroid.smskey.activities.Main"
 			android:label="@string/app_name"
 			android:launchMode="singleTop">
 			<intent-filter>
@@ -24,7 +24,7 @@
 
 
 		<activity
-			android:name="bankdroid.smskey.SMSOTPDisplay"
+			android:name="bankdroid.smskey.activities.SMSOTPDisplay"
 			android:label="@string/app_name"
 			android:launchMode="singleTask"/>
 
@@ -44,11 +44,11 @@
 			android:authorities="bankdroid.smskey.Bank"/>
 
 
-		<activity android:name="bankdroid.smskey.AboutActivity"/>
-		<activity android:name="bankdroid.smskey.SMSListActivity"/>
-		<activity android:name="bankdroid.smskey.BankListActivity"/>
+		<activity android:name="bankdroid.smskey.activities.AboutActivity"/>
+		<activity android:name="bankdroid.smskey.activities.SMSListActivity"/>
+		<activity android:name="bankdroid.smskey.activities.BankListActivity"/>
 		<activity
-			android:name=".BankEditActivity"
+			android:name=".activities.BankEditActivity"
 			android:screenOrientation="portrait"/>
 
 	</application>

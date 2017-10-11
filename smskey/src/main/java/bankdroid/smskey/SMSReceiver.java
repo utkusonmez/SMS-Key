@@ -16,6 +16,7 @@ import android.provider.Settings;
 import android.telephony.SmsMessage;
 import android.text.ClipboardManager;
 import android.util.Log;
+import bankdroid.smskey.activities.SMSOTPDisplay;
 
 import java.text.MessageFormat;
 import java.util.Calendar;
@@ -79,7 +80,7 @@ public class SMSReceiver extends BroadcastReceiver implements Codes {
 			final CharSequence contentText = MessageFormat.format(
 				context.getText(R.string.notificationText).toString(), message.getBank().getName());
 
-			final Intent notificationIntent = new Intent(context, bankdroid.smskey.SMSOTPDisplay.class);
+			final Intent notificationIntent = new Intent(context, SMSOTPDisplay.class);
 			notificationIntent.setAction(ACTION_DISPLAY);
 			notificationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
 			notificationIntent.putExtra(BANKDROID_SMSKEY_MESSAGE, message);

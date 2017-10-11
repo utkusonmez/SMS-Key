@@ -10,6 +10,11 @@
 		"expectedCode": "39352344"
 	},
 	{
+		"number": "3388",
+		"message": "! Operacja nr 2 z dn. 01-01-2001 Przelew z rach: ...012345 na rach: 01234...01234 haslo: 39352344 mBank.",
+		"expectedCode": "39352344"
+	},
+	{
 		"number": "PolbankEFG",
 		"message": "Haslo jednorazowe do autoryzacji transakcji w systemie Polbank24: 372929. Haslo jest wazne przez 2 minuty od momentu wyslania.",
 		"expectedCode": "372929"

@@ -1,4 +1,4 @@
-package bankdroid.smskey;
+package bankdroid.smskey.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -24,6 +24,8 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.SimpleCursorAdapter.ViewBinder;
 import android.widget.TextView;
 import android.widget.Toast;
+import bankdroid.smskey.Codes;
+import bankdroid.smskey.R;
 import bankdroid.smskey.bank.Bank;
 
 /**

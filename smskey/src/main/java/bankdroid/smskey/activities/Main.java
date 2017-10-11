@@ -1,4 +1,4 @@
-package bankdroid.smskey;
+package bankdroid.smskey.activities;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -11,6 +11,12 @@ import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
+import bankdroid.smskey.BankManager;
+import bankdroid.smskey.Codes;
+import bankdroid.smskey.Eula;
+import bankdroid.smskey.Message;
+import bankdroid.smskey.R;
+import bankdroid.smskey.SMSCheckerTask;
 import bankdroid.smskey.SMSCheckerTask.OnFinishListener;
 import bankdroid.smskey.bank.Bank;
 

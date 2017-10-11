@@ -37,7 +37,7 @@ import java.io.InputStreamReader;
  * be shown again. If the user refuses, {@link android.app.Activity#finish()} is invoked
  * on your activity.
  */
-class Eula {
+public class Eula {
 	public static final String ASSET_EULA = "EULA";
 	public static final String PREFERENCE_EULA_ACCEPTED = "eula.accepted";
 	public static final String PREFERENCES_EULA = "eula";
@@ -49,7 +49,7 @@ class Eula {
 	 * @param activity The Activity to finish if the user rejects the EULA.
 	 * @return Whether the user has agreed already.
 	 */
-	static boolean show(final Activity activity) {
+	public static boolean show(final Activity activity) {
 		AppId.getAppId(activity); // init app Id
 
 		final SharedPreferences preferences = activity.getSharedPreferences(PREFERENCES_EULA, Activity.MODE_PRIVATE);
