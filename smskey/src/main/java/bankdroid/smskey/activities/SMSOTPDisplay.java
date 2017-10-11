@@ -195,7 +195,7 @@ public class SMSOTPDisplay extends MenuActivity implements Codes, CountDownListe
 		}
 
 		//check timestamp availability to make sure, that intent is not null, and correct intent is received.
-		if (messageSource != null && messageSource instanceof Message) {
+		if (messageSource instanceof Message) {
 			Log.d(TAG, "Set values based on new SMS intent.");
 			final Message message = (Message) messageSource;
 
