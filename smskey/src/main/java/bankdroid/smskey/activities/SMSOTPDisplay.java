@@ -309,8 +309,8 @@ public class SMSOTPDisplay extends MenuActivity implements Codes, CountDownListe
 		final int secs = expiry % 60;
 
 		final StringBuilder builder = new StringBuilder();
-		appendDigits(builder, hours).append(":");
-		appendDigits(builder, minutes).append(":");
+		appendDigits(builder, hours).append(':');
+		appendDigits(builder, minutes).append(':');
 		appendDigits(builder, secs);
 
 		return builder.toString();

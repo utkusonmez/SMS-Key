@@ -185,14 +185,14 @@ public class Preferences extends PreferenceActivity implements Codes, OnPreferen
 			final StringBuilder builder = new StringBuilder();
 
 			builder.append("Maintenance e-mail: ");
-			builder.append(getString(R.string.app_name)).append(" ");
+			builder.append(getString(R.string.app_name)).append(' ');
 			//set version number
 			try
 			{
 				final PackageManager manager = getPackageManager();
 				final PackageInfo info = manager.getPackageInfo(getPackageName(), 0);
 				final String versionName = info.versionName;
-				builder.append("v").append(versionName);
+				builder.append('v').append(versionName);
 			}
 			catch ( final NameNotFoundException e )
 			{
@@ -209,12 +209,12 @@ public class Preferences extends PreferenceActivity implements Codes, OnPreferen
 			final int countryCount = countries.size();
 			final int bankCount = banks.length;
 
-			builder.append("\n").append(String.format(getString(R.string.statText), bankCount, countryCount));
+			builder.append('\n').append(String.format(getString(R.string.statText), bankCount, countryCount));
 
 			final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
 			final String installLog = preferences.getString(Codes.PREF_INSTALL_LOG, "");
 			if ( installLog.length() > 1 )
-				builder.append("\n").append(installLog);
+				builder.append('\n').append(installLog);
 
 			ErrorLogger.sendEmail(this, new String[] { SUBMISSION_ADDRESS }, "MAINTENANCE", builder.toString());//no I18N
 
