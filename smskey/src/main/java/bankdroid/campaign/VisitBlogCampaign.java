@@ -24,7 +24,7 @@ public class VisitBlogCampaign implements Campaign {
 
 		final Calendar cal = Calendar.getInstance();
 		cal.add(Calendar.MONTH, -1); // appear monthly
-		return lastShown.before(cal.getTime()) && codeCount % 3 == 0;
+		return codeCount % 3 == 0 && lastShown.before(cal.getTime());
 	}
 
 	@Override
