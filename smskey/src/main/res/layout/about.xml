@@ -57,6 +57,7 @@
 				android:layout_height="wrap_content"
 				android:layout_below="@id/productId"
 				android:layout_alignLeft="@id/productId"
+				android:visibility="invisible"
 				/>
 
 			<ImageView
@@ -69,6 +70,7 @@
 				android:layout_height="wrap_content"
 				android:layout_below="@id/productId"
 				android:layout_toRightOf="@id/facebookIcon"
+				android:visibility="invisible"
 				/>
 
 			<ImageView
@@ -81,6 +83,7 @@
 				android:layout_height="wrap_content"
 				android:layout_below="@id/productId"
 				android:layout_toRightOf="@id/twitterIcon"
+				android:visibility="invisible"
 				/>
 
 			<ImageView
@@ -168,6 +171,7 @@
 
 				android:layout_below="@id/divider2"
 				android:layout_toRightOf="@id/versionId"
+				android:visibility="invisible"
 				/>
 
 		</RelativeLayout>
@@ -177,6 +181,7 @@
 			style="@style/button"
 			android:layout_marginLeft="20sp"
 			android:layout_marginRight="20sp"
+			android:visibility="invisible"
 			>
 
 			<TextView

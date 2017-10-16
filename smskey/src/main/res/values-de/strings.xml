@@ -87,7 +87,7 @@
 	<string name="ok">Ok</string>
 	<string name="loading">Wird geladen...</string>
 	<string name="msgCheckForMessages">Bitte warten Sie während der Analyse Ihrer SMS-Eingangsbox.</string>
-	<string name="msgNoBankInCountry">Es scheint, dass es noch keine unterstützten Banken in Ihrem Land gibt. Klicken Sie hier, um die vollständige Liste online zu überprüfen.</string>
+	<string name="msgNoBankInCountry">Es scheint, dass es noch keine unterstützten Banken in Ihrem Land gibt.</string>
 	<string name="aboutId">SMS Key TM</string>
 	<string name="aboutDesc">Die SMS Key ist ein Produkt des BankDroid open source Projekts. Entwickelt von freiwilligen Entwicklern.</string>
 	<string name="aboutDesc2">Wenn du mit der Anwendung Probleme hast oder gern zusätzliche Features hättest, wende dich gerne an uns.</string>

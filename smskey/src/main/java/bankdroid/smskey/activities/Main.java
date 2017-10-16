@@ -48,11 +48,6 @@ public class Main extends MenuActivity implements Codes {
 		findViewById(R.id.bankWarning).setVisibility(numberOfBanks > 0 ? View.GONE : View.VISIBLE);
 	}
 
-	public void onViewBanks(final View v) {
-		final Intent viewIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL_BANK_LIST));
-		startActivity(viewIntent);
-	}
-
 	public void onSubmitSample(final View v) {
 		final Intent submitIntent = new Intent(getBaseContext(), SMSListActivity.class);
 		startActivity(submitIntent);

@@ -37,7 +37,6 @@
 				android:drawableLeft="@android:drawable/stat_notify_error"
 				android:drawablePadding="6sp"
 				android:visibility="visible"
-				android:onClick="onViewBanks"
 				android:clickable="true"
 
 				android:layout_marginTop="3sp"
@@ -122,7 +121,7 @@
 				<LinearLayout
 					android:onClick="onProductInfo"
 					style="@style/button"
-					>
+					android:visibility="invisible">
 
 					<TextView
 						android:text="@string/btnInfoSite"

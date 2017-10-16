@@ -104,7 +104,7 @@
 	<string name="ok">Ok</string>
 	<string name="loading">Töltés...</string>
 	<string name="msgCheckForMessages">Az SMS-ek feldolgozása folyamatban.</string>
-	<string name="msgNoBankInCountry">Úgy néz ki, az országodban még nincs az SMS Key által támogatott bank. A bankok listáját megnézheted online. Klikk ide.</string>
+	<string name="msgNoBankInCountry">Úgy néz ki, az országodban még nincs az SMS Key által támogatott bank.</string>
 
 	<!-- About -->
 	<string name="aboutId">SMS Key TM</string>

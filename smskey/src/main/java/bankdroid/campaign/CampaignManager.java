@@ -25,13 +25,6 @@ public class CampaignManager implements OnClickListener {
 	private final static List<Campaign> campaigns = new ArrayList<Campaign>();
 	private final static long ANIMATION_DELAY = 500;
 
-	static {
-		campaigns.add(new DonateCampaign());
-		campaigns.add(new FacebookCampaign());
-		campaigns.add(new MarketRateCampaign());
-		campaigns.add(new VisitBlogCampaign());
-	}
-
 	private final Context context;
 	private final SharedPreferences preferences;
 	private Campaign campaign;

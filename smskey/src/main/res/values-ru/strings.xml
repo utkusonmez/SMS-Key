@@ -87,7 +87,7 @@
 	<string name="ok">Ок</string>
 	<string name="loading">Загрузка...</string>
 	<string name="msgCheckForMessages">Пожалуйста, подождите, идёт анализ SMS.</string>
-	<string name="msgNoBankInCountry">Похоже, ни один банк вашей страны пока не поддерживается. Нажмите, чтобы просмотреть полный список онлайн.</string>
+	<string name="msgNoBankInCountry">Похоже, ни один банк вашей страны пока не поддерживается.</string>
 	<string name="aboutId">SMS Key TM</string>
 	<string name="aboutDesc">The SMS Key является продуктом BankDroid данный проект идет с открытым кодом. Разработано добровольными программистами.</string>
 	<string name="aboutDesc2">Если у вас возникли какие-либо проблемы с этим приложением, или если вы хотели бы видеть новые функции, не стесняйтесь обращаться к нам.</string>
