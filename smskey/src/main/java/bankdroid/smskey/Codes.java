@@ -22,6 +22,9 @@ public interface Codes {
 	public static final String BANKDROID_SMSKEY_MESSAGE = "bankdroid.smskey.SMSMessage";
 	public static final String BANKDROID_SMSKEY_BANK = "bankdroid.smskey.Bank";
 
+	public static final String GITHUB_SEND_MESSAGE = "bankdroid.smskey.githubsend.message";
+	public static final String GITHUB_SEND_ADDRESS = "bankdroid.smskey.githubsend.address";
+
 	public static final String PREF = "bankdroid.smskey";
 	public static final String PREF_NOTIFICATION = "bankdroid.smskey.Notification";
 	public static final String PREF_KEEP_SMS = "bankdroid.smskey.KeepSMS";

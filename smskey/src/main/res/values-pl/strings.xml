@@ -101,4 +101,11 @@
 	<string name="campaignFacebook">Czy podoba Ci się aplikacja? Pokaż ją innym na Facebooku ...</string>
 	<string name="campaignDonate1">Ponad 150 kodów było wyświetlonych.</string>
 	<string name="campaignDonate2">Wspomóż przez PayPal...</string>
+
+	<!-- GitHub integration -->
+	<string name="gitHubSmsAddress">Nadawca.</string>
+	<string name="gitHubSmsContent">Treść.</string>
+	<string name="gitHubSendDesc">Prześlij treść.</string>
+	<string name="gitHubSendWarning">Ze względów bezpieczeństwa wszystkie cyfry w treści zostały zastąpione losowymi. Poniżej znajduje się treść, która zostanie przesłana.</string>
+
 </resources>

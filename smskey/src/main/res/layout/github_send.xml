@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@drawable/background3">
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		>
+
+		<TextView
+			android:id="@+id/textView"
+
+			android:text="@string/gitHubSendWarning"
+			android:gravity="left"
+			android:background="#FFA000"
+			android:textColor="#FFFFFF"
+			android:textStyle="bold"
+			android:padding="5sp"
+			android:drawableLeft="@android:drawable/stat_notify_error"
+			android:drawablePadding="6sp"
+			android:visibility="visible"
+			android:clickable="true"
+
+			android:layout_marginTop="3sp"
+			android:layout_marginBottom="10sp"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/titleView"
+			/>
+
+		<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:paddingLeft="20sp"
+			android:paddingRight="20sp"
+			>
+
+			<TextView
+				android:text="@string/gitHubSmsAddress"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/textView2"/>
+
+			<EditText
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:inputType="textPersonName"
+				android:text="+48123456789"
+				android:ems="10"
+				android:id="@+id/githubSendSmsAddress"/>
+
+			<TextView
+				android:text="@string/gitHubSmsContent"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/textView3"/>
+
+			<EditText
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:inputType="textMultiLine"
+				android:text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."
+				android:ems="10"
+				android:id="@+id/githubSendSmsContent"/>
+
+			<LinearLayout
+				android:onClick="createGitHubIssue"
+				style="@style/button"
+				>
+
+				<TextView
+					android:text="@string/btnSubmitSample"
+					android:drawableLeft="@drawable/icon_submitsample"
+					style="@style/buttonTitle"
+					/>
+
+				<TextView
+					android:text="@string/gitHubSendDesc"
+					style="@style/buttonComment"
+					/>
+
+			</LinearLayout>
+
+			<TextView
+				android:autoLink="web"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/githubSendFeedback"
+				android:layout_weight="1"/>
+
+		</LinearLayout>
+	</LinearLayout>
+
+</ScrollView>

@@ -3,14 +3,10 @@ package bankdroid.smskey.activities;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,15 +15,10 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 import bankdroid.smskey.BankManager;
-import bankdroid.smskey.Codes;
 import bankdroid.smskey.Message;
 import bankdroid.smskey.R;
-import bankdroid.smskey.activities.MenuActivity;
-import bankdroid.smskey.bank.Bank;
-import bankdroid.util.ErrorLogger;
 
 import java.util.Date;
-import java.util.HashSet;
 
 /**
  * @author gyenes
@@ -118,41 +109,11 @@ public class SMSListActivity extends MenuActivity implements OnItemClickListener
 			return;
 		}
 
-		//construct e-mail body
-		final StringBuilder builder = new StringBuilder();
-
-		builder.append(getString(R.string.emailPrefix)).append(' ');
-		builder.append(getString(R.string.emailOriginator)).append(" <<").append(address).append(">>. ");
-		builder.append(getString(R.string.emailSMSText)).append(" {{").append(body).append("}} \n\n");
-		builder.append(getString(R.string.app_name)).append(' ');
-		//set version number
-		try {
-			final PackageManager manager = getPackageManager();
-			final PackageInfo info = manager.getPackageInfo(getPackageName(), 0);
-			final String versionName = info.versionName;
-			builder.append('v').append(versionName);
-		} catch (final NameNotFoundException e) {
-			Log.e(TAG, "Error getting package name.", e);
-		}
-
-		//generate DB stats for debugging purposes
-		final Bank[] banks = BankManager.getAllBanks(this);
-		final HashSet<String> countries = new HashSet<String>();
-		for (final Bank bank : banks) {
-			countries.add(bank.getCountryCode());
-		}
-		final int countryCount = countries.size();
-		final int bankCount = banks.length;
-
-		builder.append('\n').append(String.format(getString(R.string.statText), bankCount, countryCount));
-
-		final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-		final String installLog = preferences.getString(Codes.PREF_INSTALL_LOG, "");
-		if (installLog.length() > 1)
-			builder.append('\n').append(installLog);
-
-		ErrorLogger.sendEmail(this, new String[]{SUBMISSION_ADDRESS}, getString(R.string.emailSubject),
-			builder.toString());//no I18N
+		final Intent intent = new Intent(getBaseContext(), GitHubSendActivity.class);
+		intent.setAction(ACTION_REDISPLAY);
+		intent.putExtra(GITHUB_SEND_MESSAGE, body);
+		intent.putExtra(GITHUB_SEND_ADDRESS, address);
+		startActivity(intent);
 	}
 
 	@Override
