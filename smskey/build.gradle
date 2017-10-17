@@ -11,8 +11,8 @@ android {
 		applicationId 'pl.pamsoft.smskey'
 		minSdkVersion 22
 		targetSdkVersion 22
-		versionCode 52
-		versionName "3.11"
+		versionCode 53
+		versionName "3.12"
 	}
 
 	signingConfigs {
@@ -33,7 +33,7 @@ android {
 		}
 		releaseProguard {
 			initWith release
-			
+
 			minifyEnabled true
 			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'config/proguard.txt'
 		}
