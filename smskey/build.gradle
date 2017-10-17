@@ -28,11 +28,17 @@ android {
 		release {
 			signingConfig signingConfigs.release
 
-			minifyEnabled false // Enables code shrinking for the release build type.
-			//proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+			minifyEnabled false
 			zipAlignEnabled true
 		}
+		releaseProguard {
+			initWith release
+			
+			minifyEnabled true
+			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'config/proguard.txt'
+		}
 	}
+
 
 	lintOptions {
 		checkReleaseBuilds false
