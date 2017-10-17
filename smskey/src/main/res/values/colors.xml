@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<color name="backgroundStart">#FFFFFF</color>
+	<color name="backgroundEnd">#FFF8D9</color>
+
 	<color name="sodaBlue">#56748E</color>
 
 	<color name="darkBrown">#A6642E</color>
