@@ -4,6 +4,8 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.Point;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -17,11 +19,13 @@ import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.text.ClipboardManager;
 import android.util.Log;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,12 +39,19 @@ import bankdroid.smskey.Formatters;
 import bankdroid.smskey.Message;
 import bankdroid.smskey.R;
 import bankdroid.smskey.SMSReceiver;
-import bankdroid.smskey.activities.BankListActivity;
-import bankdroid.smskey.activities.MenuActivity;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.EncodeHintType;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.EnumMap;
 import java.util.List;
+import java.util.Map;
+
+import static android.graphics.Color.BLACK;
 
 /**
  * This view as able to display SMS one time passwords processed by {@link SMSReceiver}. Besides displayed the codes
@@ -272,6 +283,8 @@ public class SMSOTPDisplay extends MenuActivity implements Codes, CountDownListe
 			//TODO try to read bank name from contact list
 			((TextView) findViewById(R.id.originatingAddress)).setText(message.getOriginatingAddress());
 
+			updateQRCode(code);
+
 			final TextView countDownView = (TextView) findViewById(R.id.countDown);
 
 			findViewById(R.id.securityWarning).setVisibility(
@@ -301,6 +314,49 @@ public class SMSOTPDisplay extends MenuActivity implements Codes, CountDownListe
 			findViewById(R.id.countDown).setVisibility(View.GONE);
 			findViewById(R.id.securityWarning).setVisibility(View.GONE);
 		}
+	}
+
+	private void updateQRCode(String code) {
+		ImageView qr = (ImageView) findViewById(R.id.qrCode);
+		Display display = getWindowManager().getDefaultDisplay();
+		Point size = new Point();
+		display.getSize(size);
+		int width = size.x;
+		int height = size.y;
+		int smaller = (int) (Math.min(width, height) * 0.60);
+		try {
+			Bitmap bitmap = encodeAsBitmap(code, smaller, smaller);
+			qr.setImageBitmap(bitmap);
+		} catch (WriterException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private Bitmap encodeAsBitmap(String str, int width, int height) throws WriterException {
+		int background = getResources().getColor(R.color.backgroundEnd);
+
+		BitMatrix result;
+		Map<EncodeHintType, Object> hints = new EnumMap<>(EncodeHintType.class);
+		hints.put(EncodeHintType.CHARACTER_SET, "UTF-8");
+		hints.put(EncodeHintType.MARGIN, 2); /* default = 4 */
+		try {
+			result = new MultiFormatWriter().encode(str, BarcodeFormat.QR_CODE, width, height, hints);
+		} catch (IllegalArgumentException iae) {
+			// Unsupported format
+			return null;
+		}
+		int w = result.getWidth();
+		int h = result.getHeight();
+		int[] pixels = new int[w * h];
+		for (int y = 0; y < h; y++) {
+			int offset = y * w;
+			for (int x = 0; x < w; x++) {
+				pixels[offset + x] = result.get(x, y) ? BLACK : background;
+			}
+		}
+		Bitmap bitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+		bitmap.setPixels(pixels, 0, width, 0, 0, w, h);
+		return bitmap;
 	}
 
 	private CharSequence convertTime(final int expiry) {
