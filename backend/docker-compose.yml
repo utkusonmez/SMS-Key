@@ -1,0 +1,12 @@
+version: '3'
+services:
+  ejsik_smskey_backend:
+    container_name: ejsik_smskey_backend
+    build: .
+    ports:
+      - "18080:8080"
+    environment:
+      - SMSKEY_GH_TOKEN=${SMSKEY_GH_TOKEN}
+    deploy:
+      restart_policy:
+        condition: on-failure
