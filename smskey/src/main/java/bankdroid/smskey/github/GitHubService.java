@@ -7,8 +7,8 @@ import retrofit2.http.POST;
 
 public interface GitHubService {
 
-	@Headers("Authorization: token 4b225025429989f08962f6b33c788d9260fc978e")
-	@POST("/repos/pmajkutewicz/SMS-Key/issues")
+	@Headers(CommConstants.HEADER_NAME + ": " + CommConstants.HEADER_VALUE)
+	@POST("/createIssue")
 	Call<CreateIssueResponse> createIssue(@Body CreateIssueRequest issue);
 
 }

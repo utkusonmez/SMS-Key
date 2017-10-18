@@ -44,7 +44,7 @@ public class RetrofitGitHubService extends AsyncTask<String, Void, String> imple
 		Retrofit retrofit = new Retrofit.Builder()
 			.addConverterFactory(GsonConverterFactory.create())
 			.addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-			.baseUrl("https://api.github.com").build();
+			.baseUrl(CommConstants.ENDPOINT_HOST).build();
 
 		GitHubService service = retrofit.create(GitHubService.class);
 		String msg = createMessage(args[0], args[1]);
