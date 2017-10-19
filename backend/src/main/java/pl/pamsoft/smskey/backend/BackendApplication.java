@@ -28,6 +28,12 @@ public class BackendApplication {
 			throw new RuntimeException("Missing SMSKEY_GH_TOKEN env.");
 		}
 		LOG.info("Using GH token: {}", token);
+
+		String ghEndpoint = System.getenv("SMSKEY_GH_ENDPOINT");
+		if (null != ghEndpoint) {
+			LOG.info("GH Endpoint overwritten: {}", ghEndpoint);
+		}
+
 		SpringApplication.run(BackendApplication.class, args);
 	}
 

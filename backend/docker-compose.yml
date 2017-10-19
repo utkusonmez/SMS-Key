@@ -7,6 +7,7 @@ services:
       - "18080:8080"
     environment:
       - SMSKEY_GH_TOKEN=${SMSKEY_GH_TOKEN}
+      - SMSKEY_GH_ENDPOINT=https://api.github.com/repos/pmajkutewicz/smskey-sandbox/issues
     deploy:
       restart_policy:
         condition: on-failure

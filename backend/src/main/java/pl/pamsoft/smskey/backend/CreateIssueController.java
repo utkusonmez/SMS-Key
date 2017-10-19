@@ -26,8 +26,10 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RestController
 public class CreateIssueController {
 
-	private final static String GIT_HUB = "https://api.github.com/repos/pmajkutewicz/SMS-Key/issues";
 	private final static Logger LOG = LoggerFactory.getLogger(CreateIssueController.class);
+	private String ghEndpoint = null == System.getenv("SMSKEY_GH_ENDPOINT")
+			? "https://api.github.com/repos/pmajkutewicz/SMS-Key/issues"
+			: System.getenv("SMSKEY_GH_ENDPOINT");
 
 	@Autowired
 	private RestTemplate restTemplate;
@@ -51,7 +53,7 @@ public class CreateIssueController {
 		}
 
 		ResponseEntity<CreateIssueResponse> ghResponse =
-			restTemplate.exchange(GIT_HUB, POST, new HttpEntity<>(request, ghHeaders), CreateIssueResponse.class);
+			restTemplate.exchange(ghEndpoint, POST, new HttpEntity<>(request, ghHeaders), CreateIssueResponse.class);
 
 		if (HttpStatus.CREATED == ghResponse.getStatusCode()) {
 			LOG.info("For {} request we got response: {}", request, ghResponse);
