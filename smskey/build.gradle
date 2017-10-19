@@ -70,8 +70,8 @@ android {
 		applicationId 'pl.pamsoft.smskey'
 		minSdkVersion 22
 		targetSdkVersion 22
-		versionCode 53
-		versionName "3.12"
+		versionCode 54
+		versionName "3.13"
 	}
 
 	signingConfigs {
