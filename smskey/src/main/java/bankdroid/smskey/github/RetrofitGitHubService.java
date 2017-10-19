@@ -1,12 +1,10 @@
 package bankdroid.smskey.github;
 
-import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.util.Log;
 import android.widget.TextView;
 import bankdroid.smskey.Codes;
-import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import retrofit2.Call;
 import retrofit2.Response;
@@ -15,11 +13,9 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import static java.lang.String.format;
@@ -53,10 +49,8 @@ public class RetrofitGitHubService extends AsyncTask<String, Void, String> imple
 
 		try {
 			Response<CreateIssueResponse> execute = issue.execute();
-			Log.d(TAG, "isSuccessful:" + execute.isSuccessful());
-			Log.d(TAG, "code:" + execute.code());
 			if (!execute.isSuccessful()) {
-				Log.e(TAG, "isSuccessful:" + execute.errorBody().string());
+				Log.e(TAG, "Invalid API usage: " + execute.errorBody().string());
 				return "Invalid API usage.";
 			} else {
 				return execute.body().getHtmlUrl();

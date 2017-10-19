@@ -3,7 +3,7 @@ package bankdroid.smskey.github;
 public class CreateIssueResponse {
 	private int id;
 	private String url;
-	private String html_url;
+	private String htmlUrl;
 	private int number;
 
 	public int getId() {
@@ -23,11 +23,13 @@ public class CreateIssueResponse {
 	}
 
 	public String getHtmlUrl() {
-		return html_url;
+		return htmlUrl;
 	}
 
-	public void setHtml_url(String html_url) {
-		this.html_url = html_url;
+	/* Neded by backend to deserialize GH response */
+	/* Retrofit uses reflection, so wathc out for field names */
+	public void setHtml_url(String htmlUrl) {
+		this.htmlUrl = htmlUrl;
 	}
 
 	public int getNumber() {
