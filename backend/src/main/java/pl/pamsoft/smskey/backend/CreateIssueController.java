@@ -11,6 +11,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -19,6 +20,7 @@ import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
 import java.util.Collections;
+import java.util.concurrent.ThreadLocalRandom;
 
 import static org.springframework.http.HttpMethod.POST;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -41,6 +43,11 @@ public class CreateIssueController {
 		ghHeaders = new HttpHeaders();
 		ghHeaders.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
 		ghHeaders.set("Authorization", String.format("token %s", System.getenv("SMSKEY_GH_TOKEN")));
+	}
+
+	@GetMapping(value = "/", produces = APPLICATION_JSON_VALUE)
+	public ResponseEntity<Integer> status() {
+		return new ResponseEntity<>(ThreadLocalRandom.current().nextInt(0, 101), HttpStatus.I_AM_A_TEAPOT);
 	}
 
 	@PostMapping(value = "/createIssue", produces = APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
