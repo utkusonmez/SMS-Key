@@ -9,3 +9,10 @@ services:
       - SMSKEY_GH_TOKEN=${SMSKEY_GH_TOKEN}
       - SMSKEY_GH_ENDPOINT=https://api.github.com/repos/pmajkutewicz/smskey-sandbox/issues
     restart: always
+    networks:
+      - apache_apache
+
+networks:
+  apache_apache:
+    external:
+      name: apache_apache
