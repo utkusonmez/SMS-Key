@@ -15,7 +15,6 @@ import android.provider.Settings;
 import android.support.v4.app.NotificationCompat;
 import android.telephony.SmsMessage;
 import android.text.ClipboardManager;
-import android.util.Log;
 import bankdroid.smskey.activities.SMSOTPDisplay;
 
 import java.text.MessageFormat;
@@ -51,7 +50,6 @@ public class SMSReceiver extends BroadcastReceiver implements Codes {
 		// Restore preferences
 		final SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
 		final boolean notificationOnly = settings.getBoolean(PREF_NOTIFICATION, DEFAULT_NOTIFICATION);
-		final boolean keepSMS = settings.getBoolean(PREF_KEEP_SMS, DEFAULT_KEEP_SMS);
 		final boolean autoCopy = settings.getBoolean(PREF_AUTO_COPY, DEFAULT_AUTO_COPY);
 		final boolean playSound = settings.getBoolean(PREF_PLAY_SOUND, DEFAULT_PLAY_SOUND);
 		final int codeCount = settings.getInt(PREF_CODE_COUNT, 0) + 1;
@@ -117,11 +115,6 @@ public class SMSReceiver extends BroadcastReceiver implements Codes {
 			myIntent.putExtra(BANKDROID_SMSKEY_MESSAGE, message);
 			myIntent.putExtra(BANKDROID_SMSKEY_PLAYSOUND, playSound);
 			context.startActivity(myIntent);
-		}
-
-		if (!keepSMS) {
-			Log.d(TAG, "SMS should not be persisted. Aborting broadcast...");
-			abortBroadcast();
 		}
 	}
 }

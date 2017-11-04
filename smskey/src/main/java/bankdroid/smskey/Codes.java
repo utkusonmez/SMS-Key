@@ -27,7 +27,6 @@ public interface Codes {
 
 	public static final String PREF = "bankdroid.smskey";
 	public static final String PREF_NOTIFICATION = "bankdroid.smskey.Notification";
-	public static final String PREF_KEEP_SMS = "bankdroid.smskey.KeepSMS";
 	public static final String PREF_KEEP_SCREEN_ON = "bankdroid.smskey.KeepScreenOn";
 	public static final String PREF_RESET_DB = "bankdroid.smskey.ResetDb";
 	public static final String PREF_RESET_CAMPAIGN = "bankdroid.smskey.ResetCampaign";
@@ -41,7 +40,6 @@ public interface Codes {
 	public static final String PREF_SPLIT_CODE = "bankdroid.smskey.SplitCode";
 
 	public static final boolean DEFAULT_NOTIFICATION = false;
-	public static final boolean DEFAULT_KEEP_SMS = false;
 	public static final boolean DEFAULT_KEEP_SCREEN_ON = true;
 	public static final boolean DEFAULT_UNLOCK_SCREEN = true;
 	public static final boolean DEFAULT_AUTO_COPY = true;
