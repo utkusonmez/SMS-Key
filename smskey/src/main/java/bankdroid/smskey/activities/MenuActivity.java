@@ -8,9 +8,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import bankdroid.smskey.Codes;
-import bankdroid.smskey.Preferences;
 import bankdroid.smskey.R;
-import bankdroid.smskey.activities.AboutActivity;
 
 public class MenuActivity extends Activity implements Codes {
 
