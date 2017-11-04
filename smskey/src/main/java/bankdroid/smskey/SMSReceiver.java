@@ -1,6 +1,5 @@
 package bankdroid.smskey;
 
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -13,6 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
+import android.support.v4.app.NotificationCompat;
 import android.telephony.SmsMessage;
 import android.text.ClipboardManager;
 import android.util.Log;
@@ -73,8 +73,6 @@ public class SMSReceiver extends BroadcastReceiver implements Codes {
 				.toString(), message.getBank().getName());
 			final long when = System.currentTimeMillis();
 
-			final Notification notification = new Notification(icon, tickerText, when);
-
 			//set extended message
 			final CharSequence contentTitle = context.getText(R.string.notificationTitle);
 			final CharSequence contentText = MessageFormat.format(
@@ -88,20 +86,28 @@ public class SMSReceiver extends BroadcastReceiver implements Codes {
 			final PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent,
 				PendingIntent.FLAG_UPDATE_CURRENT);
 
-			notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
+			NotificationCompat.Builder notificationBuilder =
+				new NotificationCompat.Builder(context, "SMS-Key")
+				.setSmallIcon(icon)
+				.setBadgeIconType(icon)
+				.setTicker(tickerText)
+				.setWhen(when)
+				.setContentTitle(contentTitle)
+				.setContentText(contentText)
+				.setContentIntent(contentIntent);
+
 
 			if (playSound) {
 				final String ringtoneURI = settings.getString(PREF_NOTIFICATION_RINGTONE,
 					Settings.System.DEFAULT_NOTIFICATION_URI.toString());
 
 				if (ringtoneURI != null && !"".equals(ringtoneURI)) {
-					notification.audioStreamType = AudioManager.STREAM_NOTIFICATION;
-					notification.sound = Uri.parse(ringtoneURI);
+					notificationBuilder.setSound(Uri.parse(ringtoneURI), AudioManager.STREAM_NOTIFICATION);
 				}
 			}
 
 			//display notification
-			nm.notify(NOTIFICATION_ID, notification);
+			nm.notify(NOTIFICATION_ID, notificationBuilder.build());
 		} else {
 			//start display activity directly.
 			final Intent myIntent = new Intent();
