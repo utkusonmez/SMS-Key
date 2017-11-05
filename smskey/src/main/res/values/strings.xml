@@ -118,6 +118,6 @@
 	<string name="gitHubSmsAddress">Original sender.</string>
 	<string name="gitHubSmsContent">Message content.</string>
 	<string name="gitHubSendDesc">Send sms content to author.</string>
-	<string name="gitHubSendWarning">For security purposes all numbers in original message was replaced by random one. Below You will find content that will be send.</string>
+	<string name="gitHubSendWarning">For security purposes all numbers in original message was replaced by random one. Below You will find content that will be sent.</string>
 
 </resources>

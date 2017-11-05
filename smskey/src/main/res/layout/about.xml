@@ -124,7 +124,6 @@
 				android:textSize="12sp"
 				android:gravity="right"
 				android:textColor="#777"
-				android:onClick="onProductInfo"
 				android:clickable="true"
 
 				android:layout_width="fill_parent"

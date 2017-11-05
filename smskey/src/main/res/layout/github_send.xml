@@ -69,7 +69,7 @@
 				android:id="@+id/githubSendSmsContent"/>
 
 			<LinearLayout
-				android:onClick="createGitHubIssue"
+				android:id="@+id/createGitHubIssueRow"
 				style="@style/button"
 				>
 

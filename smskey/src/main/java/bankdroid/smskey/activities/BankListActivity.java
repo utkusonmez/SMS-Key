@@ -19,6 +19,7 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.SimpleCursorAdapter.ViewBinder;
@@ -27,21 +28,29 @@ import android.widget.Toast;
 import bankdroid.smskey.Codes;
 import bankdroid.smskey.R;
 import bankdroid.smskey.bank.Bank;
+import bankdroid.util.PackageUtils;
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Bean;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.Extra;
+import org.androidannotations.annotations.OptionsItem;
+import org.androidannotations.annotations.OptionsMenu;
+import org.androidannotations.annotations.ViewById;
 
-/**
- * @author gyenes
- */
+@EActivity(R.layout.banklist)
+@OptionsMenu(R.menu.banklistmenu)
 public class BankListActivity extends MenuActivity implements Codes, OnItemClickListener, OnClickListener {
 	SimpleCursorAdapter adapter;
+	// @formatter:off
+	@ViewById(R.id.bankListView) ListView bankListView;
+	@ViewById(R.id.showAllCountry) CheckBox showAllCountry;
+	// @formatter:on
+
 	private boolean filtered = true;
 	private String userCountry;
 
-	@Override
-	protected void onCreate(final Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-
-		setContentView(R.layout.banklist);
-
+	@AfterViews
+	void init() {
 		final TelephonyManager telephony = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 		userCountry = telephony.getSimCountryIso().toUpperCase();
 		Log.d(TAG, "User's country: " + userCountry);
@@ -71,12 +80,11 @@ public class BankListActivity extends MenuActivity implements Codes, OnItemClick
 			}
 		});
 
-		final ListView list = (ListView) findViewById(R.id.bankListView);
-		list.setAdapter(adapter);
-		list.setOnItemClickListener(this);
-		registerForContextMenu(list);
+		bankListView.setAdapter(adapter);
+		bankListView.setOnItemClickListener(this);
+		registerForContextMenu(bankListView);
 
-		((Button) findViewById(R.id.showAllCountry)).setOnClickListener(this);
+		showAllCountry.setOnClickListener(this);
 	}
 
 	@Override
@@ -95,23 +103,13 @@ public class BankListActivity extends MenuActivity implements Codes, OnItemClick
 	}
 
 	private void startEdit(final long id) {
-		final Intent intent = new Intent(Intent.ACTION_EDIT);
-		intent.setClass(getBaseContext(), BankEditActivity.class);
-		intent.setData(Uri.withAppendedPath(CONTENT_URI, String.valueOf(id)));
-		startActivity(intent);
+		BankEditActivity_.intent(getBaseContext())
+			.action(Intent.ACTION_EDIT).data(Uri.withAppendedPath(CONTENT_URI, String.valueOf(id))).start();
 	}
 
-	@Override
-	public boolean onOptionsItemSelected(final MenuItem item) {
-		if (item.getItemId() == R.id.addBank) {
-			final Intent intent = new Intent(Intent.ACTION_INSERT);
-			intent.setData(CONTENT_URI);
-			intent.setClass(getBaseContext(), BankEditActivity.class);
-			startActivity(intent);
-			return true;
-		}
-
-		return super.onOptionsItemSelected(item);
+	@OptionsItem(R.id.addBank)
+	void addBank() {
+		BankEditActivity_.intent(getBaseContext()).action(Intent.ACTION_INSERT).data(CONTENT_URI).start();
 	}
 
 	@Override
@@ -137,13 +135,6 @@ public class BankListActivity extends MenuActivity implements Codes, OnItemClick
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(final Menu menu) {
-		final MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.banklistmenu, menu);
-		return true;
-	}
-
-	@Override
 	public void onClick(final View view) {
 		if (view.getId() == R.id.showAllCountry) {
 			setCursor();
@@ -151,7 +142,7 @@ public class BankListActivity extends MenuActivity implements Codes, OnItemClick
 	}
 
 	private void setCursor() {
-		filtered = !((CheckBox) findViewById(R.id.showAllCountry)).isChecked();
+		filtered = !showAllCountry.isChecked();
 
 		final Cursor old = adapter.getCursor();
 		if (old != null) {

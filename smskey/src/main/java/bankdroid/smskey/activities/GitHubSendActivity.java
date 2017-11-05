@@ -1,30 +1,35 @@
 package bankdroid.smskey.activities;
 
-import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.os.Bundle;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import bankdroid.smskey.R;
 import bankdroid.smskey.github.RetrofitGitHubService;
+import bankdroid.util.PackageUtils;
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Bean;
+import org.androidannotations.annotations.Click;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.Extra;
+import org.androidannotations.annotations.ViewById;
 
 import java.util.concurrent.ThreadLocalRandom;
 
+@EActivity(R.layout.github_send)
 public class GitHubSendActivity extends MenuActivity {
 
-	@Override
-	protected void onCreate(final Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.github_send);
+	// @formatter:off
+	@ViewById(R.id.githubSendSmsContent) EditText smsContent;
+	@ViewById(R.id.githubSendSmsAddress) EditText smsAddress;
+	@ViewById(R.id.githubSendFeedback) TextView feedback;
+	@Extra(INTENT_GITHUB_SEND_MESSAGE) String intentMessage;
+	@Extra(INTENT_GITHUB_SEND_ADDRESS) String intentAddress;
+	@Bean PackageUtils packageUtils;
+	// @formatter:on
 
-		EditText smsContent = (EditText) findViewById(R.id.githubSendSmsContent);
-		EditText smsAddress = (EditText) findViewById(R.id.githubSendSmsAddress);
-
-		Intent intent = getIntent();
-		smsContent.setText(filter(intent.getStringExtra(INTENT_GITHUB_SEND_MESSAGE)));
-		smsAddress.setText(intent.getStringExtra(INTENT_GITHUB_SEND_ADDRESS));
+	@AfterViews
+	void init() {
+		smsContent.setText(filter(intentMessage));
+		smsAddress.setText(intentAddress);
 	}
 
 	private String filter(String msg) {
@@ -40,23 +45,9 @@ public class GitHubSendActivity extends MenuActivity {
 		return sb.toString();
 	}
 
-	public void createGitHubIssue(View view) {
-		EditText smsContent = (EditText) findViewById(R.id.githubSendSmsContent);
-		EditText smsAddress = (EditText) findViewById(R.id.githubSendSmsAddress);
-
-		TextView feedback = (TextView) findViewById(R.id.githubSendFeedback);
+	@Click(R.id.createGitHubIssueRow)
+	void createGitHubIssue() {
 		new RetrofitGitHubService(feedback)
-			.execute(smsAddress.getText().toString(), smsContent.getText().toString(), getAppVersion());
-	}
-
-	private String getAppVersion() {
-		try {
-			final PackageManager manager = getPackageManager();
-			final PackageInfo info = manager.getPackageInfo(getPackageName(), 0);
-
-			return info.versionName;
-		} catch (PackageManager.NameNotFoundException e) {
-			return "";
-		}
+			.execute(smsAddress.getText().toString(), smsContent.getText().toString(), packageUtils.getAppVersion());
 	}
 }

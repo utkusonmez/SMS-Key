@@ -3,10 +3,8 @@ package bankdroid.smskey.activities;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -17,31 +15,30 @@ import android.widget.Toast;
 import bankdroid.smskey.BankManager;
 import bankdroid.smskey.Message;
 import bankdroid.smskey.R;
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.ViewById;
 
 import java.util.Date;
 
-/**
- * @author gyenes
- */
+@EActivity(R.layout.smslist)
 public class SMSListActivity extends MenuActivity implements OnItemClickListener {
 	private final static int DIALOG_KNOWN_SMS = 678;
+	// @formatter:off
+	@ViewById(R.id.smsListView) ListView smsListView;
+	// @formatter:on
 
 	private SimpleCursorAdapter adapter;
-
 	private String[] addresses;
 	private String[] bodies;
 	private long[] timestamps;
-
 	private int addressIndex;
 	private int bodyIndex;
 	private int timestampIndex;
 
-	@Override
-	protected void onCreate(final Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.smslist);
-
+	@AfterViews
+	void init() {
 		final Cursor cursor = getContentResolver().query(Uri.parse("content://sms/inbox"),
 			new String[]{"_id", "address", "person", "body", "date"}, null, null, "date DESC");
 
@@ -56,9 +53,8 @@ public class SMSListActivity extends MenuActivity implements OnItemClickListener
 
 		adapter = new SimpleCursorAdapter(this, R.layout.smslistitem, cursor, columns, names);
 
-		final ListView list = (ListView) findViewById(R.id.smsListView);
-		list.setAdapter(adapter);
-		list.setOnItemClickListener(this);
+		smsListView.setAdapter(adapter);
+		smsListView.setOnItemClickListener(this);
 	}
 
 	@Override
@@ -109,11 +105,8 @@ public class SMSListActivity extends MenuActivity implements OnItemClickListener
 			return;
 		}
 
-		final Intent intent = new Intent(getBaseContext(), GitHubSendActivity.class);
-		intent.setAction(ACTION_REDISPLAY);
-		intent.putExtra(INTENT_GITHUB_SEND_MESSAGE, body);
-		intent.putExtra(INTENT_GITHUB_SEND_ADDRESS, address);
-		startActivity(intent);
+		GitHubSendActivity_.intent(getBaseContext()).action(ACTION_REDISPLAY)
+			.extra(INTENT_GITHUB_SEND_MESSAGE, body).extra(INTENT_GITHUB_SEND_ADDRESS, address).start();
 	}
 
 	@Override

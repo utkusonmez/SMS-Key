@@ -99,7 +99,6 @@
 
 			<LinearLayout
 				android:id="@+id/codePanel"
-				android:onClick="onCopyAndClose"
 				style="@style/button"
 				android:layout_below="@id/messagePanel"
 				android:layout_marginLeft="20sp"

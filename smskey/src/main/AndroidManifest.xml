@@ -14,7 +14,7 @@
 		android:theme="@android:style/Theme.NoTitleBar">
 
 		<activity
-			android:name="bankdroid.smskey.activities.Main"
+			android:name=".activities.Main_"
 			android:label="@string/app_name"
 			android:launchMode="singleTop">
 			<intent-filter>
@@ -23,20 +23,26 @@
 			</intent-filter>
 		</activity>
 
-
 		<activity
-			android:name="bankdroid.smskey.activities.SMSOTPDisplay"
+			android:name=".activities.SMSOTPDisplay_"
 			android:label="@string/app_name"
 			android:launchMode="singleTask"/>
 
-		<receiver android:name=".SMSReceiver">
+		<activity
+			android:name=".activities.BankEditActivity_"
+			android:screenOrientation="portrait"/>
+		<activity android:name=".activities.Preferences"/>
+		<activity android:name=".activities.GitHubSendActivity_"/>
+		<activity android:name=".activities.AboutActivity_"/>
+		<activity android:name=".activities.SMSListActivity_"/>
+		<activity android:name=".activities.BankListActivity_"/>
+
+		<receiver android:name=".SMSReceiver_"
+				  android:permission="android.permission.BROADCAST_SMS">
 			<intent-filter android:priority="999">
 				<action android:name="android.provider.Telephony.SMS_RECEIVED"/>
 			</intent-filter>
 		</receiver>
-		<activity android:name="bankdroid.smskey.activities.Preferences"/>
-		<activity android:name="bankdroid.smskey.activities.GitHubSendActivity"/>
-
 
 		<provider
 			android:exported="false"
@@ -44,14 +50,6 @@
 			android:label="Banks"
 			android:enabled="true"
 			android:authorities="bankdroid.smskey.Bank"/>
-
-
-		<activity android:name="bankdroid.smskey.activities.AboutActivity"/>
-		<activity android:name="bankdroid.smskey.activities.SMSListActivity"/>
-		<activity android:name="bankdroid.smskey.activities.BankListActivity"/>
-		<activity
-			android:name=".activities.BankEditActivity"
-			android:screenOrientation="portrait"/>
 
 	</application>
 

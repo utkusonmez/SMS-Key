@@ -36,6 +36,15 @@ android {
 		targetSdkVersion 26
 		versionCode 54
 		versionName "3.13"
+		javaCompileOptions {
+			annotationProcessorOptions {
+				arguments = [
+					"logLevel"           : "TRACE",
+					"logAppenderConsole" : "true",
+					"resourcePackageName": "bankdroid.smskey"
+				]
+			}
+		}
 	}
 
 	signingConfigs {
@@ -62,9 +71,13 @@ android {
 		}
 	}
 
+	def AAVersion = '4.4.0'
 	dependencies {
 		compile project(':communication')
 
+		annotationProcessor "org.androidannotations:androidannotations:$AAVersion"
+
+		compile "org.androidannotations:androidannotations-api:$AAVersion"
 		compile 'com.android.support:support-compat:26.1.0'
 		compile 'com.google.code.gson:gson:2.8.0'
 		compile 'com.android.support:support-annotations:25.3.1'

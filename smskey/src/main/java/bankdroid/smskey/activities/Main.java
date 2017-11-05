@@ -24,13 +24,22 @@ import bankdroid.smskey.R;
 import bankdroid.smskey.SMSCheckerTask;
 import bankdroid.smskey.SMSCheckerTask.OnFinishListener;
 import bankdroid.smskey.bank.Bank;
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Click;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.ViewById;
 
 import java.util.List;
 
+@EActivity(R.layout.main)
 public class Main extends MenuActivity implements Codes {
 	private final static int DIALOG_NOCODE = 567;
 	private static final int PERMISSION_REQUEST_CODE = 123;
 	private static final int IGNORED_REQUEST_CODE = 0;
+
+	@ViewById(R.id.bankWarning)
+	View bankWarning;
+
 	private ProgressDialog progressDialog;
 
 	@Override
@@ -39,12 +48,14 @@ public class Main extends MenuActivity implements Codes {
 
 		Eula.show(this);
 
-		setContentView(R.layout.main);
-
-		if(ContextCompat.checkSelfPermission(getBaseContext(), Manifest.permission.READ_SMS) == PackageManager.PERMISSION_DENIED) {
+		if (ContextCompat.checkSelfPermission(getBaseContext(), Manifest.permission.READ_SMS) == PackageManager.PERMISSION_DENIED) {
 			ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_SMS}, IGNORED_REQUEST_CODE);
 		}
 
+		printSmsReceiversInfoIfDebug();
+	}
+
+	private void printSmsReceiversInfoIfDebug() {
 		if (BuildConfig.DEBUG) {
 			Intent smsRecvIntent = new Intent("android.provider.Telephony.SMS_RECEIVED");
 			List<ResolveInfo> infos = getPackageManager().queryBroadcastReceivers(smsRecvIntent, 0);
@@ -52,7 +63,10 @@ public class Main extends MenuActivity implements Codes {
 				Log.d(TAG, "Receiver: " + info.activityInfo.name + ", priority=" + info.priority);
 			}
 		}
+	}
 
+	@AfterViews
+	void showWarningIfNeeded() {
 		//find out whether there is any supported bank in the country
 		final TelephonyManager telephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
 		final String userCountry = telephonyManager.getSimCountryIso().toUpperCase();
@@ -64,22 +78,27 @@ public class Main extends MenuActivity implements Codes {
 			numberOfBanks = cursor.getCount();
 			cursor.close();
 		}
-
 		Log.d(TAG, "Number of banks in " + userCountry + " is " + numberOfBanks + ".");
-		findViewById(R.id.bankWarning).setVisibility(numberOfBanks > 0 ? View.GONE : View.VISIBLE);
+		bankWarning.setVisibility(numberOfBanks > 0 ? View.GONE : View.VISIBLE);
 	}
 
-	public void onSubmitSample(final View v) {
-		final Intent submitIntent = new Intent(getBaseContext(), SMSListActivity.class);
-		startActivity(submitIntent);
+	@Click(R.id.onSubmitSampleRow)
+	void onSubmitSample() {
+		SMSListActivity_.intent(getBaseContext()).start();
 	}
 
-	public void onViewLastCode(final View v) {
-		if(ContextCompat.checkSelfPermission(getBaseContext(), Manifest.permission.READ_SMS) == PackageManager.PERMISSION_DENIED) {
+	@Click(R.id.viewLastCodeRow)
+	void onViewLastCode() {
+		if (ContextCompat.checkSelfPermission(getBaseContext(), Manifest.permission.READ_SMS) == PackageManager.PERMISSION_DENIED) {
 			ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_SMS}, PERMISSION_REQUEST_CODE);
 		} else {
 			showSmsOTP();
 		}
+	}
+
+	@Click(R.id.onManageBankRow)
+	void onManageBank() {
+		BankListActivity_.intent(getBaseContext()).start();
 	}
 
 	@Override
@@ -123,15 +142,7 @@ public class Main extends MenuActivity implements Codes {
 	}
 
 	private void openSMSOTPDisplay(final Message message) {
-		final Intent intent = new Intent(getBaseContext(), SMSOTPDisplay.class);
-		intent.setAction(ACTION_REDISPLAY);
-		intent.putExtra(BANKDROID_SMSKEY_MESSAGE, message);
-		startActivity(intent);
-	}
-
-	public void onManageBank(final View v) {
-		final Intent bankListIntent = new Intent(getBaseContext(), BankListActivity.class);
-		startActivity(bankListIntent);
+		SMSOTPDisplay_.intent(getBaseContext()).action(ACTION_REDISPLAY).extra(BANKDROID_SMSKEY_MESSAGE, message).start();
 	}
 
 	@Override

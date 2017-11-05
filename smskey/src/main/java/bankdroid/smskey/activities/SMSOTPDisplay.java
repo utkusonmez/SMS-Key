@@ -27,6 +27,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import bankdroid.smskey.BankManager;
 import bankdroid.smskey.Codes;
@@ -37,19 +38,25 @@ import bankdroid.smskey.Formatters;
 import bankdroid.smskey.Message;
 import bankdroid.smskey.R;
 import bankdroid.smskey.SMSReceiver;
-import com.google.zxing.BarcodeFormat;
-import com.google.zxing.EncodeHintType;
-import com.google.zxing.MultiFormatWriter;
+import bankdroid.util.CodeUtils;
+import bankdroid.util.QRUtils;
 import com.google.zxing.WriterException;
-import com.google.zxing.common.BitMatrix;
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Bean;
+import org.androidannotations.annotations.Click;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.Extra;
+import org.androidannotations.annotations.OptionsItem;
+import org.androidannotations.annotations.OptionsMenu;
+import org.androidannotations.annotations.ViewById;
+import org.androidannotations.annotations.res.ColorRes;
 
-import java.io.Serializable;
 import java.util.Calendar;
-import java.util.EnumMap;
 import java.util.List;
-import java.util.Map;
 
-import static android.graphics.Color.BLACK;
+import static java.lang.String.format;
+
+
 
 /**
  * This view as able to display SMS one time passwords processed by {@link SMSReceiver}. Besides displayed the codes
@@ -71,50 +78,39 @@ import static android.graphics.Color.BLACK;
  * <li>displays transaction signing security warning</li>
  * <li>split code into group of numbers based on user preference</li>
  * </ul>
- *
- * @author user
  */
+@EActivity(R.layout.sod)
+@OptionsMenu(R.menu.sodmenu)
 public class SMSOTPDisplay extends MenuActivity implements Codes, CountDownListener, SensorEventListener {
 	private static final int FORCE_THRESHOLD = 900;
 
+	// @formatter:off
+	@ViewById(R.id.codeButton) TextView codeButton;
+	@ViewById(R.id.receivedAt) TextView receivedAt;
+	@ViewById(R.id.messageBody) TextView messageBody;
+	@ViewById(R.id.originatingAddress) TextView originatingAddress;
+	@ViewById(R.id.countDown) TextView countDownView;
+	@ViewById(R.id.securityWarning) TextView securityWarning;
+	@ViewById(R.id.qrCode) ImageView qrCode;
+	@ViewById(R.id.mainPanel) RelativeLayout mainPanel;
+	@Bean CodeUtils codeUtils;
+	@Bean QRUtils qrUtils;
+	@ColorRes(R.color.backgroundEnd) int backgroundColor;
+	@Extra(BANKDROID_SMSKEY_MESSAGE) Message intentMessage;
+	//@formatter:on
+
 	private Message message;
 	private CountDown countDown;
-
 	private SensorManager sensorManager;
 	private Sensor sensor;
 	private long lastUpdate = -1;
 	private float lastX, lastY, lastZ;
 	private SharedPreferences settings;
-
 	private MediaPlayer mediaPlayer;
 
-	private static String splitCode(String code, final int splitSize) {
-		if (splitSize != 0) {
-			final StringBuilder sb = new StringBuilder(code);
-
-			int size = sb.length();
-			int i = 0;
-			while (i + splitSize < size) {
-				i += splitSize;
-				sb.insert(i, " ");
-				i++;
-				size++;
-			}
-			code = sb.toString();
-		}
-		return code;
-	}
-
-	/**
-	 * Called when the activity is first created.
-	 */
-	@Override
-	public void onCreate(final Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-
+	@AfterViews
+	void init() {
 		Eula.show(this);
-
-		setContentView(R.layout.sod);
 
 		settings = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 		final boolean unlockScreen = settings.getBoolean(PREF_UNLOCK_SCREEN, DEFAULT_UNLOCK_SCREEN);
@@ -157,7 +153,7 @@ public class SMSOTPDisplay extends MenuActivity implements Codes, CountDownListe
 		}
 
 		final boolean keepScreenOn = settings.getBoolean(PREF_KEEP_SCREEN_ON, DEFAULT_KEEP_SCREEN_ON);
-		findViewById(R.id.codeButton).setKeepScreenOn(keepScreenOn);
+		codeButton.setKeepScreenOn(keepScreenOn);
 	}
 
 	private void playSound() {
@@ -186,29 +182,22 @@ public class SMSOTPDisplay extends MenuActivity implements Codes, CountDownListe
 		} else {
 			Log.e(TAG, "Notification sound URI is not available.");
 		}
-
 	}
 
 	private boolean processIntent() {
 		//process intent
 		final Intent intent = getIntent();
 
-		Serializable messageSource = null;
-		if (intent != null) {
-			messageSource = intent.getSerializableExtra(BANKDROID_SMSKEY_MESSAGE);
-		}
-
 		//check timestamp availability to make sure, that intent is not null, and correct intent is received.
-		if (messageSource instanceof Message) {
+		if (intentMessage != null) {
 			Log.d(TAG, "Set values based on new SMS intent.");
-			final Message message = (Message) messageSource;
 
 			//to avoid duplicate noise
-			final boolean newMessage = this.message == null || !this.message.equals(message);
-			setValues(message);
+			final boolean newMessage = this.message == null || !this.message.equals(intentMessage);
+			setValues(intentMessage);
 
 			if (ACTION_DISPLAY.equals(intent.getAction()))
-				BankManager.updateLastMessage(getApplicationContext(), message);
+				BankManager.updateLastMessage(getApplicationContext(), intentMessage);
 
 			if (newMessage && settings.getBoolean(PREF_PLAY_SOUND, DEFAULT_PLAY_SOUND)
 				&& intent.getBooleanExtra(BANKDROID_SMSKEY_PLAYSOUND, false)) {
@@ -240,8 +229,7 @@ public class SMSOTPDisplay extends MenuActivity implements Codes, CountDownListe
 		super.onSaveInstanceState(outState);
 
 		if (message != null) {
-			Log.d(TAG, "Values going to be saved for code: " + message.getCode() + "(" + message.getBank().getName()
-				+ ")");
+			Log.d(TAG, format("Values going to be saved for code: %s (%s)", message.getCode(), message.getBank().getName()));
 			outState.putSerializable(BANKDROID_SMSKEY_MESSAGE, message);
 		}
 	}
@@ -252,7 +240,7 @@ public class SMSOTPDisplay extends MenuActivity implements Codes, CountDownListe
 
 		if (savedInstanceState.containsKey(BANKDROID_SMSKEY_MESSAGE)) {
 			message = (Message) savedInstanceState.getSerializable(BANKDROID_SMSKEY_MESSAGE);
-			Log.d(TAG, "Values restored for code: " + message.getCode() + "(" + message.getBank().getName() + ")");
+			Log.d(TAG, format("Values restored for code: %s (%s)", message.getCode(), message.getBank().getName()));
 		}
 	}
 
@@ -260,28 +248,24 @@ public class SMSOTPDisplay extends MenuActivity implements Codes, CountDownListe
 		this.message = message;
 
 		if (message != null) {
-			Log.i(TAG, "One time password to display from Bank = " + message.getBank().getName());
+			Log.i(TAG, format("One time password to display from Bank = %s", message.getBank().getName()));
 			final CharSequence timestampText = Formatters.getTimstampFormat().format(message.getTimestamp());
 
 			//format code
 			String code = message.getCode();
 			final int splitSize = Integer.parseInt(settings.getString(PREF_SPLIT_CODE, DEFAULT_SPLIT_CODE));
-			code = splitCode(code, splitSize);
+			code = codeUtils.splitCode(code, splitSize);
 
-			((TextView) findViewById(R.id.codeButton)).setText(code);
-			((TextView) findViewById(R.id.receivedAt)).setText(getResources().getText(R.string.received_prefix)
-				.toString() + " " + timestampText);
-			((TextView) findViewById(R.id.messageBody)).setText(message.getMessage());
+			codeButton.setText(code);
+			receivedAt.setText(getResources().getText(R.string.received_prefix).toString() + " " + timestampText);
+			messageBody.setText(message.getMessage());
 
 			//TODO try to read bank name from contact list
-			((TextView) findViewById(R.id.originatingAddress)).setText(message.getOriginatingAddress());
+			originatingAddress.setText(message.getOriginatingAddress());
 
 			updateQRCode(code);
 
-			final TextView countDownView = (TextView) findViewById(R.id.countDown);
-
-			findViewById(R.id.securityWarning).setVisibility(
-				message.getBank().isTransactionSign(message.getMessage()) ? View.VISIBLE : View.GONE);
+			securityWarning.setVisibility(message.getBank().isTransactionSign(message.getMessage()) ? View.VISIBLE : View.GONE);
 
 			if (message.getBank().getExpiry() > 0) {
 				countDownView.setVisibility(View.VISIBLE);
@@ -300,17 +284,16 @@ public class SMSOTPDisplay extends MenuActivity implements Codes, CountDownListe
 				countDownView.setVisibility(View.GONE);
 			}
 		} else { //set empty message
-			((TextView) findViewById(R.id.codeButton)).setText(getResources().getText(R.string.nocode));
-			((TextView) findViewById(R.id.messageBody)).setText("");
-			((TextView) findViewById(R.id.originatingAddress)).setText("");
-			findViewById(R.id.receivedAt).setVisibility(View.GONE);
-			findViewById(R.id.countDown).setVisibility(View.GONE);
-			findViewById(R.id.securityWarning).setVisibility(View.GONE);
+			codeButton.setText(getResources().getText(R.string.nocode));
+			messageBody.setText("");
+			originatingAddress.setText("");
+			receivedAt.setVisibility(View.GONE);
+			countDownView.setVisibility(View.GONE);
+			securityWarning.setVisibility(View.GONE);
 		}
 	}
 
 	private void updateQRCode(String code) {
-		ImageView qr = (ImageView) findViewById(R.id.qrCode);
 		Display display = getWindowManager().getDefaultDisplay();
 		Point size = new Point();
 		display.getSize(size);
@@ -318,38 +301,11 @@ public class SMSOTPDisplay extends MenuActivity implements Codes, CountDownListe
 		int height = size.y;
 		int smaller = (int) (Math.min(width, height) * 0.60);
 		try {
-			Bitmap bitmap = encodeAsBitmap(code, smaller, smaller);
-			qr.setImageBitmap(bitmap);
+			Bitmap bitmap = qrUtils.encodeAsBitmap(code, smaller, smaller, backgroundColor);
+			qrCode.setImageBitmap(bitmap);
 		} catch (WriterException e) {
 			e.printStackTrace();
 		}
-	}
-
-	private Bitmap encodeAsBitmap(String str, int width, int height) throws WriterException {
-		int background = getResources().getColor(R.color.backgroundEnd);
-
-		BitMatrix result;
-		Map<EncodeHintType, Object> hints = new EnumMap<>(EncodeHintType.class);
-		hints.put(EncodeHintType.CHARACTER_SET, "UTF-8");
-		hints.put(EncodeHintType.MARGIN, 2); /* default = 4 */
-		try {
-			result = new MultiFormatWriter().encode(str, BarcodeFormat.QR_CODE, width, height, hints);
-		} catch (IllegalArgumentException iae) {
-			// Unsupported format
-			return null;
-		}
-		int w = result.getWidth();
-		int h = result.getHeight();
-		int[] pixels = new int[w * h];
-		for (int y = 0; y < h; y++) {
-			int offset = y * w;
-			for (int x = 0; x < w; x++) {
-				pixels[offset + x] = result.get(x, y) ? BLACK : background;
-			}
-		}
-		Bitmap bitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
-		bitmap.setPixels(pixels, 0, width, 0, 0, w, h);
-		return bitmap;
 	}
 
 	private CharSequence convertTime(final int expiry) {
@@ -382,33 +338,23 @@ public class SMSOTPDisplay extends MenuActivity implements Codes, CountDownListe
 		processIntent();
 	}
 
+	@Click(R.id.codePanel)
 	public void onCopyAndClose(final View v) {
 		if (message != null) {
 			((ClipboardManager) getSystemService(CLIPBOARD_SERVICE)).setText(message.getCode());
 		}
-
 		finish();
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(final Menu menu) {
-		final MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.sodmenu, menu);
-		return true;
+	@OptionsItem(R.id.menuBanks)
+	void menuBanks() {
+		BankListActivity_.intent(this).start();
 	}
 
-	@Override
-	public boolean onOptionsItemSelected(final MenuItem item) {
-		if (item.getItemId() == R.id.menuBanks) {
-			startActivity(new Intent(this, BankListActivity.class));
-			return true;
-		}
-		if (item.getItemId() == R.id.menuClear) {
-			Log.d(TAG, "Clear menu selected.");
-			setValues(null);
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
+	@OptionsItem(R.id.menuClear)
+	void menuClear() {
+		Log.d(TAG, "Clear menu selected.");
+		setValues(null);
 	}
 
 	@Override
@@ -418,13 +364,13 @@ public class SMSOTPDisplay extends MenuActivity implements Codes, CountDownListe
 
 	@Override
 	public void tick(final int remainingSec) {
-		final TextView countDown = (TextView) findViewById(R.id.countDown);
+		final TextView countDown = countDownView;
 		countDown.setText(getResources().getText(R.string.countdown_prefix).toString() + " "
 			+ convertTime(remainingSec));
 	}
 
 	@Override
-	public void onAccuracyChanged(final Sensor s, final int valu) {
+	public void onAccuracyChanged(final Sensor s, final int value) {
 		//do nothing
 	}
 

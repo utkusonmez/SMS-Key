@@ -15,35 +15,41 @@ import android.provider.Settings;
 import android.support.v4.app.NotificationCompat;
 import android.telephony.SmsMessage;
 import android.text.ClipboardManager;
-import bankdroid.smskey.activities.SMSOTPDisplay;
+import bankdroid.smskey.activities.SMSOTPDisplay_;
+import org.androidannotations.annotations.EReceiver;
+import org.androidannotations.annotations.ReceiverAction;
 
 import java.text.MessageFormat;
 import java.util.Calendar;
 
+@EReceiver
 public class SMSReceiver extends BroadcastReceiver implements Codes {
 	private static final String ACTION = "android.provider.Telephony.SMS_RECEIVED";
 
-	@Override
-	public void onReceive(final Context context, final Intent intent) {
-		if (ACTION.equals(intent.getAction())) {
-			final Bundle bundle = intent.getExtras();
-			if (bundle != null) {
-				//retrieve the SMS message received
-				final Object[] pdus = (Object[]) bundle.get("pdus");
+	@ReceiverAction(actions = ACTION)
+	void smsReceived(final Context context, final Intent intent) {
+		final Bundle bundle = intent.getExtras();
+		if (bundle != null) {
+			//retrieve the SMS message received
+			final Object[] pdus = (Object[]) bundle.get("pdus");
 
-				final SmsMessage sms = SmsMessage.createFromPdu((byte[]) pdus[0]);
+			final SmsMessage sms = SmsMessage.createFromPdu((byte[]) pdus[0]);
 
-				final String originatingAddress = sms.getOriginatingAddress();
-				final String message = sms.getMessageBody();
+			final String originatingAddress = sms.getOriginatingAddress();
+			final String message = sms.getMessageBody();
 
-				final Message code = BankManager.getCode(context, originatingAddress, message, Calendar.getInstance()
-					.getTime(), true);
+			final Message code = BankManager.getCode(context, originatingAddress, message, Calendar.getInstance()
+				.getTime(), true);
 
-				if (code != null) {
-					processCode(context, code);
-				}
+			if (code != null) {
+				processCode(context, code);
 			}
 		}
+	}
+
+	@Override
+	public void onReceive(final Context context, final Intent intent) {
+		// empty, will be overridden in generated subclass
 	}
 
 	private void processCode(final Context context, final Message message) {
@@ -76,10 +82,11 @@ public class SMSReceiver extends BroadcastReceiver implements Codes {
 			final CharSequence contentText = MessageFormat.format(
 				context.getText(R.string.notificationText).toString(), message.getBank().getName());
 
-			final Intent notificationIntent = new Intent(context, SMSOTPDisplay.class);
-			notificationIntent.setAction(ACTION_DISPLAY);
-			notificationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-			notificationIntent.putExtra(BANKDROID_SMSKEY_MESSAGE, message);
+
+			final Intent notificationIntent = SMSOTPDisplay_.intent(context)
+				.action(ACTION_DISPLAY)
+				.flags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK)
+				.extra(BANKDROID_SMSKEY_MESSAGE, message).get();
 
 			final PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent,
 				PendingIntent.FLAG_UPDATE_CURRENT);
@@ -94,7 +101,6 @@ public class SMSReceiver extends BroadcastReceiver implements Codes {
 				.setContentText(contentText)
 				.setContentIntent(contentIntent);
 
-
 			if (playSound) {
 				final String ringtoneURI = settings.getString(PREF_NOTIFICATION_RINGTONE,
 					Settings.System.DEFAULT_NOTIFICATION_URI.toString());
@@ -108,13 +114,11 @@ public class SMSReceiver extends BroadcastReceiver implements Codes {
 			nm.notify(NOTIFICATION_ID, notificationBuilder.build());
 		} else {
 			//start display activity directly.
-			final Intent myIntent = new Intent();
-			myIntent.setAction(ACTION_DISPLAY);
-			myIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-			myIntent.setClass(context, SMSOTPDisplay.class);
-			myIntent.putExtra(BANKDROID_SMSKEY_MESSAGE, message);
-			myIntent.putExtra(BANKDROID_SMSKEY_PLAYSOUND, playSound);
-			context.startActivity(myIntent);
+			SMSOTPDisplay_.intent(context)
+				.action(ACTION_DISPLAY)
+				.flags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK)
+				.extra(BANKDROID_SMSKEY_MESSAGE, message)
+				.extra(BANKDROID_SMSKEY_PLAYSOUND, playSound).start();
 		}
 	}
 }

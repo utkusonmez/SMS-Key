@@ -56,7 +56,7 @@
 
 
 				<LinearLayout
-					android:onClick="onViewLastCode"
+					android:id="@+id/viewLastCodeRow"
 					style="@style/button"
 					>
 
@@ -81,7 +81,7 @@
 
 
 				<LinearLayout
-					android:onClick="onSubmitSample"
+					android:id="@+id/onSubmitSampleRow"
 					style="@style/button"
 					>
 
@@ -100,7 +100,7 @@
 
 
 				<LinearLayout
-					android:onClick="onManageBank"
+					android:id="@+id/onManageBankRow"
 					style="@style/button"
 					>
 
