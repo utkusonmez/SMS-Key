@@ -33,18 +33,6 @@
 			android:key="bankdroid.smskey.NotificationRingtone"/>
 
 		<CheckBoxPreference
-			android:title="@string/keepSMS"
-			android:defaultValue="false"
-			android:summary="@string/keepSMSSummary"
-			android:key="bankdroid.smskey.KeepSMS"/>
-
-		<CheckBoxPreference
-			android:title="@string/keepScreenOn"
-			android:defaultValue="true"
-			android:summary="@string/keepScreenOnSummary"
-			android:key="bankdroid.smskey.KeepScreenOn"/>
-
-		<CheckBoxPreference
 			android:title="@string/unlockScreen"
 			android:defaultValue="true"
 			android:summary="@string/unlockScreenSummary"

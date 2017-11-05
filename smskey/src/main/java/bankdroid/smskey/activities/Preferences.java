@@ -1,4 +1,4 @@
-package bankdroid.smskey;
+package bankdroid.smskey.activities;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -21,6 +21,10 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.Toast;
 import bankdroid.campaign.CampaignManager;
+import bankdroid.smskey.BankManager;
+import bankdroid.smskey.BankProvider;
+import bankdroid.smskey.Codes;
+import bankdroid.smskey.R;
 import bankdroid.smskey.bank.Bank;
 import bankdroid.util.ErrorLogger;
 

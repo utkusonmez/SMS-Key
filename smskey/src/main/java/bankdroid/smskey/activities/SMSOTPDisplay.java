@@ -10,13 +10,14 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.provider.Settings;
 import android.text.ClipboardManager;
 import android.util.Log;
 import android.view.Display;
@@ -170,7 +171,7 @@ public class SMSOTPDisplay extends MenuActivity implements Codes, CountDownListe
 
 	private void playSound() {
 		final String ringtoneURI = settings.getString(PREF_NOTIFICATION_RINGTONE,
-			Settings.System.DEFAULT_NOTIFICATION_URI.toString());
+			RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION).toString());
 
 		if (ringtoneURI != null && !"".equals(ringtoneURI)) {
 			try {
@@ -179,7 +180,9 @@ public class SMSOTPDisplay extends MenuActivity implements Codes, CountDownListe
 					if (mediaPlayer == null) {
 						mediaPlayer = new MediaPlayer();
 						mediaPlayer.setDataSource(this, Uri.parse(ringtoneURI));
-						mediaPlayer.setAudioStreamType(AudioManager.STREAM_NOTIFICATION);
+						AudioAttributes audioAttributes = new AudioAttributes.Builder()
+							.setLegacyStreamType(AudioManager.STREAM_NOTIFICATION).build();
+						mediaPlayer.setAudioAttributes(audioAttributes);
 						mediaPlayer.setLooping(false);
 						mediaPlayer.prepare();
 					}
@@ -188,7 +191,6 @@ public class SMSOTPDisplay extends MenuActivity implements Codes, CountDownListe
 				}
 			} catch (final Exception e) {
 				Log.e(TAG, "Failed to play notification sound.", e);
-				Toast.makeText(this, "Failed to play notification sound.", Toast.LENGTH_SHORT);
 			}
 		} else {
 			Log.e(TAG, "Notification sound URI is not available.");
