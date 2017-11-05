@@ -24,8 +24,10 @@ android {
 	sourceCompatibility = '1.7'
 
 	lintOptions {
-		checkReleaseBuilds false
+		checkReleaseBuilds true
 		abortOnError false
+
+		disable 'MissingTranslation'
 	}
 
 	defaultConfig {
