@@ -30,7 +30,6 @@
 	<string name="menuClear">Vymazat</string>
 	<string name="menuBanks">Banky</string>
 	<string name="menuPref">Předvolby</string>
-	<string name="menuUserGuide">Informace</string>
 	<string name="menuAbout">O aplikaci</string>
 	<string name="app_name">SMS Key TM</string>
 	<string name="received.prefix">Došlo : </string>
@@ -80,7 +79,6 @@
 	<string name="btnViewLast">Zobrazit poslední kód</string>
 	<string name="btnManageBanks">Správa bank</string>
 	<string name="btnSubmitSample">Odeslat vzorek</string>
-	<string name="btnInfoSite">Informace</string>
 	<string name="descViewLast">Připomeňme si poslední SMS kód</string>
 	<string name="descManageBanks">Udržovat banky sami ...</string>
 	<string name="descSubmitSample">Vaše banka zatím není podporováno</string>
@@ -93,8 +91,6 @@
 	<string name="aboutDesc">SMS Key je produktem open source projektu BankDroid. Vyvinuto programátory dobrovolníky.</string>
 	<string name="aboutDesc2">Pokud budete mít jakýkoliv problém s aplikací, nebo zájem o nové funkce, neváhejte nás kontaktovat.</string>
 	<string name="aboutUrl2">www.bankdroid.info</string>
-	<string name="donateButton">Podpořit vývoj darem</string>
-	<string name="donateButtonDesc">Pomoz mi na přímé náklady přes PayPal</string>
 
 	<!-- EULA -->
 	<string name="eula_title">Licence</string>

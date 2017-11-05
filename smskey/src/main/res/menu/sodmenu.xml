@@ -16,11 +16,6 @@
 		android:icon="@android:drawable/ic_menu_preferences"
 		/>
 	<item
-		android:id="@+id/menuUserGuide"
-		android:title="@string/menuUserGuide"
-		android:icon="@android:drawable/ic_menu_help"
-		/>
-	<item
 		android:id="@+id/menuAbout"
 		android:title="@string/menuAbout"
 		android:icon="@android:drawable/ic_menu_info_details"

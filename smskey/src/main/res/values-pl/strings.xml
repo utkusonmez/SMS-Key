@@ -26,7 +26,6 @@
 	<string name="menuClear">Wyczyść</string>
 	<string name="menuBanks">Banki</string>
 	<string name="menuPref">Ustawienia</string>
-	<string name="menuUserGuide">Pomoc Online</string>
 	<string name="menuAbout">O programie</string>
 	<string name="app_name">SMS Key TM</string>
 	<string name="received.prefix">Otrzymano: </string>
@@ -58,8 +57,6 @@
 	<string name="shakeToCopySummary">Skopiuj kod i zamknij SMS Key poprzez potrząśnięcie telefonem</string>
 	<string name="playSound">Odtwórz dźwięk</string>
 	<string name="playSoundSummary">Odtwórz dźwięk, gdy przyjdzie SMS</string>
-	<string name="resetCampaign">Resetowanie kampanii</string>
-	<string name="resetCampaignSummary">Resetuj ukryte kampanie</string>
 	<string name="notificationRingtone">Dzwonek powiadomienia</string>
 	<string name="notificationRingtoneSummary">Dzwonek odtwarzany po odebraniu kodu</string>
 	<string name="resetDb">Resetowanie Bazy Banków</string>
@@ -67,7 +64,6 @@
 	<string name="developerPrefs">Ustawienia programisty</string>
 	<string name="genericPrefs">Ustawienia ogólne</string>
 	<string name="msgDbReset">Baza danych została wyczyszczona.</string>
-	<string name="msgCampaignReset">Ukryte kampanie zostały pomyślnie zresetowana.</string>
 	<string name="msgAreYouSure">Czy jesteś pewien?</string>
 	<string name="yes">Tak</string>
 	<string name="no">Nie</string>
@@ -78,7 +74,6 @@
 	<string name="btnViewLast">Pokaż ostatni kod</string>
 	<string name="btnManageBanks">Zarządzaj Bankami</string>
 	<string name="btnSubmitSample">Wyślij przykład</string>
-	<string name="btnInfoSite">Pomoc Online</string>
 	<string name="descViewLast">Wyświetla ponownie ostatniego SMSa.</string>
 	<string name="descManageBanks">Zarządzaj Bankami samodzielnie...</string>
 	<string name="descSubmitSample">Twój Bank nie jest jeszcze obsługiwany?</string>
@@ -92,15 +87,9 @@
 	<string name="aboutDesc">SMS Key jest projektem open source stworzonym przez BankDroid. Jest tworzony przez programistów wolontariuszy.</string>
 	<string name="aboutDesc2">Jeśli masz problem z aplikacją, albo chciałbyś w nim zobaczyć jakąś nową funkcję, skontaktuj się z nami.</string>
 	<string name="aboutUrl2">www.bankdroid.info</string>
-	<string name="donateButton">Wspomóż nas</string>
-	<string name="donateButtonDesc">Wspomóż nas poprzez PayPal</string>
 	<string name="eula_title">Licencja</string>
 	<string name="eula_accept">Akceptuj</string>
 	<string name="eula_refuse">Odrzuć</string>
-	<string name="campaignRate">Oceń SMS Key TM w Markecie i powiedz z którego banku korzystasz!</string>
-	<string name="campaignFacebook">Czy podoba Ci się aplikacja? Pokaż ją innym na Facebooku ...</string>
-	<string name="campaignDonate1">Ponad 150 kodów było wyświetlonych.</string>
-	<string name="campaignDonate2">Wspomóż przez PayPal...</string>
 
 	<!-- GitHub integration -->
 	<string name="gitHubSmsAddress">Nadawca.</string>

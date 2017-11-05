@@ -48,45 +48,6 @@
 				/>
 
 			<ImageView
-				android:id="@+id/facebookIcon"
-				android:src="@drawable/icon_facebook"
-				android:background="@drawable/button"
-				android:onClick="onFacebook"
-				android:padding="2sp"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_below="@id/productId"
-				android:layout_alignLeft="@id/productId"
-				android:visibility="invisible"
-				/>
-
-			<ImageView
-				android:id="@+id/twitterIcon"
-				android:src="@drawable/icon_twitter"
-				android:background="@drawable/button"
-				android:onClick="onTwitter"
-				android:padding="2sp"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_below="@id/productId"
-				android:layout_toRightOf="@id/facebookIcon"
-				android:visibility="invisible"
-				/>
-
-			<ImageView
-				android:id="@+id/gmailIcon"
-				android:src="@drawable/icon_gmail"
-				android:background="@drawable/button"
-				android:onClick="onMail"
-				android:padding="2sp"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_below="@id/productId"
-				android:layout_toRightOf="@id/twitterIcon"
-				android:visibility="invisible"
-				/>
-
-			<ImageView
 				android:id="@+id/logo"
 				android:scaleType="fitCenter"
 				android:src="@drawable/icon_about"
@@ -96,7 +57,8 @@
 
 				android:layout_alignParentTop="true"
 				android:layout_alignParentLeft="true"
-				android:layout_alignBottom="@id/gmailIcon"
+				android:layout_below="@id/productId"
+				android:layout_alignLeft="@id/productId"
 				/>
 
 
@@ -106,7 +68,7 @@
 				android:layout_width="fill_parent"
 				android:layout_height="2sp"
 				android:scaleType="fitXY"
-				android:layout_below="@id/gmailIcon"
+				android:layout_below="@id/logo"
 				/>
 
 			<TextView
@@ -175,28 +137,6 @@
 				/>
 
 		</RelativeLayout>
-
-		<LinearLayout
-			android:onClick="onDonate"
-			style="@style/button"
-			android:layout_marginLeft="20sp"
-			android:layout_marginRight="20sp"
-			android:visibility="invisible"
-			>
-
-			<TextView
-				android:text="@string/donateButton"
-				android:drawableLeft="@drawable/icon_submitsample"
-
-				style="@style/buttonTitle"
-				/>
-
-			<TextView
-				android:text="@string/donateButtonDesc"
-				style="@style/buttonComment"
-				/>
-		</LinearLayout>
-
 	</LinearLayout>
 
 </ScrollView>

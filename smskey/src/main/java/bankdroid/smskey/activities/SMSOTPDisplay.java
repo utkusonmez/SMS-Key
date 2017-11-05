@@ -27,10 +27,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-import bankdroid.campaign.CampaignManager;
 import bankdroid.smskey.BankManager;
 import bankdroid.smskey.Codes;
 import bankdroid.smskey.CountDown;
@@ -91,8 +88,6 @@ public class SMSOTPDisplay extends MenuActivity implements Codes, CountDownListe
 
 	private MediaPlayer mediaPlayer;
 
-	private CampaignManager campaignManager;
-
 	private static String splitCode(String code, final int splitSize) {
 		if (splitSize != 0) {
 			final StringBuilder sb = new StringBuilder(code);
@@ -136,8 +131,6 @@ public class SMSOTPDisplay extends MenuActivity implements Codes, CountDownListe
 				sensor = sensors.get(0);
 			}
 		}
-		campaignManager = new CampaignManager(this);
-
 	}
 
 	@Override
@@ -165,8 +158,6 @@ public class SMSOTPDisplay extends MenuActivity implements Codes, CountDownListe
 
 		final boolean keepScreenOn = settings.getBoolean(PREF_KEEP_SCREEN_ON, DEFAULT_KEEP_SCREEN_ON);
 		findViewById(R.id.codeButton).setKeepScreenOn(keepScreenOn);
-
-		campaignManager.show((RelativeLayout) findViewById(R.id.mainPanel));
 	}
 
 	private void playSound() {

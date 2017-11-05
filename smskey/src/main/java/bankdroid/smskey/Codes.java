@@ -3,33 +3,19 @@ package bankdroid.smskey;
 import android.net.Uri;
 
 public interface Codes {
-	public static final String DEFAULT_COUNTRY = "HU";
-
-	public static final String FACEBOOK_URL = "http://goo.gl/1TZ9x";
-	public static final String TWITTER_URL = "http://twitter.com/bankdroid";
-
-	public static final String GMAIL_URL = "mailto:info@bankdroid.info";
-	public static final String SUBMISSION_ADDRESS = "sample@bankdroid.info";
-
-	public static final String URL_PROJECT_HOME = "http://goo.gl/9oiKb";
-	public static final String URL_HELP = "http://goo.gl/Kpxbk";
-	public static final String URL_HOME_PAGE = "http://goo.gl/gIVFJ";
-	public static final String URL_BANK_LIST = "http://goo.gl/ukYYk";
-	public static final String URL_MARKET_DETAILS = "http://goo.gl/3skg0";
-	public static final String URL_PAYPAL = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6LYSJ5ATUZRFJ";
+	public static final String SUBMISSION_ADDRESS = "smskey@vmails.pl";
 
 	public static final String BANKDROID_SMSKEY_PLAYSOUND = "bankdroid.smskey.PlaySound";
 	public static final String BANKDROID_SMSKEY_MESSAGE = "bankdroid.smskey.SMSMessage";
 	public static final String BANKDROID_SMSKEY_BANK = "bankdroid.smskey.Bank";
 
-	public static final String GITHUB_SEND_MESSAGE = "bankdroid.smskey.githubsend.message";
-	public static final String GITHUB_SEND_ADDRESS = "bankdroid.smskey.githubsend.address";
+	public static final String INTENT_GITHUB_SEND_MESSAGE = "bankdroid.smskey.githubsend.message";
+	public static final String INTENT_GITHUB_SEND_ADDRESS = "bankdroid.smskey.githubsend.address";
 
 	public static final String PREF = "bankdroid.smskey";
 	public static final String PREF_NOTIFICATION = "bankdroid.smskey.Notification";
 	public static final String PREF_KEEP_SCREEN_ON = "bankdroid.smskey.KeepScreenOn";
 	public static final String PREF_RESET_DB = "bankdroid.smskey.ResetDb";
-	public static final String PREF_RESET_CAMPAIGN = "bankdroid.smskey.ResetCampaign";
 	public static final String PREF_UNLOCK_SCREEN = "bankdroid.smskey.UnlockScreen";
 	public static final String PREF_AUTO_COPY = "bankdroid.smskey.AutoCopy";
 	public static final String PREF_SHAKE_TO_COPY = "bankdroid.smskey.ShakeToCopy";

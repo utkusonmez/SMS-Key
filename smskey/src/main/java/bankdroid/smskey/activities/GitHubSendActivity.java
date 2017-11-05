@@ -23,8 +23,8 @@ public class GitHubSendActivity extends MenuActivity {
 		EditText smsAddress = (EditText) findViewById(R.id.githubSendSmsAddress);
 
 		Intent intent = getIntent();
-		smsContent.setText(filter(intent.getStringExtra(GITHUB_SEND_MESSAGE)));
-		smsAddress.setText(intent.getStringExtra(GITHUB_SEND_ADDRESS));
+		smsContent.setText(filter(intent.getStringExtra(INTENT_GITHUB_SEND_MESSAGE)));
+		smsAddress.setText(intent.getStringExtra(INTENT_GITHUB_SEND_ADDRESS));
 	}
 
 	private String filter(String msg) {

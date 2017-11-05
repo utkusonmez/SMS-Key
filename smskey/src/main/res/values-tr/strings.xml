@@ -25,7 +25,6 @@
 	<string name="menuClear">Temizle</string>
 	<string name="menuBanks">Bankalar</string>
 	<string name="menuPref">Tercihler</string>
-	<string name="menuUserGuide">Çevrimiçi Yardım</string>
 	<string name="menuAbout">Hakkında</string>
 	<string name="app_name">SMS Key TM</string>
 	<string name="received.prefix">Alındığı saat: </string>
@@ -66,7 +65,6 @@
 	<string name="btnViewLast">Son kodu görüntüle</string>
 	<string name="btnManageBanks">Bankaları yönet</string>
 	<string name="btnSubmitSample">Örnek gönder</string>
-	<string name="btnInfoSite">Çevrimiçi Yardım</string>
 	<string name="descViewLast">Son kod SMS\'ini geri çağır.</string>
 	<string name="descManageBanks">Banka listesini kendiniz yönetin...</string>
 	<string name="descSubmitSample">Bankanız henüz desteklenmiyor mu?</string>
@@ -77,8 +75,6 @@
 	<string name="aboutDesc">SMS Key bir BankDroid açık kaynak projesi ürünüdür. Gönüllü programcılar tarafından geliştirilmiştir.</string>
 	<string name="aboutDesc2">Bu uygulamada herhangi bir sorunla karşılaşırsanız veya bazı yeni özellikler hakkında bilgi sahibi olmak isterseniz, bizimle iletişime geçebilirsiniz.</string>
 	<string name="aboutUrl2">www.bankdroid.info</string>
-	<string name="donateButton">Bağışta bulun</string>
-	<string name="donateButtonDesc">PayPal yoluyla doğrudan yardımda bulunun</string>
 	<string name="eula_title">Lisans</string>
 	<string name="eula_accept">Kabul et</string>
 	<string name="eula_refuse">Reddet</string>

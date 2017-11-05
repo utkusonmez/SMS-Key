@@ -31,7 +31,6 @@
 	<string name="menuClear">Kód törlése</string>
 	<string name="menuBanks">Bankok</string>
 	<string name="menuPref">Beállítások</string>
-	<string name="menuUserGuide">Leírás</string>
 	<string name="menuAbout">Névjegy</string>
 	<string name="app_name">SMS Key TM</string>
 	<string name="received.prefix">Érkezett: </string>
@@ -71,8 +70,6 @@
 	<string name="shakeToCopySummary">Ha megrázod a készüléket, az alkalmazás bezáródik és a kód vágólapra kerül.</string>
 	<string name="playSound">Értesítési hang</string>
 	<string name="playSoundSummary">Értesítési hang lejátszása, ha kód érkezik.</string>
-	<string name="resetCampaign">Kampány adat törlés</string>
-	<string name="resetCampaignSummary">Már elrejtett kampányok újra aktiválása</string>
 	<string name="notificationRingtone">Értesítési hang</string>
 	<string name="notificationRingtoneSummary">Hang lejátszása, ha új kód érkezik</string>
 	<string name="resetDb">Bank DB visszaállítás</string>
@@ -80,7 +77,6 @@
 	<string name="developerPrefs">Fejlesztő beállítások</string>
 	<string name="genericPrefs">Általános beállítások</string>
 	<string name="msgDbReset">A bank adatbázis visszaállításra került.</string>
-	<string name="msgCampaignReset">The hidden campaigns were reset successfully.</string>
 	<string name="msgAreYouSure">Biztos benne?</string>
 	<string name="yes">Igen</string>
 	<string name="no">Nem</string>
@@ -95,7 +91,6 @@
 	<string name="btnViewLast">Utolsó jelszó</string>
 	<string name="btnManageBanks">Bankok kezelése</string>
 	<string name="btnSubmitSample">Minta beküldése</string>
-	<string name="btnInfoSite">Infó oldalak (angol)</string>
 	<string name="descViewLast">Utolsó kód megjelenítése</string>
 	<string name="descManageBanks">Beállíthatsz saját bankokat magadnak</string>
 	<string name="descSubmitSample">A te bankodat még nem támogatja a program?</string>
@@ -111,19 +106,12 @@
 	<string name="aboutDesc">Az SMS Key a BankDroid nyíltforráskódú project terméke, önkéntes programozók munkája.</string>
 	<string name="aboutDesc2">Amennyiben hibát észlelsz, vagy új ötleted van az alkalmazással kapcsolatban, örömmel vesszük a visszajelzéseket.</string>
 	<string name="aboutUrl2">www.bankdroid.info</string>
-	<string name="donateButton">Támogatás</string>
-	<string name="donateButtonDesc">Segítsd pénzzel az alkalmazás fentartását</string>
 
 	<!-- EULA -->
 	<string name="eula_title">License</string>
 	<string name="eula_accept">Elfogad</string>
 	<string name="eula_refuse">Visszautasít</string>
 
-	<!-- Campaign -->
-	<string name="campaignRate">Értekeld az appot a Market, és írd meg kinél bankolsz!</string><!-- I18N -->
-	<string name="campaignFacebook">Tetszik az alkalmazás? Mutasd meg a többieknek...</string><!-- I18N -->
-	<string name="campaignDonate1">Túl vagy 150. kódon!</string>
-	<string name="campaignDonate2">PayPal adomány?</string>
 	<string name="errorLog">Hiba napló</string><!-- I18N -->
 
 </resources>

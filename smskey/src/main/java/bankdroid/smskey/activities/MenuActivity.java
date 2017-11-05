@@ -23,11 +23,6 @@ public class MenuActivity extends Activity implements Codes {
 			onPreferences(null);
 			return true;
 		}
-
-		if (item.getItemId() == R.id.menuUserGuide) {
-			onOnlineHelp(null);
-			return true;
-		}
 		return super.onOptionsItemSelected(item);
 	}
 
@@ -36,16 +31,6 @@ public class MenuActivity extends Activity implements Codes {
 		final MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.normalmenu, menu);
 		return true;
-	}
-
-	public void onProductInfo(final View v) {
-		final Intent viewIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL_HOME_PAGE));
-		startActivity(viewIntent);
-	}
-
-	public void onOnlineHelp(final View v) {
-		final Intent viewIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL_HELP));
-		startActivity(viewIntent);
 	}
 
 	public void onPreferences(final View v) {

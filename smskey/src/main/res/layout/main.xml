@@ -116,27 +116,6 @@
 						style="@style/buttonComment"
 						/>
 				</LinearLayout>
-
-
-				<LinearLayout
-					android:onClick="onProductInfo"
-					style="@style/button"
-					android:visibility="invisible">
-
-					<TextView
-						android:text="@string/btnInfoSite"
-						android:drawableLeft="@drawable/icon_infosite"
-
-						style="@style/buttonTitle"
-						/>
-
-					<TextView
-						android:text="@string/descInfoSite"
-						style="@style/buttonComment"
-						/>
-				</LinearLayout>
-
-
 			</LinearLayout>
 		</LinearLayout>
 	</ScrollView>

@@ -111,8 +111,8 @@ public class SMSListActivity extends MenuActivity implements OnItemClickListener
 
 		final Intent intent = new Intent(getBaseContext(), GitHubSendActivity.class);
 		intent.setAction(ACTION_REDISPLAY);
-		intent.putExtra(GITHUB_SEND_MESSAGE, body);
-		intent.putExtra(GITHUB_SEND_ADDRESS, address);
+		intent.putExtra(INTENT_GITHUB_SEND_MESSAGE, body);
+		intent.putExtra(INTENT_GITHUB_SEND_ADDRESS, address);
 		startActivity(intent);
 	}
 

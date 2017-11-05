@@ -26,7 +26,6 @@
 	<string name="menuClear">Löschen</string>
 	<string name="menuBanks">Banken</string>
 	<string name="menuPref">Präferenzen</string>
-	<string name="menuUserGuide">Online-Hilfe</string>
 	<string name="menuAbout">Über diese Anwendung</string>
 	<string name="app_name">SMS Key TM</string>
 	<string name="received.prefix">Angekommen am: </string>
@@ -58,8 +57,6 @@
 	<string name="shakeToCopySummary">Kopieren Sie den Code und schließen Sie SMS Key durch Schütteln des Telefons</string>
 	<string name="playSound">Sound abspielen</string>
 	<string name="playSoundSummary">Sound abspielen, wenn SMS empfangen wird</string>
-	<string name="resetCampaign">Zurücksetzen der Aktion</string>
-	<string name="resetCampaignSummary">Zurücksetzen der versteckten Aktion</string>
 	<string name="notificationRingtone">Benachrichtigungs-Klingelton</string>
 	<string name="notificationRingtoneSummary">abzuspielender Klingelton, wenn Code empfangen wird</string>
 	<string name="resetDb">Bank-DB zurücksetzen</string>
@@ -67,7 +64,6 @@
 	<string name="developerPrefs">Entwickler Einstellungen</string>
 	<string name="genericPrefs">Allgemeine Einstellungen</string>
 	<string name="msgDbReset">Die Banken DB wurde erfolgreich gelöscht.</string>
-	<string name="msgCampaignReset">Die versteckten Aktionen wurden erfolgreich zurückgesetzt.</string>
 	<string name="msgAreYouSure">Bist Du sicher?</string>
 	<string name="yes">Ja</string>
 	<string name="no">Nein</string>
@@ -78,7 +74,6 @@
 	<string name="btnViewLast">Letztes Muster anzeigen</string>
 	<string name="btnManageBanks">Banken verwalten</string>
 	<string name="btnSubmitSample">Muster einreichen</string>
-	<string name="btnInfoSite">Online Hilfe</string>
 	<string name="descViewLast">Zeige den letzten SMS-Code</string>
 	<string name="descManageBanks">Banken selbst verwalten...</string>
 	<string name="descSubmitSample">Deine Bank wird noch nicht unterstützt?</string>
@@ -92,13 +87,7 @@
 	<string name="aboutDesc">Die SMS Key ist ein Produkt des BankDroid open source Projekts. Entwickelt von freiwilligen Entwicklern.</string>
 	<string name="aboutDesc2">Wenn du mit der Anwendung Probleme hast oder gern zusätzliche Features hättest, wende dich gerne an uns.</string>
 	<string name="aboutUrl2">www.bankdroid.info</string>
-	<string name="donateButton">Spenden</string>
-	<string name="donateButtonDesc">Unterstütze unsere Arbeit mittels PayPal</string>
 	<string name="eula_title">Lizenz</string>
 	<string name="eula_accept">Akzeptieren</string>
 	<string name="eula_refuse">Ablehnen</string>
-	<string name="campaignRate">Bewerten Sie SMS Key TM im Market und sagen Sie, welche Bank Sie verwenden!</string>
-	<string name="campaignFacebook">Gefällt Ihnen die App? Zeigen Sie es Anderen auf Facebook...</string>
-	<string name="campaignDonate1">Mehr als 150 Codes wurden angezeigt.</string>
-	<string name="campaignDonate2">PayPal spenden...</string>
 </resources>

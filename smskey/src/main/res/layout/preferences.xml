@@ -66,12 +66,6 @@
 				android:summary="@string/resetDbSummary"
 				android:key="bankdroid.smskey.ResetDb"/>
 
-			<CheckBoxPreference
-				android:title="@string/resetCampaign"
-				android:defaultValue="false"
-				android:summary="@string/resetCampaignSummary"
-				android:key="bankdroid.smskey.ResetCampaign"/>
-
 			<Preference
 				android:title="@string/codeCount"
 				android:enabled="false"
