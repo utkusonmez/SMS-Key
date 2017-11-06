@@ -28,7 +28,7 @@ public class BankProvider extends ContentProvider implements Codes {
 		uriMatcher.addURI(PROVIDER_AUTHORITY, "banks", BANKS);
 		uriMatcher.addURI(PROVIDER_AUTHORITY, "banks/#", BANK_ID);
 
-		projectionMap = new HashMap<String, String>();
+		projectionMap = new HashMap<>();
 		projectionMap.put(Bank.F__ID, Bank.F__ID);
 		projectionMap.put(Bank.F_NAME, Bank.F_NAME);
 		projectionMap.put(Bank.F_VALIDITY, Bank.F_VALIDITY);

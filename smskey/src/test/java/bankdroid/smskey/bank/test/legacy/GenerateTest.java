@@ -10,7 +10,7 @@ public class GenerateTest {
 	public static void main(final String[] args) throws Exception {
 		final Bank[] defaultBanks = new BankDescriptor(null).getDefaultBanks();
 
-		final List<String> countries = new ArrayList<String>();
+		final List<String> countries = new ArrayList<>();
 		for (Bank defaultBank : defaultBanks) {
 			final String country = defaultBank.getCountryCode();
 			if (!countries.contains(country))

@@ -166,7 +166,7 @@ public class Preferences extends PreferenceActivity implements Codes, OnPreferen
 
 			//generate DB stats for debugging purposes
 			final Bank[] banks = BankManager.getAllBanks(this);
-			final HashSet<String> countries = new HashSet<String>();
+			final HashSet<String> countries = new HashSet<>();
 			for ( final Bank bank : banks )
 			{
 				countries.add(bank.getCountryCode());

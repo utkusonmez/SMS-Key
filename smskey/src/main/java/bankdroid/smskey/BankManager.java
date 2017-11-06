@@ -50,7 +50,7 @@ public final class BankManager implements Codes {
 		if (len == 0)
 			return new String[0];
 
-		final List<String> result = new ArrayList<String>();
+		final List<String> result = new ArrayList<>();
 		boolean wordStarted = false;
 		int wordStartIndex = -1;
 		boolean wordEscaped = false;
@@ -221,7 +221,7 @@ public final class BankManager implements Codes {
 				Bank.F_EXPRESSIONS}, null, null, Bank.DEFAULT_SORT_ORDER);
 
 		try {
-			final List<Bank> banks = new ArrayList<Bank>();
+			final List<Bank> banks = new ArrayList<>();
 			while (cursor.moveToNext()) {
 				final int id = cursor.getInt(0);
 				final String name = cursor.getString(1);
