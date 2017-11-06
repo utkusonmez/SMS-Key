@@ -3,7 +3,6 @@ package bankdroid.smskey.bank.test.legacy;
 import bankdroid.smskey.bank.Bank;
 import bankdroid.smskey.bank.BankDescriptor;
 import bankdroid.smskey.bank.Expression;
-import junit.framework.TestCase;
 
 import java.util.regex.Pattern;
 

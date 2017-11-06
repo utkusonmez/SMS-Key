@@ -1,6 +1,5 @@
 package bankdroid.smskey.bank.test.legacy;
 
-import android.content.Context;
 import bankdroid.smskey.bank.Bank;
 import bankdroid.smskey.bank.BankDescriptor;
 import bankdroid.smskey.bank.Expression;
