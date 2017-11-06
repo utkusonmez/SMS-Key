@@ -109,12 +109,8 @@ public class Bank implements Serializable, Cloneable {
 	}
 
 	public String extractCode(final String message) {
-		final Pattern[] lp = initPattern();
-
-		final int len = lp.length;
-
-		for (int i = 0; i < len; i++) {
-			final Matcher matcher = lp[i].matcher(message);
+		for (Pattern aLp : initPattern()) {
+			final Matcher matcher = aLp.matcher(message);
 			if (matcher.find())
 				return matcher.group(1);
 		}
@@ -176,10 +172,8 @@ public class Bank implements Serializable, Cloneable {
 	}
 
 	public boolean isBankPhoneNumber(final String phoneNumber) {
-		final String[] pn = phoneNumbers;
-		final int len = pn.length;
-		for (int i = 0; i < len; i++) {
-			if (pn[i].equals(phoneNumber))
+		for (String aPn : phoneNumbers) {
+			if (aPn.equals(phoneNumber))
 				return true;
 		}
 		return false;

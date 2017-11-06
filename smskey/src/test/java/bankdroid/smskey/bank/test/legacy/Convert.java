@@ -56,8 +56,8 @@ public class Convert {
 		final Bank[] defaultBanks = new BankDescriptor(null).getDefaultBanks();
 
 		final List<String> countries = new ArrayList<String>();
-		for (int i = 0; i < defaultBanks.length; i++) {
-			final String country = defaultBanks[i].getCountryCode();
+		for (Bank defaultBank : defaultBanks) {
+			final String country = defaultBank.getCountryCode();
 			if (!countries.contains(country))
 				countries.add(country);
 		}

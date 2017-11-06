@@ -48,8 +48,7 @@ class DatabaseHelper extends SQLiteOpenHelper {
 		try {
 			final Bank[] banks = new BankDescriptor(context).getDefaultBanks();
 			final ContentValues values = new ContentValues(9);
-			for (int i = 0; i < banks.length; i++) {
-				final Bank bank = banks[i];
+			for (final Bank bank : banks) {
 				values.clear();
 				values.put(Bank.F_NAME, bank.getName());
 				values.put(Bank.F_VALIDITY, bank.getExpiry());

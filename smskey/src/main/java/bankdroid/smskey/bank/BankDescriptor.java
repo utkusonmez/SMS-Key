@@ -53,11 +53,11 @@ public class BankDescriptor {
 		List<Bank> results = new ArrayList<>();
 
 		Field[] fields = R.raw.class.getFields();
-		for (int count = 0; count < fields.length; count++) {
-			int resourceID = fields[count].getInt(fields[count]);
+		for (Field field : fields) {
+			int resourceID = field.getInt(field);
 			List<Bank> banks = loadRawAsset(resourceID);
 			results.addAll(banks);
-			Log.i("Raw Asset: ", fields[count].getName());
+			Log.i("Raw Asset: ", field.getName());
 		}
 
 		return results;
