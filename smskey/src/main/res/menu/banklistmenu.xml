@@ -5,15 +5,6 @@
 		android:title="@string/addBank"
 		android:id="@+id/addBank"
 		android:icon="@android:drawable/ic_menu_add"
-		/>
-	<item
-		android:id="@+id/menuPreferences"
-		android:title="@string/menuPref"
-		android:icon="@android:drawable/ic_menu_preferences"
-		/>
-	<item
-		android:id="@+id/menuAbout"
-		android:title="@string/menuAbout"
-		android:icon="@android:drawable/ic_menu_info_details"
+		android:orderInCategory="5"
 		/>
 </menu>
