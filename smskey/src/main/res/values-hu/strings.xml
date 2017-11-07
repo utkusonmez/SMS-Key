@@ -26,7 +26,7 @@
 
 
 	<!-- SMS OTP Display Activity -->
-	<string name="copyright">SMS Key TM, BankDroid, 2009 (c)</string>
+	<string name="copyright">SMS Key TM, BankDroid, 2009 ©</string>
 	<string name="clickToClose">Tappints a kódra, vagy rázd meg a készüléket a másoláshoz és bezáráshoz.</string>
 	<string name="menuClear">Kód törlése</string>
 	<string name="menuBanks">Bankok</string>
@@ -97,7 +97,7 @@
 	<string name="descInfoSite">Nem érted mire jó ez a program?</string>
 	<string name="noMessageYet">Még egyetlen kódot sem fogadott az alkalmazás. (Megjegyzés: Az SMS Key csak az újonnan beérkező üzeneteket dolgozza fel. A korábbi üzeneteket nem értelmezi.)</string>
 	<string name="ok">Ok</string>
-	<string name="loading">Töltés...</string>
+	<string name="loading">Töltés…</string>
 	<string name="msgCheckForMessages">Az SMS-ek feldolgozása folyamatban.</string>
 	<string name="msgNoBankInCountry">Úgy néz ki, az országodban még nincs az SMS Key által támogatott bank.</string>
 

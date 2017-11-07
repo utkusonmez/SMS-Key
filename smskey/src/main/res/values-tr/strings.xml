@@ -20,7 +20,7 @@
 	<string name="noEmptyPhoneNumber">Boş telefon numaralarına izin verilmez.</string>
 	<string name="noEmptyExpression">Boş ifadelere izin verilmez.</string>
 	<string name="invalidExpression">Geçersiz ifade. Lütfen tekrar kontrol edin!</string>
-	<string name="copyright">SMS Key TM, BankDroid, 2009 (c)</string>
+	<string name="copyright">SMS Key TM, BankDroid, 2009 ©</string>
 	<string name="clickToClose">Kopyalayıp kapatmak için dokunun ya da sallayın.</string>
 	<string name="menuClear">Temizle</string>
 	<string name="menuBanks">Bankalar</string>
@@ -66,7 +66,7 @@
 	<string name="btnManageBanks">Bankaları yönet</string>
 	<string name="btnSubmitSample">Örnek gönder</string>
 	<string name="descViewLast">Son kod SMS\'ini geri çağır.</string>
-	<string name="descManageBanks">Banka listesini kendiniz yönetin...</string>
+	<string name="descManageBanks">Banka listesini kendiniz yönetin…</string>
 	<string name="descSubmitSample">Bankanız henüz desteklenmiyor mu?</string>
 	<string name="descInfoSite">Bu uygulamanın ne işe yaradığını anlayamadınız mı?</string>
 	<string name="noMessageYet">Henüz herhangi bir SMS kodu almadınız. (Not: SMS Key sadece yeni alınan mesajları işler. Mevcut mesajlar işlenmez.)</string>

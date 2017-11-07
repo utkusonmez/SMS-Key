@@ -1,33 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  xmlns:tools="http://schemas.android.com/tools"
 			  android:id="@+id/itemWrapper"
 			  android:orientation="vertical"
 			  android:layout_width="fill_parent"
 			  android:layout_height="wrap_content"
-			  android:background="@drawable/button"
-	>
+			  android:background="@drawable/button">
 
 	<TextView
+		tools:text="Unicredit"
 		style="@style/labelText"
 		android:id="@+id/bankName"
-		android:text="Unicredit"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:gravity="center_vertical"
 		android:paddingLeft="5dip"
-		android:singleLine="true"
-		/>
+		android:maxLines="1"/>
 
 	<TextView
+		tools:text="+36204051181"
 		style="@style/commentText"
 		android:id="@+id/phoneNumber"
-		android:text="+36204051181"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:gravity="center_vertical"
 		android:paddingLeft="5dip"
-		android:singleLine="true"
-		/>
+		android:maxLines="1"/>
 
 </LinearLayout>

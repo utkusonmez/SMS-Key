@@ -1,172 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
 	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:id="@+id/mainPanel"
 	android:background="@drawable/background3"
 	android:layout_width="fill_parent"
-	android:layout_height="fill_parent"
-	>
+	android:layout_height="fill_parent">
 
-	<ScrollView
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		>
+	<RelativeLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+
+		<include
+			android:id="@+id/titleView"
+			layout="@layout/titlebar"/>
+
+		<TextView
+			android:id="@+id/securityWarning"
+			android:text="@string/securityWarning"
+			android:gravity="start"
+			android:background="#FFA000"
+			android:textColor="#FFFFFF"
+			android:textStyle="bold"
+			android:padding="5sp"
+			android:drawableStart="@android:drawable/stat_notify_error"
+			android:drawablePadding="6sp"
+			android:visibility="visible"
+			android:layout_marginTop="3sp"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/titleView"/>
 
 		<RelativeLayout
+			android:id="@+id/messagePanel"
+			android:background="@drawable/panel_background"
+			android:orientation="horizontal"
+			android:padding="12sp"
+			android:layout_marginTop="8sp"
 			android:layout_width="fill_parent"
-			android:layout_height="fill_parent"
-			>
-
-
-			<include
-				android:id="@+id/titleView"
-				layout="@layout/titlebar"
-				/>
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_below="@id/securityWarning">
 
 			<TextView
-				android:id="@+id/securityWarning"
-
-				android:text="@string/securityWarning"
-				android:gravity="left"
-				android:background="#FFA000"
-				android:textColor="#FFFFFF"
+				tools:text="+443334343"
+				android:id="@+id/originatingAddress"
+				android:textSize="18sp"
+				android:textColor="@color/darkBrown"
 				android:textStyle="bold"
-				android:padding="5sp"
-				android:drawableLeft="@android:drawable/stat_notify_error"
-				android:drawablePadding="6sp"
-				android:visibility="visible"
-
-				android:layout_marginTop="3sp"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:layout_below="@id/titleView"
-				/>
-
-			<RelativeLayout
-				android:id="@+id/messagePanel"
-				android:background="@drawable/panel_background"
-				android:orientation="horizontal"
-				android:padding="12sp"
-
-				android:layout_marginTop="8sp"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:layout_gravity="center"
-				android:layout_below="@id/securityWarning"
-				>
-
-				<TextView
-					android:id="@+id/originatingAddress"
-
-					android:text="+443334343"
-					android:textSize="18sp"
-					android:textColor="@color/darkBrown"
-					android:textStyle="bold"
-
-					android:layout_alignParentTop="true"
-					android:layout_alignParentLeft="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					/>
-
-				<View
-					android:id="@+id/horizontalSeparator"
-					android:background="@color/darkBrown"
-
-					android:layout_height="1dp"
-					android:layout_width="match_parent"
-					android:layout_marginTop="5sp"
-
-					android:layout_below="@id/originatingAddress"
-					android:layout_alignParentLeft="true"
-					android:layout_alignParentRight="true"
-					/>
-
-				<TextView
-					android:id="@+id/messageBody"
-					android:text="The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox ju..."
-					android:textSize="14sp"
-					android:textColor="@color/darkBrown"
-
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-
-					android:layout_below="@id/horizontalSeparator"
-					android:layout_alignParentLeft="true"
-					android:layout_alignParentRight="true"
-					/>
-			</RelativeLayout>
-
-			<LinearLayout
-				android:id="@+id/codePanel"
-				style="@style/button"
-				android:layout_below="@id/messagePanel"
-				android:layout_marginLeft="20sp"
-				android:layout_marginRight="20sp"
-				>
-
-				<TextView
-					android:id="@+id/codeButton"
-					android:text="M8m8m8M8"
-					android:textSize="42sp"
-					android:gravity="center"
-
-					style="@style/buttonTitle"
-					/>
-
-				<LinearLayout
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:layout_gravity="center">
-					<ImageView
-						android:src="@drawable/background"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:id="@+id/qrCode"
-						android:layout_weight="1"/>
-				</LinearLayout>
-
-				<TextView
-					android:text="@string/clickToClose"
-					android:gravity="center_horizontal"
-					style="@style/buttonComment"
-					android:layout_marginLeft="0sp"
-					/>
-			</LinearLayout>
-
-
-			<TextView
-				android:id="@+id/receivedAt"
-				android:text="Received at: 2009.12.20 12:34:11"
-				android:textColor="@color/midBrown"
-				android:paddingTop="5sp"
-
-				android:gravity="center_horizontal"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:layout_below="@id/codePanel"
-				/>
-
-			<TextView
-				android:id="@+id/countDown"
-
-				android:text="Remaining time: 00:12:22"
-				android:textColor="@color/midBrown"
-
-				android:gravity="center_horizontal"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:layout_below="@id/receivedAt"
-				/>
+				android:layout_alignParentTop="true"
+				android:layout_alignParentStart="true"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"/>
 
 			<View
-				android:layout_height="30sp"
-				android:layout_width="fill_parent"
-				android:layout_below="@id/countDown"
-				/>
+				android:id="@+id/horizontalSeparator"
+				android:background="@color/darkBrown"
+				android:layout_height="1dp"
+				android:layout_width="match_parent"
+				android:layout_marginTop="5sp"
+				android:layout_below="@id/originatingAddress"
+				android:layout_alignParentStart="true"
+				android:layout_alignParentEnd="true"/>
 
+			<TextView
+				tools:text="The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox ju..."
+				android:id="@+id/messageBody"
+				android:textSize="14sp"
+				android:textColor="@color/darkBrown"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/horizontalSeparator"
+				android:layout_alignParentStart="true"
+				android:layout_alignParentEnd="true"/>
 		</RelativeLayout>
 
-	</ScrollView>
+		<LinearLayout
+			android:id="@+id/codePanel"
+			style="@style/button"
+			android:layout_below="@id/messagePanel"
+			android:layout_marginLeft="20sp"
+			android:layout_marginRight="20sp">
 
-</RelativeLayout>
+			<TextView
+				tools:text="M8m8m8M8"
+				android:id="@+id/codeButton"
+				android:textSize="42sp"
+				android:gravity="center"
+				style="@style/buttonTitle"/>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center">
+
+				<ImageView
+					android:src="@drawable/background"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:id="@+id/qrCode"
+					android:layout_weight="1"/>
+			</LinearLayout>
+
+			<TextView
+				android:text="@string/clickToClose"
+				android:gravity="center_horizontal"
+				style="@style/buttonComment"
+				android:layout_marginStart="0sp"/>
+		</LinearLayout>
+
+		<TextView
+			tools:text="Received at: 2009.12.20 12:34:11"
+			android:id="@+id/receivedAt"
+			android:textColor="@color/midBrown"
+			android:paddingTop="5sp"
+			android:gravity="center_horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/codePanel"/>
+
+		<TextView
+			tools:text="Remaining time: 00:12:22"
+			android:id="@+id/countDown"
+			android:textColor="@color/midBrown"
+			android:gravity="center_horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/receivedAt"/>
+
+		<View
+			android:layout_height="30sp"
+			android:layout_width="fill_parent"
+			android:layout_below="@id/countDown"/>
+	</RelativeLayout>
+</ScrollView>

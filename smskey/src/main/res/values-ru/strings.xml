@@ -21,7 +21,7 @@
 	<string name="noEmptyPhoneNumber">Пустые телефонные номера не допустимы.</string>
 	<string name="noEmptyExpression">Пустые выражения не допустимы.</string>
 	<string name="invalidExpression">Недопустимое регулярное выражение. Пожалуйста, проверьте его еще раз!</string>
-	<string name="copyright">SMS Key TM, BankDroid, 2009 (c)</string>
+	<string name="copyright">SMS Key TM, BankDroid, 2009 ©</string>
 	<string name="clickToClose">Нажмите или встряхните, чтобы копировать и закрыть.</string>
 	<string name="menuClear">Очистить</string>
 	<string name="menuBanks">Банки</string>
@@ -76,12 +76,12 @@
 	<string name="btnManageBanks">Управление банками</string>
 	<string name="btnSubmitSample">Загрузить образец</string>
 	<string name="descViewLast">Напомнить последний SMS код.</string>
-	<string name="descManageBanks">Поддержать банки самостоятельно...</string>
+	<string name="descManageBanks">Поддержать банки самостоятельно…</string>
 	<string name="descSubmitSample">Ваш банк пока не поддерживается?</string>
 	<string name="descInfoSite">Не понимаете, что это приложение делает?</string>
 	<string name="noMessageYet">Вы еще не получили SMS код. (Примечание: SMS Key обрабатывает только недавно полученные сообщения. Существующие сообщения не обрабатываются.)</string>
 	<string name="ok">Ок</string>
-	<string name="loading">Загрузка...</string>
+	<string name="loading">Загрузка…</string>
 	<string name="msgCheckForMessages">Пожалуйста, подождите, идёт анализ SMS.</string>
 	<string name="msgNoBankInCountry">Похоже, ни один банк вашей страны пока не поддерживается.</string>
 	<string name="aboutId">SMS Key TM</string>

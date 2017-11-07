@@ -1,62 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
 <RelativeLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
-	android:background="@drawable/background3"
-	>
+	android:background="@drawable/background3">
 
 	<include
 		android:id="@+id/titleView"
-		layout="@layout/titlebar"
-		/>
-
-	<!-- ***************** Button row ************** -->
-	<LinearLayout
-		android:id="@+id/buttonBar"
-		android:background="@android:drawable/bottom_bar"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:layout_alignParentBottom="true"
-		>
-
-		<Button
-			android:id="@+id/done"
-			android:text="@string/btnDone"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_weight="1"
-			android:layout_marginTop="5px"
-			/>
-
-		<Button
-			android:id="@+id/cancel"
-			android:text="@string/btnCancel"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_weight="1"
-			android:layout_marginTop="5px"
-			/>
-	</LinearLayout>
+		layout="@layout/titlebar"/>
 
 	<ScrollView
 		android:id="@+id/scrollArea"
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
 		android:layout_below="@id/titleView"
-		android:layout_above="@id/buttonBar"
-		>
+		android:layout_above="@id/buttonBar">
 
 		<RelativeLayout
 			android:paddingRight="5sp"
 			android:layout_width="fill_parent"
-			android:layout_height="fill_parent"
-			>
-
-
-			<!-- *********** TOP *********** -->
+			android:layout_height="fill_parent">
 
 			<TextView
 				style="@style/labelText"
@@ -65,19 +30,17 @@
 				android:text="@string/bankName"
 				android:id="@+id/bankNameLabel"
 				android:paddingLeft="5sp"
-
+				android:labelFor="@id/bankName"
 				android:layout_alignParentTop="true"
-				android:layout_alignParentLeft="true"
-				/>
+				android:layout_alignParentLeft="true"/>
 
 			<EditText
-				android:singleLine="true"
-				android:text="Raiffeisen Bank"
+				tools:text="Raiffeisen Bank"
+				android:maxLines="1"
 				android:id="@+id/bankName"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:layout_below="@id/bankNameLabel"
-				/>
+				android:layout_below="@id/bankNameLabel"/>
 
 			<View
 				android:id="@+id/bankNameSeparator"
@@ -86,10 +49,21 @@
 				android:layout_height="1sp"
 				android:layout_below="@id/bankName"
 				android:layout_marginLeft="5sp"
-				android:layout_marginRight="5sp"
-				/>
+				android:layout_marginRight="5sp"/>
 
-			<!-- *********** Phone Numbers *********** -->
+			<TextView
+				style="@style/labelText"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/phoneNumber"
+				android:id="@+id/phoneNumberLabel"
+				android:paddingLeft="5sp"
+				android:layout_below="@id/bankNameSeparator"
+				android:layout_alignParentLeft="true"
+				android:layout_toLeftOf="@id/addPhoneNumber"
+				android:layout_alignTop="@id/addPhoneNumber"
+				android:layout_alignBottom="@id/addPhoneNumber"
+				android:gravity="center_vertical"/>
 
 			<ImageButton
 				android:layout_width="wrap_content"
@@ -102,21 +76,15 @@
 				android:layout_alignParentRight="true"
 				/>
 
-			<TextView
-				style="@style/labelText"
-				android:layout_width="wrap_content"
+			<EditText
+				tools:text="Phone number3"
+				android:id="@+id/phoneNumber3"
+				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:text="@string/phoneNumber"
-				android:id="@+id/phoneNumberLabel"
-				android:paddingLeft="5sp"
-
-				android:layout_below="@id/bankNameSeparator"
+				android:layout_marginLeft="5px"
+				android:layout_alignTop="@id/removePhoneNumber3"
 				android:layout_alignParentLeft="true"
-				android:layout_toLeftOf="@id/addPhoneNumber"
-				android:layout_alignTop="@id/addPhoneNumber"
-				android:layout_alignBottom="@id/addPhoneNumber"
-				android:gravity="center_vertical"
-				/>
+				android:layout_toLeftOf="@id/removePhoneNumber3"/>
 
 			<ImageButton
 				android:layout_width="wrap_content"
@@ -124,22 +92,18 @@
 				android:layout_gravity="right"
 				android:src="@android:drawable/ic_delete"
 				android:id="@+id/removePhoneNumber3"
-
 				android:layout_below="@id/addPhoneNumber"
-				android:layout_alignParentRight="true"
-				/>
+				android:layout_alignParentRight="true"/>
 
 			<EditText
-				android:text="Phone number3"
-				android:id="@+id/phoneNumber3"
+				tools:text="Phone number2"
+				android:id="@+id/phoneNumber2"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-
 				android:layout_marginLeft="5px"
-				android:layout_alignTop="@id/removePhoneNumber3"
+				android:layout_alignTop="@id/removePhoneNumber2"
 				android:layout_alignParentLeft="true"
-				android:layout_toLeftOf="@id/removePhoneNumber3"
-				/>
+				android:layout_toLeftOf="@id/removePhoneNumber2"/>
 
 			<ImageButton
 				android:layout_width="wrap_content"
@@ -147,22 +111,18 @@
 				android:layout_gravity="right"
 				android:src="@android:drawable/ic_delete"
 				android:id="@+id/removePhoneNumber2"
-
 				android:layout_below="@id/removePhoneNumber3"
-				android:layout_alignParentRight="true"
-				/>
+				android:layout_alignParentRight="true"/>
 
 			<EditText
-				android:text="Phone number2"
-				android:id="@+id/phoneNumber2"
+				tools:text="Phone number1"
+				android:id="@+id/phoneNumber1"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-
 				android:layout_marginLeft="5px"
-				android:layout_alignTop="@id/removePhoneNumber2"
+				android:layout_alignTop="@id/removePhoneNumber1"
 				android:layout_alignParentLeft="true"
-				android:layout_toLeftOf="@id/removePhoneNumber2"
-				/>
+				android:layout_toLeftOf="@id/removePhoneNumber1"/>
 
 			<ImageButton
 				android:layout_width="wrap_content"
@@ -170,22 +130,8 @@
 				android:layout_gravity="right"
 				android:src="@android:drawable/ic_delete"
 				android:id="@+id/removePhoneNumber1"
-
 				android:layout_below="@id/removePhoneNumber2"
-				android:layout_alignParentRight="true"
-				/>
-
-			<EditText
-				android:text="Phone number1"
-				android:id="@+id/phoneNumber1"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-
-				android:layout_marginLeft="5px"
-				android:layout_alignTop="@id/removePhoneNumber1"
-				android:layout_alignParentLeft="true"
-				android:layout_toLeftOf="@id/removePhoneNumber1"
-				/>
+				android:layout_alignParentRight="true"/>
 
 			<View
 				android:id="@+id/phoneNumberSeparator"
@@ -194,21 +140,7 @@
 				android:layout_height="1sp"
 				android:layout_below="@id/removePhoneNumber1"
 				android:layout_marginLeft="5sp"
-				android:layout_marginRight="5sp"
-				/>
-
-			<!-- *********** Patterns *********** -->
-
-			<ImageButton
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_gravity="right"
-				android:src="@android:drawable/ic_input_add"
-				android:id="@+id/addPattern"
-
-				android:layout_below="@id/phoneNumberSeparator"
-				android:layout_alignParentRight="true"
-				/>
+				android:layout_marginRight="5sp"/>
 
 			<TextView
 				style="@style/labelText"
@@ -217,14 +149,32 @@
 				android:text="@string/messagePatterns"
 				android:id="@+id/patternLabel"
 				android:paddingLeft="5sp"
-
 				android:layout_below="@id/phoneNumberSeparator"
 				android:layout_alignParentLeft="true"
 				android:layout_toLeftOf="@id/addPattern"
 				android:layout_alignTop="@id/addPattern"
 				android:layout_alignBottom="@id/addPattern"
-				android:gravity="center_vertical"
-				/>
+				android:gravity="center_vertical"/>
+
+			<ImageButton
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="right"
+				android:src="@android:drawable/ic_input_add"
+				android:id="@+id/addPattern"
+				android:layout_below="@id/phoneNumberSeparator"
+				android:layout_alignParentRight="true"/>
+
+			<EditText
+				tools:text="Message pattern3"
+				android:id="@+id/pattern3"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:maxLines="1"
+				android:layout_marginLeft="5px"
+				android:layout_alignTop="@id/removePattern3"
+				android:layout_alignParentLeft="true"
+				android:layout_toLeftOf="@id/removePattern3"/>
 
 			<ImageButton
 				android:layout_width="wrap_content"
@@ -232,23 +182,19 @@
 				android:layout_gravity="right"
 				android:src="@android:drawable/ic_delete"
 				android:id="@+id/removePattern3"
-
 				android:layout_below="@id/addPattern"
-				android:layout_alignParentRight="true"
-				/>
+				android:layout_alignParentRight="true"/>
 
 			<EditText
-				android:text="Message pattern3"
-				android:id="@+id/pattern3"
+				tools:text="Message pattern2"
+				android:id="@+id/pattern2"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:singleLine="true"
-
+				android:maxLines="1"
 				android:layout_marginLeft="5px"
-				android:layout_alignTop="@id/removePattern3"
+				android:layout_alignTop="@id/removePattern2"
 				android:layout_alignParentLeft="true"
-				android:layout_toLeftOf="@id/removePattern3"
-				/>
+				android:layout_toLeftOf="@id/removePattern2"/>
 
 			<ImageButton
 				android:layout_width="wrap_content"
@@ -256,23 +202,19 @@
 				android:layout_gravity="right"
 				android:src="@android:drawable/ic_delete"
 				android:id="@+id/removePattern2"
-
 				android:layout_below="@id/removePattern3"
-				android:layout_alignParentRight="true"
-				/>
+				android:layout_alignParentRight="true"/>
 
 			<EditText
-				android:text="Message pattern2"
-				android:id="@+id/pattern2"
+				tools:text="Message pattern1"
+				android:id="@+id/pattern1"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:singleLine="true"
-
+				android:maxLines="1"
 				android:layout_marginLeft="5px"
-				android:layout_alignTop="@id/removePattern2"
+				android:layout_alignTop="@id/removePattern1"
 				android:layout_alignParentLeft="true"
-				android:layout_toLeftOf="@id/removePattern2"
-				/>
+				android:layout_toLeftOf="@id/removePattern1"/>
 
 			<ImageButton
 				android:layout_width="wrap_content"
@@ -280,23 +222,8 @@
 				android:layout_gravity="right"
 				android:src="@android:drawable/ic_delete"
 				android:id="@+id/removePattern1"
-
 				android:layout_below="@id/removePattern2"
-				android:layout_alignParentRight="true"
-				/>
-
-			<EditText
-				android:text="Message pattern1"
-				android:id="@+id/pattern1"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:singleLine="true"
-
-				android:layout_marginLeft="5px"
-				android:layout_alignTop="@id/removePattern1"
-				android:layout_alignParentLeft="true"
-				android:layout_toLeftOf="@id/removePattern1"
-				/>
+				android:layout_alignParentRight="true"/>
 
 			<View
 				android:id="@+id/patternSeparator"
@@ -305,22 +232,7 @@
 				android:layout_height="1sp"
 				android:layout_below="@id/removePattern1"
 				android:layout_marginLeft="5sp"
-				android:layout_marginRight="5sp"
-				/>
-
-			<!-- ************** Expiry ***************** -->
-
-			<EditText
-				android:text="Expiry in Seconds"
-				android:id="@+id/expiry"
-				android:layout_width="120dp"
-				android:layout_height="wrap_content"
-				android:inputType="number"
-
-				android:layout_marginLeft="5px"
-				android:layout_below="@id/patternSeparator"
-				android:layout_alignParentRight="true"
-				/>
+				android:layout_marginRight="5sp"/>
 
 			<TextView
 				style="@style/labelText"
@@ -329,16 +241,48 @@
 				android:text="@string/expiry"
 				android:id="@+id/expiryLabel"
 				android:paddingLeft="5sp"
+				android:labelFor="@id/expiry"
 
 				android:layout_below="@id/patternSeparator"
 				android:layout_alignParentLeft="true"
 				android:layout_alignTop="@id/expiry"
 				android:layout_alignBottom="@id/expiry"
 				android:layout_toLeftOf="@id/expiry"
-				android:gravity="center_vertical"
-				/>
+				android:gravity="center_vertical"/>
 
+			<EditText
+				android:text="Expiry in Seconds"
+				android:id="@+id/expiry"
+				android:layout_width="120dp"
+				android:layout_height="wrap_content"
+				android:inputType="number"
+				android:layout_marginLeft="5px"
+				android:layout_below="@id/patternSeparator"
+				android:layout_alignParentRight="true"/>
 		</RelativeLayout>
 	</ScrollView>
 
+	<LinearLayout
+		android:id="@+id/buttonBar"
+		android:background="@android:drawable/bottom_bar"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true">
+
+		<Button
+			android:id="@+id/done"
+			android:text="@string/btnDone"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:layout_marginTop="5px"/>
+
+		<Button
+			android:id="@+id/cancel"
+			android:text="@string/btnCancel"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:layout_marginTop="5px"/>
+	</LinearLayout>
 </RelativeLayout>

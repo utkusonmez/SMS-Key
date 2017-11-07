@@ -26,7 +26,7 @@
 
 
 	<!-- SMS OTP Display Activity -->
-	<string name="copyright">SMS Key TM, BankDroid, 2009 (c)</string>
+	<string name="copyright">SMS Key TM, BankDroid, 2009 ©</string>
 	<string name="clickToClose">Tap or shake to copy and close.</string>
 	<string name="menuClear">Clear</string>
 	<string name="menuBanks">Banks</string>
@@ -92,12 +92,12 @@
 	<string name="btnManageBanks">Manage Banks</string>
 	<string name="btnSubmitSample">Submit Sample</string>
 	<string name="descViewLast">Recall the last SMS code.</string>
-	<string name="descManageBanks">Maintain banks yourself...</string>
+	<string name="descManageBanks">Maintain banks yourself…</string>
 	<string name="descSubmitSample">Is your bank not supported yet?</string>
 	<string name="descInfoSite">Don\'t understand what this app does?</string>
 	<string name="noMessageYet">You have not received any SMS code yet. (Note: SMS Key processes only newly received messages. Existing messages are not handled.)</string>
 	<string name="ok">Ok</string>
-	<string name="loading">Loading...</string><!-- I18N -->
+	<string name="loading">Loading…</string><!-- I18N -->
 	<string name="msgCheckForMessages">Please wait while analyzing your SMS inbox.</string><!-- I18N -->
 	<string name="msgNoBankInCountry">It seems that there is no supported banks yet in your country.</string><!-- I18N -->
 

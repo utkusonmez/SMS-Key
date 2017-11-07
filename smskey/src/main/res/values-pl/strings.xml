@@ -21,7 +21,7 @@
 	<string name="noEmptyPhoneNumber">Puste numery nie są dozwolone.</string>
 	<string name="noEmptyExpression">Puste wyrażenia nie są dozwolone.</string>
 	<string name="invalidExpression">Błędne wyrażenie regularne, sprawdź raz jeszcze!</string>
-	<string name="copyright">SMS Key TM, BankDroid, 2009 (c)</string>
+	<string name="copyright">SMS Key TM, BankDroid, 2009 ©</string>
 	<string name="clickToClose">Kliknij lub wstrząśnij, aby skopiować i zamknąć.</string>
 	<string name="menuClear">Wyczyść</string>
 	<string name="menuBanks">Banki</string>
@@ -75,12 +75,12 @@
 	<string name="btnManageBanks">Zarządzaj Bankami</string>
 	<string name="btnSubmitSample">Wyślij przykład</string>
 	<string name="descViewLast">Wyświetla ponownie ostatniego SMSa.</string>
-	<string name="descManageBanks">Zarządzaj Bankami samodzielnie...</string>
+	<string name="descManageBanks">Zarządzaj Bankami samodzielnie…</string>
 	<string name="descSubmitSample">Twój Bank nie jest jeszcze obsługiwany?</string>
 	<string name="descInfoSite">Nie wiesz do czego służy ta aplikacja?</string>
 	<string name="noMessageYet">Jeszcze nie otrzymałeś kodu. (Note: SMS Key przetwarza tylko nowo otrzymane wiadomości.)</string>
 	<string name="ok">Ok</string>
-	<string name="loading">Ładowanie ...</string>
+	<string name="loading">Ładowanie…</string>
 	<string name="msgCheckForMessages">Poczekaj analizuję wiadomości w skrzynce odbiorczej.</string>
 	<string name="msgNoBankInCountry">Wydaje się, że nie ma obsługiwanych banków jeszcze w Twoim kraju.</string>
 	<string name="aboutId">SMS Key TM</string>

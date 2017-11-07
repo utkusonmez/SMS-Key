@@ -25,7 +25,7 @@
 
 
 	<!-- SMS OTP Display Activity -->
-	<string name="copyright">SMS Key TM, BankDroid, 2009 (c)</string>
+	<string name="copyright">SMS Key TM, BankDroid, 2009 ©</string>
 	<string name="clickToClose">Kliknite alebo zatrasete pre skopírovanie a zavretie.</string>
 	<string name="menuClear">Vyčisiť</string>
 	<string name="menuBanks">Banky</string>
@@ -79,7 +79,7 @@
 	<string name="btnManageBanks">Správa bánk</string>
 	<string name="btnSubmitSample">Odoslať vzor</string>
 	<string name="descViewLast">Znovu zobraziť posledný SMS kód.</string>
-	<string name="descManageBanks">Vlastná správa bánk...</string>
+	<string name="descManageBanks">Vlastná správa bánk…</string>
 	<string name="descSubmitSample">Nie je Vaša banka zatiaľ podporovaná?</string>
 	<string name="descInfoSite">Nechápete načo je táto aplikácia?</string>
 	<string name="noMessageYet">Ešte ste nedostali žiadny kód SMS. (Poznámka: SMS Key analyzuje len nové správy. Už existujúce Súčasné správy nie sú spracované.)</string>

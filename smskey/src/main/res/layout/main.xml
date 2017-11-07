@@ -3,118 +3,95 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
-	android:background="@drawable/background3"
-	>
+	android:background="@drawable/background3">
 
 	<include
 		android:id="@+id/titleView"
-		layout="@layout/titlebar"
-		/>
+		layout="@layout/titlebar"/>
 
 	<ScrollView
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
 		android:layout_below="@id/titleView"
 		android:layout_alignParentBottom="true"
-		android:layout_marginTop="10sp"
-		>
+		android:layout_marginTop="10sp">
 
 		<LinearLayout
 			android:orientation="vertical"
 			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			>
+			android:layout_height="wrap_content">
 
 			<TextView
 				android:id="@+id/bankWarning"
-
 				android:text="@string/msgNoBankInCountry"
-				android:gravity="left"
+				android:gravity="start"
 				android:background="#FFA000"
 				android:textColor="#FFFFFF"
 				android:textStyle="bold"
 				android:padding="5sp"
-				android:drawableLeft="@android:drawable/stat_notify_error"
+				android:drawableStart="@android:drawable/stat_notify_error"
 				android:drawablePadding="6sp"
 				android:visibility="visible"
 				android:clickable="true"
-
 				android:layout_marginTop="3sp"
 				android:layout_marginBottom="10sp"
 				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:layout_below="@id/titleView"
-				/>
+				android:layout_height="wrap_content"/>
 
 			<LinearLayout
 				android:orientation="vertical"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 				android:paddingLeft="20sp"
-				android:paddingRight="20sp"
-				>
-
+				android:paddingRight="20sp">
 
 				<LinearLayout
 					android:id="@+id/viewLastCodeRow"
-					style="@style/button"
-					>
+					style="@style/button">
 
 					<TextView
 						android:text="@string/btnViewLast"
-						android:drawableLeft="@drawable/icon_viewlast"
-						style="@style/buttonTitle"
-						/>
+						android:drawableStart="@drawable/icon_viewlast"
+						style="@style/buttonTitle"/>
 
 					<TextView
 						android:text="@string/descViewLast"
-						style="@style/buttonComment"
-						/>
+						style="@style/buttonComment"/>
 				</LinearLayout>
 
 				<View
 					android:background="@color/darkBrown"
 					android:layout_width="fill_parent"
 					android:layout_height="1dp"
-					android:layout_marginBottom="6sp"
-					/>
-
+					android:layout_marginBottom="6sp"/>
 
 				<LinearLayout
 					android:id="@+id/onSubmitSampleRow"
-					style="@style/button"
-					>
+					style="@style/button">
 
 					<TextView
 						android:text="@string/btnSubmitSample"
-						android:drawableLeft="@drawable/icon_submitsample"
-
-						style="@style/buttonTitle"
-						/>
+						android:drawableStart="@drawable/icon_submitsample"
+						style="@style/buttonTitle"/>
 
 					<TextView
 						android:text="@string/descSubmitSample"
-						style="@style/buttonComment"
-						/>
+						style="@style/buttonComment"/>
 				</LinearLayout>
 
 
 				<LinearLayout
 					android:id="@+id/onManageBankRow"
-					style="@style/button"
-					>
+					style="@style/button">
 
 					<TextView
 						android:text="@string/btnManageBanks"
-						android:drawableLeft="@drawable/icon_managebank"
-
-						style="@style/buttonTitle"
-						/>
+						android:drawableStart="@drawable/icon_managebank"
+						style="@style/buttonTitle"/>
 
 					<TextView
 						android:text="@string/descManageBanks"
-						style="@style/buttonComment"
-						/>
+						style="@style/buttonComment"/>
 				</LinearLayout>
 			</LinearLayout>
 		</LinearLayout>

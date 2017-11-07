@@ -67,11 +67,10 @@ public class RetrofitGitHubService extends AsyncTask<String, Void, String> imple
 		data.put("message", message);
 		data.put("osVersion", format("Android SDK: %s (%s)", Build.VERSION.SDK_INT, Build.VERSION.RELEASE));
 
-		StringBuilder sb = new StringBuilder("Please add support for following message:\n");
-		sb.append("`");
-		sb.append(new GsonBuilder().setPrettyPrinting().create().toJson(data));
-		sb.append("`");
-		return sb.toString();
+		return new StringBuilder("Please add support for following message:\n")
+			.append("`")
+			.append(new GsonBuilder().setPrettyPrinting().create().toJson(data))
+			.append("`").toString();
 	}
 
 	@Override

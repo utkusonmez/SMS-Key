@@ -31,10 +31,9 @@ public class TestEntry {
 
 	@Override
 	public String toString() {
-		final StringBuilder sb = new StringBuilder("TestEntry{");
-		sb.append("number='").append(number).append('\'');
-		sb.append(", expectedCode='").append(expectedCode).append('\'');
-		sb.append('}');
-		return sb.toString();
+		return new StringBuilder("TestEntry{")
+			.append("number='").append(number).append('\'')
+			.append(", expectedCode='").append(expectedCode).append('\'')
+			.append('}').toString();
 	}
 }
