@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
+import android.provider.Telephony;
 import android.support.v4.app.NotificationCompat;
 import android.telephony.SmsMessage;
 import android.text.ClipboardManager;
@@ -31,9 +32,7 @@ public class SMSReceiver extends BroadcastReceiver implements Codes {
 		final Bundle bundle = intent.getExtras();
 		if (bundle != null) {
 			//retrieve the SMS message received
-			final Object[] pdus = (Object[]) bundle.get("pdus");
-
-			final SmsMessage sms = SmsMessage.createFromPdu((byte[]) pdus[0]);
+			SmsMessage sms = Telephony.Sms.Intents.getMessagesFromIntent(intent)[0];
 
 			final String originatingAddress = sms.getOriginatingAddress();
 			final String message = sms.getMessageBody();

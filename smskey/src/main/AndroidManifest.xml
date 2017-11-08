@@ -37,8 +37,7 @@
 		<activity android:name=".activities.SMSListActivity_"/>
 		<activity android:name=".activities.BankListActivity_"/>
 
-		<receiver android:name=".SMSReceiver_"
-				  android:permission="android.permission.BROADCAST_SMS">
+		<receiver android:name=".SMSReceiver_">
 			<intent-filter android:priority="999">
 				<action android:name="android.provider.Telephony.SMS_RECEIVED"/>
 			</intent-filter>

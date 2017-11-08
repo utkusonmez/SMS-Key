@@ -17,7 +17,7 @@
 		android:text="@string/smsListTitle"
 
 		style="@style/commentText"
-		android:gravity="left"
+		android:gravity="start"
 		android:padding="5sp"
 
 		android:layout_width="fill_parent"

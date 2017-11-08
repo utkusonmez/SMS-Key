@@ -24,7 +24,7 @@ import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import bankdroid.smskey.BankManager;
 import bankdroid.smskey.Codes;
@@ -89,7 +89,7 @@ public class SMSOTPDisplay extends MenuActivity implements Codes, CountDownListe
 	@ViewById(R.id.countDown) TextView countDownView;
 	@ViewById(R.id.securityWarning) TextView securityWarning;
 	@ViewById(R.id.qrCode) ImageView qrCode;
-	@ViewById(R.id.mainPanel) RelativeLayout mainPanel;
+	@ViewById(R.id.mainPanel) ScrollView mainPanel;
 	@Bean CodeUtils codeUtils;
 	@Bean QRUtils qrUtils;
 	@ColorRes(R.color.backgroundEnd) int backgroundColor;

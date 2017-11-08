@@ -39,7 +39,6 @@
 				android:text="@string/gitHubSmsAddress"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:labelFor="@id/githubSendSmsAddress"
 				android:id="@+id/textView2"/>
 
 			<EditText
@@ -54,7 +53,6 @@
 				android:text="@string/gitHubSmsContent"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:labelFor="@id/githubSendSmsContent"
 				android:id="@+id/textView3"/>
 
 			<EditText

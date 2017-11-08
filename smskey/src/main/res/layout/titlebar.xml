@@ -28,7 +28,7 @@
 
 		android:background="@drawable/titlebackground"
 
-		android:gravity="left|center_vertical"
+		android:gravity="start|center_vertical"
 		android:paddingLeft="18sp"
 		android:paddingTop="5sp"
 		android:paddingBottom="5sp"
