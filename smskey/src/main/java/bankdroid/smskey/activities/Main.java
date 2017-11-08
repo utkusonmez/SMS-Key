@@ -49,7 +49,7 @@ public class Main extends MenuActivity implements Codes {
 		Eula.show(this);
 
 		if (ContextCompat.checkSelfPermission(getBaseContext(), Manifest.permission.READ_SMS) == PackageManager.PERMISSION_DENIED) {
-			ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_SMS}, IGNORED_REQUEST_CODE);
+			ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_SMS, Manifest.permission.RECEIVE_SMS}, IGNORED_REQUEST_CODE);
 		}
 
 		printSmsReceiversInfoIfDebug();
@@ -90,7 +90,7 @@ public class Main extends MenuActivity implements Codes {
 	@Click(R.id.viewLastCodeRow)
 	void onViewLastCode() {
 		if (ContextCompat.checkSelfPermission(getBaseContext(), Manifest.permission.READ_SMS) == PackageManager.PERMISSION_DENIED) {
-			ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_SMS}, PERMISSION_REQUEST_CODE);
+			ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_SMS, Manifest.permission.RECEIVE_SMS}, PERMISSION_REQUEST_CODE);
 		} else {
 			showSmsOTP();
 		}
