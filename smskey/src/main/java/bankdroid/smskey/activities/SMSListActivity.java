@@ -2,9 +2,13 @@ package bankdroid.smskey.activities;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.LoaderManager;
+import android.content.CursorLoader;
 import android.content.DialogInterface;
+import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -22,7 +26,8 @@ import org.androidannotations.annotations.ViewById;
 import java.util.Date;
 
 @EActivity(R.layout.smslist)
-public class SMSListActivity extends MenuActivity implements OnItemClickListener {
+public class SMSListActivity extends MenuActivity implements OnItemClickListener, LoaderManager.LoaderCallbacks<Cursor> {
+	private static final int LOADER_ID = 1;
 	private final static int DIALOG_KNOWN_SMS = 678;
 	// @formatter:off
 	@ViewById(R.id.smsListView) ListView smsListView;
@@ -36,41 +41,32 @@ public class SMSListActivity extends MenuActivity implements OnItemClickListener
 	private int bodyIndex;
 	private int timestampIndex;
 
-
 	@AfterViews
 	void init() {
-		final Cursor cursor = getContentResolver().query(Uri.parse("content://sms/inbox"),
-			new String[]{"_id", "address", "person", "body", "date"}, null, null, "date DESC");
-
-		addressIndex = cursor.getColumnIndexOrThrow("address");
-		bodyIndex = cursor.getColumnIndexOrThrow("body");
-		timestampIndex = cursor.getColumnIndexOrThrow("date");
-
-		startManagingCursor(cursor); //display person if known
-
 		final String[] columns = new String[]{"address", "body"};
 		final int[] names = new int[]{R.id.smsSender, R.id.smstext};
 
-		adapter = new SimpleCursorAdapter(this, R.layout.smslistitem, cursor, columns, names);
-
+		adapter = new SimpleCursorAdapter(this, R.layout.smslistitem, null, columns, names, 0);
 		smsListView.setAdapter(adapter);
 		smsListView.setOnItemClickListener(this);
+
+		getLoaderManager().initLoader(LOADER_ID, null, this);
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
-
 		final Cursor cursor = adapter.getCursor();
+		if (null != cursor) {
+			updateData(cursor);
+		}
+	}
 
-		//collect data from cursor
+	private void updateData(Cursor cursor) {
 		cursor.moveToFirst();
-
 		final int count = cursor.getCount();
 		if (count == 0) {
-			final Toast toast = Toast.makeText(getApplicationContext(), R.string.noSMSInInbox, Toast.LENGTH_SHORT);
-			toast.show();
-
+			Toast.makeText(getApplicationContext(), R.string.noSMSInInbox, Toast.LENGTH_SHORT).show();
 			Log.d(TAG, "There is no SMS in the inbox. Existing from SMS selection activity.");
 			finish();
 		} else {
@@ -81,10 +77,8 @@ public class SMSListActivity extends MenuActivity implements OnItemClickListener
 				addresses[i] = cursor.getString(addressIndex);
 				bodies[i] = cursor.getString(bodyIndex);
 				timestamps[i] = cursor.getLong(timestampIndex);
-
 				cursor.moveToNext();
 			}
-
 			cursor.moveToFirst();
 		}
 	}
@@ -131,4 +125,33 @@ public class SMSListActivity extends MenuActivity implements OnItemClickListener
 		return dialog;
 	}
 
+	@Override
+	public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+		Uri uri = Uri.parse("content://sms/inbox");
+		String[] projection = {"_id", "address", "person", "body", "date"};
+		String selection = null;
+		String[] selectionArgs = null;
+		String order = "date DESC";
+		return new CursorLoader(this, uri, projection, selection, selectionArgs, order);
+	}
+
+	@Override
+	public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
+		switch (loader.getId()) {
+			case LOADER_ID:
+				addressIndex = cursor.getColumnIndexOrThrow("address");
+				bodyIndex = cursor.getColumnIndexOrThrow("body");
+				timestampIndex = cursor.getColumnIndexOrThrow("date");
+				adapter.swapCursor(cursor);
+				updateData(cursor);
+				break;
+			default:
+				break;
+		}
+	}
+
+	@Override
+	public void onLoaderReset(Loader<Cursor> loader) {
+		adapter.swapCursor(null);
+	}
 }
