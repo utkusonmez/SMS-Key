@@ -34,8 +34,8 @@ android {
 		applicationId 'pl.pamsoft.smskey'
 		minSdkVersion 22
 		targetSdkVersion 26
-		versionCode 54
-		versionName "3.13"
+		versionCode 55
+		versionName "3.14"
 		javaCompileOptions {
 			annotationProcessorOptions {
 				arguments = [
