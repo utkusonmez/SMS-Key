@@ -17,6 +17,11 @@ Isn't your bank listed on the site? Don't worry! Submit a sample of SMS message 
 
 * Google and Facebook SMS messages cannot be processed by SMS Key due to technical reasons. Please do not post samples for these services. 
 
+## Important notice
+Starting from Android 4.4 only default messaging app can receive `Telephony.Sms.Intents.html#SMS_DELIVER_ACTION` and because of that:
+- SMS-Key can not suppress default sms ringtone/notification
+- if SMS-Key is not running in background (eg. was forcibly closed) it won't be able to show received sms code.      
+
 ## Google Play
 [Get it from Google Play](https://play.google.com/store/apps/details?id=pl.pamsoft.smskey)  
 [Get beta from Google Play](https://play.google.com/apps/testing/pl.pamsoft.smskey)
